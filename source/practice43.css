@@ -1,0 +1,28 @@
+.p43 { max-width: 1200px; margin: 0 auto; }
+.p43-hero { border-top: 4px solid #25765e; }
+.p43-cases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 20px; }
+.p43-cases .btn { text-align: left; white-space: normal; padding: 16px; }
+.p43-cases small { display: block; margin-top: 6px; font-weight: 400; line-height: 1.6; }
+.p43-steps { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0; }
+.p43-steps .btn { white-space: normal; }
+.p43-document { margin-top: 22px; }
+.p43-document h3 { font-size: 16px; margin-bottom: 10px; }
+.p43-document td { white-space: normal; min-width: 110px; overflow-wrap: anywhere; }
+.p43-document table { width: 100%; }
+.p43-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin: 18px 0; }
+.p43 .fieldlabel { min-width: 0; line-height: 1.6; }
+.p43 .field, .p43 .select { width: 100%; max-width: 100%; min-width: 0; box-sizing: border-box; }
+.p43 .fieldlabel .select { white-space: normal; }
+.p43 .p43-feedback:not(:empty) { margin: 18px 0; padding: 14px 18px; border: 1px solid #dfb580; background: #fff8eb; border-radius: 12px; }
+.p43 .p43-feedback.good { background: #edf7f1; border-color: #9dc4ac; }
+.p43-result { border-left: 4px solid #25765e; }
+.p43 button:disabled { opacity: .55; cursor: not-allowed; }
+.p43 p { line-height: 1.8; }
+@media (max-width: 700px) {
+  .p43-cases, .p43-fields { grid-template-columns: 1fr; }
+  .p43 .panel { padding: 18px 14px; }
+  .p43 .btn { max-width: 100%; white-space: normal; }
+  .p43-steps { display: grid; grid-template-columns: 1fr; }
+}
+
+#p43-stage { scroll-margin-top: 16px; }

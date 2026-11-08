@@ -1,8 +1,25 @@
-# 食品 OEM／ODM 生管專業養成學院 v4.2｜引導式跟班實作版
+# 食品 OEM／ODM 生管專業養成學院 v4.3｜到職實戰版
 
 [線上開啟食品生管養成學院](https://nightelf114-piya.github.io/food-production-academy/)
 
-## 從哪裡開始
+## v4.3 到職實戰
+
+首頁按「進入到職實戰與單據核對」，可完成四組共 16 步的虛構案件。
+
+- 五日跟單實戰會承接你選擇的代工或等待方案，核對追料期限、品質狀態、追加費用、短收與結案。
+- 原料供應練習批號效期、客規、預留、到貨換算與簽收。
+- OEM 練習標籤版次、重複回報、累計差額、損耗餘料及單據鏈。
+- ODM 練習配方/BOM/技轉版次、包材缺件、核准數量與剩餘交貨追蹤。
+
+每步可查看資料、填答、使用兩層提示，下載已收到的原始資料 CSV，並匯出自己的交班表。修改已完成步驟會重新核對該步及後續步驟。草稿與進度會保存在同一瀏覽器，也包含於工作台 JSON 備份。
+
+數字、選項與文件關聯採客觀規則核對。自由文字明確標示「待教練覆核」，由有實務經驗者核對依據、權責、時限、備案及取捨。課程完成不能直接當作獨立工作資格。
+
+v4.3 沿用既有儲存鍵，保留 v4.2 課程與跟班進度。切換舊工作台情境保留到職實戰進度，「重置全部進度」才會一起清除。
+
+三輪情境資料卡已隨輪次更新，已確認的到貨預估與工廠檔期會顯示本輪資訊。到貨預估仍需與實收、品質放行分別判讀。
+
+## 基礎跟班從哪裡開始
 
 1. 直接用 Windows Chrome 或 Edge 開啟 `index.html`，不需要安裝套件或啟動伺服器。
 2. 第一次學習，先到左側「專業養成課程」熟悉前幾課；也可以按左側新增的「★ 完整訂單跟班實作」。
@@ -23,17 +40,20 @@
 - v4.2 使用新的 `...-v42` 瀏覽器儲存鍵；同一網頁來源下，首次會從可用的 v4.1 儲存紀錄複製資料，**不覆蓋** v4.1 的儲存內容。
 - 新的跟班實作進度記錄在工作台狀態 `journey42`，因此「ERP 資料概念練習 → 匯出完整 JSON 備份」可備份目前案例與跟班進度。
 - 十門課的個人學習進度使用另一組課程儲存鍵，不包含在工作台 JSON 備份中。
-- 若本機 HTML 的瀏覽器儲存被禁止，重開後可能無法保留進度。先用 JSON 匯出重要工作台資料；本機重開保存效果尚未完成實測，請參考 `LIMITATIONS_V42.md`。
+- 若本機 HTML 的瀏覽器儲存被禁止，重開後可能無法保留進度。先用 JSON 匯出重要工作台資料；本機重開保存效果尚未完成實測，請參考 [目前使用限制](LIMITATIONS_V43.md)。
+
+目前驗證結果：[v4.3 驗證紀錄](TEST_REPORT_V43.md)；使用範圍：[v4.3 限制](LIMITATIONS_V43.md)。
 
 ## 程式與測試
 
+- `source/practice43.js`、`source/practice43.css`：四組到職實戰、草稿保存與 CSV 匯出。
 - `source/journey42.js`：11 步引導式實務訓練，使用原本 `PC` 排程引擎。
 - `source/journey42.css`：跟班實作及錯誤提示視覺樣式。
 - `source/engine.js`：核心排程、耗料、品質與出貨引擎。
 - `source/academy.js`、`source/coach41.js`：原課程與新手引導。
 - `source/ui.js`：新增跟班入口及導覽整合。
 - `source/build.py`：輸出可離線開啟的單一 HTML。
-- 執行：`python source/build.py`、`node source/tests.js`、`node source/tests_academy.js`、`node source/tests_journey42.js`。
+- 執行：`python source/build.py`、`node source/tests.js`、`node source/tests_academy.js`、`node source/tests_journey42.js`、`node source/tests_practice43.js`、`node source/tests_coach43.js`。
 
 所有產品、企業、工廠、產能及訂單資料均為虛構示範。本工具不代表任何公司的內部 ERP、法規遵循或實際產線能力。
 
