@@ -1,0 +1,66 @@
+[
+  {
+    "name": "A-01 ten modules and six levels",
+    "result": "PASS"
+  },
+  {
+    "name": "A-02 terms have explanation formal use sample pitfall",
+    "result": "PASS"
+  },
+  {
+    "name": "A-03 every module has 3 inspections, worked example and interactive question",
+    "result": "PASS"
+  },
+  {
+    "name": "A-04 3 MPS sum is from actual planned F-A timeline",
+    "result": "PASS"
+  },
+  {
+    "name": "A-05 BOM derived from currently remaining",
+    "result": "PASS"
+  },
+  {
+    "name": "A-06 finite capacity accounts for downtime",
+    "result": "PASS"
+  },
+  {
+    "name": "A-07 material usable excludes held batches",
+    "result": "PASS"
+  },
+  {
+    "name": "A-08 exercise response does not mutate operational state",
+    "result": "PASS"
+  },
+  {
+    "name": "A-09 wrong numeric choice is not accepted",
+    "result": "PASS"
+  },
+  {
+    "name": "A-10 stage links and manual reason are required",
+    "result": "PASS"
+  },
+  {
+    "name": "A-11 scenario change changes calculation where appropriate",
+    "result": "PASS"
+  },
+  {
+    "name": "A-12 abnormal order not allowed to reserve material",
+    "result": "PASS"
+  },
+  {
+    "name": "A-13 zero quality release authority cannot be assumed",
+    "result": "PASS"
+  },
+  {
+    "name": "A-14 plan is deterministic at identical snapshot",
+    "result": "PASS"
+  },
+  {
+    "name": "A-15 daily risk list tracks underlying model state",
+    "result": "PASS"
+  },
+  {
+    "name": "A-16 all modes render static HTML without DOM",
+    "result": "PASS"
+  }
+]

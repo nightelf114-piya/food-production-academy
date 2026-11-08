@@ -1,0 +1,977 @@
+<!doctype html><html lang="zh-Hant-TW"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>食品 OEM／ODM 生管專業養成學院 v4.2｜跟班實作版</title><style>:root{--bg:#f4f7f8;--paper:#fff;--ink:#17322f;--muted:#60726f;--line:#dce6e2;--green:#13765b;--green2:#e7f4ee;--teal:#0e807e;--orange:#a85d18;--red:#ac3f43;--redbg:#faeeee;--amberbg:#fff3de;--blue:#346c9c;--bluebg:#eaf1f8;--shadow:0 8px 28px #193f3910;font-family:Inter,"Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;color-scheme:light}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-size:14px}button,input,textarea,select{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.5}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #7cbbc3;outline-offset:2px}a{color:var(--green)}
+.shell{min-height:100vh;display:grid;grid-template-columns:238px minmax(0,1fr)}aside{background:#113d37;color:#f3fff9;padding:24px 13px;position:sticky;top:0;height:100vh;overflow:auto}.brand{padding:6px 13px 22px;border-bottom:1px solid #ffffff20}.brand .logo{font-size:27px;font-weight:900;letter-spacing:-1px}.brand small{color:#c7dcd5;line-height:1.7;display:block}.asidecaption{font-size:11px;letter-spacing:1px;opacity:.62;padding:22px 13px 8px}.nav{display:grid;gap:5px}.nav button{background:transparent;border:0;text-align:left;padding:12px 13px;color:#d5e7e1;border-radius:11px;display:flex;gap:11px;align-items:center;font-weight:650}.nav button:hover,.nav button.active{background:#e1f7eb22;color:white}.nav button.active{box-shadow:inset 3px 0 #7cd1a8}.asidefoot{font-size:12px;color:#d0e3dd;line-height:1.7;margin:32px 11px 0;padding-top:15px;border-top:1px solid #ffffff21}
+main{min-width:0}.toolbar{padding:25px 33px 20px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--line);background:#fff}.crumb{font-size:12px;color:var(--green);font-weight:800;letter-spacing:.5px}.toolbar h1{font-size:25px;margin:5px 0 5px;letter-spacing:-.5px}.toolbar p{color:var(--muted);margin:0;font-size:13px}.tools{display:flex;align-items:flex-end;gap:8px;flex-wrap:wrap}.tools label{font-size:12px;color:var(--muted);display:grid;gap:4px}.content{padding:26px 32px 70px;max-width:1450px;margin:0 auto}.tab{display:none}.tab.active{display:block}.panel{background:var(--paper);border:1px solid var(--line);border-radius:17px;padding:20px;box-shadow:var(--shadow);margin-bottom:16px}.panel h2{margin:0 0 8px;font-size:17px}.panel h3{font-size:14px;margin:0 0 9px}.panel p{color:var(--muted);line-height:1.75;margin:7px 0}.panel > .subtitle{margin:0 0 18px}.grid{display:grid;gap:14px}.two{grid-template-columns:repeat(2,minmax(0,1fr))}.three{grid-template-columns:repeat(3,minmax(0,1fr))}.four{grid-template-columns:repeat(4,minmax(0,1fr))}.metric{border:1px solid var(--line);border-radius:14px;padding:15px;background:#fff}.metric span{font-size:12px;color:var(--muted)}.metric strong{font-size:28px;display:block;margin:6px 0}.metric small{font-size:11px;color:var(--muted)}.metric.warn strong{color:var(--orange)}.metric.bad strong{color:var(--red)}.metric.good strong{color:var(--green)}.topspace{margin-top:16px}.line{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.line.tight{gap:6px}.pill{display:inline-flex;padding:4px 9px;border:1px solid var(--line);background:#f4f6f6;color:#536663;border-radius:40px;font-size:11px;font-weight:700;white-space:nowrap}.pill.good{background:var(--green2);color:var(--green);border-color:#cbecdc}.pill.bad{background:var(--redbg);color:var(--red);border-color:#efced0}.pill.warn{background:var(--amberbg);color:var(--orange);border-color:#f6dfb5}.pill.info{background:var(--bluebg);color:var(--blue);border-color:#d4e5f4}.muted{color:var(--muted)}.tiny{font-size:11px}.note{background:#f0f6f4;border:1px solid #dce9e4;padding:13px 15px;border-radius:12px;color:#385b51;line-height:1.7}.note.warn{background:var(--amberbg);border-color:#f5e2c3;color:#775321}.note.bad{background:var(--redbg);border-color:#f0d1d2;color:#793738}.steps{display:grid;gap:10px}.step{padding:12px 14px;border-left:3px solid #9acbb6;background:#f7faf8;border-radius:4px 10px 10px 4px}.step b{display:block;margin-bottom:5px}.step small{color:var(--muted);line-height:1.7}.btn{border-radius:10px;background:#fff;border:1px solid #ccdcd7;color:#244a43;padding:9px 13px;line-height:1.2;font-weight:700;min-height:36px}.btn:hover{background:#f0f7f3}.btn.primary{background:var(--green);color:#fff;border-color:var(--green)}.btn.primary:hover{background:#0d5e49}.btn.danger{background:#fff;color:var(--red);border-color:#e8bfc1}.btn.small{padding:6px 9px;font-size:12px;min-height:29px}.select,.field{border:1px solid #ccdbd7;border-radius:9px;background:#fff;color:var(--ink);padding:9px 11px;min-height:37px;max-width:100%}textarea.field{resize:vertical;min-height:86px;width:100%}.field.wide{width:100%}.field.small{max-width:110px}.fieldline{display:flex;gap:9px;align-items:end;flex-wrap:wrap}.fieldlabel{display:grid;gap:5px;font-size:12px;color:var(--muted);font-weight:650}.tablewrap{width:100%;overflow-x:auto;border:1px solid var(--line);border-radius:11px}table{width:100%;border-collapse:collapse;text-align:left;min-width:620px}th,td{padding:11px 12px;border-bottom:1px solid #e6eeeb;vertical-align:top}th{font-size:12px;background:#f5f8f7;color:#526b63;font-weight:750;white-space:nowrap}tr:last-child td{border-bottom:0}td{font-size:12px;line-height:1.55}td strong{font-size:13px}td small{color:var(--muted)}.cell{display:flex;flex-direction:column;gap:5px}.gantt{min-width:810px;table-layout:fixed}.gantt td,.gantt th{padding:8px 7px;text-align:center;border-right:1px solid var(--line);font-size:11px}.gantt th:first-child,.gantt td:first-child{width:148px;text-align:left}.slot{display:block;color:white;background:#2e9a7c;border-radius:6px;font-size:10px;padding:3px;margin:2px 0;white-space:nowrap}.slot.downtime{background:#cb5660}.slot.reserved{background:#8b9da4}.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.choice{border:1px solid var(--line);border-radius:13px;background:#fff;padding:14px;text-align:left;display:grid;gap:7px;color:var(--ink)}.choice:hover{border-color:#69b09a}.choice.selected{border-color:var(--green);background:#f0faf4;box-shadow:inset 0 0 0 1px var(--green)}.choice b{font-size:14px}.choice small{color:var(--muted);line-height:1.5}.stage{font-size:12px;font-weight:800;color:var(--green);letter-spacing:.3px;margin:22px 0 10px}.fact{border:1px solid var(--line);padding:12px;border-radius:11px;background:#fff;display:flex;gap:10px;align-items:start}.fact button{flex-shrink:0}.fact p{margin:5px 0 0}.reply{color:#285e50;background:#edf7f0;margin-top:8px;padding:9px;border-radius:8px;line-height:1.65}.reply.unknown{background:#fff3dd;color:#79531d}.reply.fail{background:#faebed;color:#8b3e45}.comparison td.changed{background:#fff9e8}.feedback{margin:9px 0;padding:10px 13px;background:#f4f9f6;border-left:3px solid var(--green);border-radius:4px 10px 10px 4px;line-height:1.6}.forms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.forms .span{grid-column:1/-1}.tutorial{margin-top:14px;display:grid;gap:9px}.badge-dot{background:var(--green2);border-radius:9px;padding:4px 8px;color:var(--green);font-weight:800}.kbd{font-size:11px;border:1px solid var(--line);background:#fff;border-radius:6px;padding:3px 6px}.modal-bg{position:fixed;inset:0;background:#0d2927a8;z-index:300;display:flex;align-items:center;justify-content:center;padding:20px}.modal{max-width:560px;width:100%;background:white;border-radius:20px;padding:23px;box-shadow:0 25px 70px #071c1880}.modal h2{margin-top:0}.modal .controls{display:grid;gap:9px;margin:16px 0}.modal .controls label{display:flex;gap:9px;align-items:start;line-height:1.6}.toast{position:fixed;bottom:18px;right:20px;z-index:200;background:#154c3f;color:white;border-radius:12px;padding:12px 16px;box-shadow:var(--shadow);max-width:min(500px,90vw);display:none}.toast.show{display:block}.divider{border-top:1px solid var(--line);margin:18px 0}.footer{font-size:12px;color:var(--muted);margin:24px 0}.sronly{position:absolute;left:-10000px}.subtitle strong{color:var(--ink)}
+@media(max-width:1150px){.two,.three,.four{grid-template-columns:repeat(2,minmax(0,1fr))}.toolbar{padding:20px}.content{padding:20px}.shell{grid-template-columns:210px minmax(0,1fr)}}
+@media(max-width:760px){.shell{display:block}aside{height:auto;position:relative;padding:14px}.brand{padding:4px 7px 11px}.brand .logo{font-size:21px}.asidecaption,.asidefoot{display:none}.nav{display:flex;gap:4px;overflow-x:auto;padding:8px 0 2px;scrollbar-width:thin}.nav button{font-size:12px;white-space:nowrap;padding:10px 11px}.toolbar{padding:17px 15px}.toolbar h1{font-size:20px}.content{padding:14px 12px 55px}.panel{padding:14px;border-radius:13px}.two,.three,.four,.choices,.forms{grid-template-columns:1fr}.metric strong{font-size:24px}.forms .span{grid-column:auto}.tools{width:100%}.tools label{flex:1}.fieldline .fieldlabel{flex:1}}
+
+/* Academy v4 — ergonomic course experience atop the v3 operations workbench */
+.academy{display:grid;gap:16px}.academy .panel{margin-bottom:0}.ac-hero{border-radius:22px;background:linear-gradient(115deg,#103e38 5%,#175d50 58%,#246d63 100%);padding:30px 32px;color:white;position:relative;overflow:hidden}.ac-hero:after{content:'';position:absolute;right:-64px;top:-80px;width:280px;height:280px;border:1px solid #d6f6e544;border-radius:50%;box-shadow:0 0 0 40px #e4fff40a,0 0 0 80px #e4fff408;pointer-events:none}.ac-hero h2{font-size:32px;letter-spacing:-.04em;margin:10px 0 8px;line-height:1.3;color:white}.ac-hero p{max-width:680px;color:#e0f2eb;font-size:14px;line-height:1.9;margin:6px 0}.ac-eyebrow{font-size:11px;font-weight:800;letter-spacing:1.25px;color:#158064;text-transform:uppercase}.ac-hero .ac-eyebrow{color:#b9e8d4}.ac-hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;z-index:1;position:relative}.ac-hero .btn.primary{background:#e7fff1;border-color:#e7fff1;color:#124739}.ac-hero .btn:not(.primary){background:#ffffff14;color:#f1fff8;border-color:#b8e3cf75}.ac-stat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.ac-stat{border:1px solid #dde8e4;border-radius:16px;background:white;padding:18px;display:grid;gap:5px}.ac-stat small{font-size:12px;color:#75847f}.ac-stat strong{font-size:27px;line-height:1.4;color:#124d41;font-variant-numeric:tabular-nums}.ac-stat span{font-size:12px;color:#718781}.ac-subnav{display:flex;gap:8px;flex-wrap:wrap}.ac-course-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.ac-course{border:1px solid #dce7e2;background:white;border-radius:16px;display:flex;align-items:center;text-align:left;gap:14px;min-height:95px;padding:16px;color:#173e36;box-shadow:0 6px 22px #17382d0b}.ac-course:hover{border-color:#59a58d;background:#fafffc}.ac-number{font-size:26px;color:#72a996;font-weight:850;font-variant-numeric:tabular-nums}.ac-course-info{display:grid;gap:6px;flex:1}.ac-course-info b{font-size:15px;line-height:1.4}.ac-course-info small{color:#738782}.ac-status{font-size:12px;font-weight:800;color:#287a65;white-space:nowrap}.ac-status.ok{color:#29705d}.ac-breadcrumb{display:flex;align-items:center;justify-content:space-between;gap:10px;color:#677e74;font-size:12px}.ac-lesson{padding:24px 28px!important}.ac-lesson>h2{font-size:27px;letter-spacing:-.035em;margin:8px 0 3px}.ac-muted{color:#7a8f89}.ac-phase{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:7px;margin:24px 0 22px}.ac-phase-btn{min-height:58px;border:1px solid #dfeae4;border-radius:11px;background:#f8faf9;color:#617b70;font-size:16px;font-weight:800}.ac-phase-btn span{font-size:11px;font-weight:500;display:block;margin-top:3px}.ac-phase-btn.on{background:#e0f6ea;border-color:#49a384;color:#11664e}.ac-lesson-body{background:#fbfcfb;border:1px solid #e3ece6;border-radius:16px;padding:22px;min-height:280px}.ac-lesson-body>h3{font-size:19px;margin:0 0 18px;color:#1b4d41}.ac-paragraph p{color:#405a53!important;font-size:15px;line-height:1.95}.ac-gloss{border:1px solid #e3e9e6;border-radius:11px;padding:13px 16px;margin:8px 0;background:#fff}.ac-gloss summary{cursor:pointer;color:#235949;font-weight:800}.ac-gloss summary span{float:right;font-size:12px;color:#8b9a94;font-weight:400}.ac-gloss-detail{margin-top:11px;line-height:2;color:#536b63}.ac-gloss-detail b{color:#2d5e50}.ac-worked{background:#edf7f1;border:1px solid #cce8d9;border-radius:12px;padding:17px 20px;margin:10px 0 14px;color:#2b5548}.ac-worked p{color:#2e584b;line-height:1.85;font-size:15px;margin:7px 0}.ac-inspect{display:grid;gap:10px}.ac-inspect-card{display:block;text-align:left;border-radius:11px;border:1px solid #d9e7e1;padding:14px 16px;background:white;color:#255244;width:100%;line-height:1.7}.ac-inspect-card:hover{border-color:#399e7e}.ac-inspect-card>b{font-weight:750;display:block}.ac-inspect-card>small{display:block;color:#8a9994;margin-top:3px}.ac-inspect-card>span{display:block;color:#426859;padding:10px 12px;margin-top:9px;border-radius:7px;background:#edf8f2}.ac-question{max-width:750px}.ac-question>h3{font-size:18px;margin-top:10px}.ac-radio{display:grid;gap:9px;margin:16px 0}.ac-radio label{display:flex;gap:11px;align-items:flex-start;border:1px solid #deebe4;border-radius:10px;background:white;padding:11px 14px;cursor:pointer}.ac-radio label:has(input:checked){border-color:#278965;background:#f1faf5}.ac-radio input{accent-color:#238969;transform:translateY(3px)}.academy form{display:grid;gap:14px}.academy textarea.field{width:100%;min-height:105px;line-height:1.65}.academy .fieldlabel{font-size:13px;line-height:1.8}.academy .field{font-size:14px}.ac-input{max-width:240px}.ac-result{border-left:4px solid #429b77;background:#f0f9f3;border-radius:7px;padding:13px 16px;margin-top:15px;color:#245d45;line-height:1.8}.ac-result.retry{border-color:#c17f39;background:#fff7e9;color:#825928}.ac-coach{border:1px solid #cbe8da;border-radius:14px;padding:22px;background:white}.ac-coach h3{color:#1a6548;font-size:21px}.ac-coach p{color:#4e655c;font-size:14px;line-height:2}.ac-actions{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;margin-top:20px}.academy-sources{font-size:12px;line-height:1.9;color:#7b8d85}.ac-day-strip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}.ac-day{min-height:78px;border:1px solid #d7e8df;border-radius:12px;background:white;padding:12px 8px;text-align:center;display:grid;align-content:center;gap:7px;color:#31584a}.ac-day>b{font-size:12px;color:#177656}.ac-day>small{font-size:11px}.ac-day.current{border:2px solid #19845d;background:#e9f6ef}.ac-day.finished{background:#f0fcf4}.ac-stat-grid.inner{grid-template-columns:repeat(2,minmax(0,1fr));margin:12px 0 18px}.ac-stat-grid.inner .ac-stat strong{font-size:22px}.ac-risk{border-bottom:1px solid #e6eee9;display:grid;gap:4px;padding:13px 0}.ac-risk:last-of-type{border-bottom:0}.ac-risk b{color:#315b4a}.ac-risk span,.ac-risk small{color:#667d73;line-height:1.6}.ac-levels{display:grid;gap:12px}.ac-level.locked{opacity:.65}.ac-level h2{font-size:18px}.ac-multi{display:grid;gap:10px}.ac-multi-row{border:1px solid #e2eae5;border-radius:10px;padding:12px;display:grid;gap:10px}.ac-multi-row>label{font-size:12px;display:grid;gap:4px}.ac-flash{background:#fff4dd;color:#805a25;border:1px solid #f2d8ac;padding:13px 15px;border-radius:10px}.ac-course:focus-visible,.ac-phase-btn:focus-visible{outline:3px solid #7bbba6}.nav button:first-child{background:#2d7b60;color:white;font-weight:900}.nav button:first-child.active{box-shadow:inset 3px 0 #b1f9b4;background:#2e9270}
+@media(max-width:1130px){.ac-course-list{grid-template-columns:1fr}.ac-stat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ac-status{font-size:11px}}@media(max-width:760px){.ac-hero{padding:24px 18px}.ac-hero h2{font-size:24px}.ac-stat strong{font-size:22px}.ac-stat{padding:12px}.ac-lesson{padding:15px!important}.ac-lesson>h2{font-size:22px}.ac-phase{gap:4px}.ac-phase-btn{min-height:52px;padding:5px 1px;font-size:13px}.ac-phase-btn span{font-size:9px}.ac-lesson-body{padding:15px}.ac-day-strip{grid-template-columns:repeat(5,minmax(0,1fr));gap:4px}.ac-day{min-height:70px;padding:8px 3px}.ac-day>small{font-size:10px}.ac-gloss summary span{font-size:10px}.ac-breadcrumb{align-items:flex-start}}
+.ac-plan-form{display:flex!important;align-items:end;gap:11px;flex-wrap:wrap;margin:15px 0}.ac-plan-form .fieldlabel{min-width:290px;flex:1}.ac-plan-result{display:grid;gap:13px;margin-top:16px;border-top:1px solid #e2e9e5;padding-top:18px}.ac-plan-result .ac-stat-grid.inner{grid-template-columns:repeat(4,minmax(0,1fr))}.ac-plan-result td{line-height:1.6}.ac-plan-result .tablewrap table{min-width:760px}@media(max-width:800px){.ac-plan-result .ac-stat-grid.inner{grid-template-columns:repeat(2,minmax(0,1fr))}.ac-plan-form .fieldlabel{min-width:100%}}
+.ac-topic-list{display:grid;gap:8px;margin:9px 0 22px}.ac-topic{display:flex;gap:10px;line-height:1.7;color:#355f4e;padding:10px 12px;border-left:2px solid #80b7a0;border-radius:5px;background:white}.ac-topic>span:first-child{color:#278762;font-weight:900}
+
+/* v4.1 coherent, keyboard-accessible coaching styles */
+.ac41{gap:16px}.ac41 .coach-toolbar{padding:11px 15px;border:1px solid #cee5d8;background:#f3faf6;border-radius:12px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.ac41 .coach-toolbar span{color:#265446;font-size:13px}.ac41-top{align-items:flex-start;gap:14px;flex-wrap:wrap}.ac41-top h2{font-size:25px;margin:7px 0}.coach-switch,.coach-options{display:flex;gap:8px;flex-wrap:wrap}.coach-guide{margin:16px 0 22px;padding:18px 20px;background:#edf8f2;border-radius:13px;border:1px solid #a6d6bd}.coach-guide h3{font-size:19px;color:#165640;margin:8px 0 10px}.coach-guide p{color:#2b5444;line-height:1.8;margin:7px 0}.coach-guide .line{display:flex;gap:7px;flex-wrap:wrap;margin-top:13px}.coach-note{padding:15px 18px;border:1px solid #c0d8e0;border-left:5px solid #497b9a;border-radius:11px;margin:15px 0;background:#f3f8fa;color:#314d58;line-height:1.75}.coach-note p{margin:6px 0}.coach-note.error{border-color:#e5bcba;border-left-color:#bb5351;background:#fff3f1;color:#803a35}.coach-note.warning{border-color:#e4cea4;border-left-color:#be892c;background:#fff9ec;color:#6c541e}.coach-note.success{border-color:#aedccc;border-left-color:#36916f;background:#effaf4;color:#20654d}.coach-note.tip{border-color:#bad7e5;border-left-color:#5084a3;background:#f0f8ff;color:#375b73}.coach-note .line{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.coach-counter{background:#f4f9f6;padding:10px 13px;margin:10px 0 16px;color:#245a47;border-radius:9px}.coach-variant{border:2px dashed #8cccb1;border-radius:13px;padding:18px;margin-top:20px;background:#fbfefa}.coach-variant h3{color:#23664d}.coach-variant form{max-width:640px}.coach-radio{border:0;margin:10px 0;padding:0;display:grid;gap:8px}.coach-radio legend{font-weight:750;color:#2b5646;margin-bottom:8px}.coach-radio label{display:block;padding:11px;border:1px solid #d8e8df;background:#fff;border-radius:10px;cursor:pointer}.coach-radio input{accent-color:#197b59}.coach-welcome{padding:45px!important;max-width:900px;margin:20px auto!important;border-top:6px solid #318c68}.coach-welcome h2{font-size:28px;color:#1d5c46;margin:12px 0}.coach-welcome p{font-size:15px;line-height:2;color:#416353}.coach-welcome .line{display:flex;flex-wrap:wrap;gap:12px;margin-top:23px}.coach-options{margin:10px 0 16px}.ac-work-return{border-left:4px solid #4e9f7a;margin-bottom:12px!important;background:#f1faf4}.ac-focus{outline:3px solid #e5af56!important;outline-offset:4px!important;box-shadow:0 0 0 8px #f6dba04d!important;transition:box-shadow .2s}.ac41 button:focus-visible,.ac41 input:focus-visible,.ac41 textarea:focus-visible,.ac-work-return button:focus-visible{outline:3px solid #dba545;outline-offset:3px}.coach-variant input,.ac41 .ac-input{width:min(100%,320px)}.coach-welcome .btn,.coach-guide .btn{min-height:40px}.ac41 .ac-lesson-body{min-height:220px}.ac41 .ac-inspect-card{scroll-margin-top:20px}.ac41 .ac-phase-btn{cursor:pointer}.ac41 .ac-phase-btn:disabled{opacity:.65;cursor:not-allowed}.ac41 .ac-lesson-body textarea{width:100%;min-height:96px}.ac41 .ac-radio label:has(input:checked),.coach-radio label:has(input:checked){border-color:#208661;background:#f1faf5}.ac41 .tablewrap{overflow:auto}.ac41 .tablewrap table{min-width:650px}@media(max-width:780px){.coach-welcome{padding:22px!important}.coach-welcome h2{font-size:22px}.coach-guide{padding:14px}.ac41-top h2{font-size:20px}.coach-switch{width:100%}.coach-switch button{flex:1}.ac41 .ac-phase{grid-template-columns:repeat(3,minmax(0,1fr))}.ac41 .ac-phase-btn{min-height:52px}.ac41 .ac-actions{justify-content:stretch}.ac41 .ac-actions .btn{flex:1}.coach-note .line .btn{flex:1}.ac41 .ac-lesson-body{padding:14px}.coach-toolbar .line{width:100%}}
+.coach-guide.challenge{background:#f4f6fa;border-color:#d5dcea}.coach-guide.challenge h3{color:#344b66}.coach-guide.challenge p{color:#55657a}.coach-field-error{font-size:13px;line-height:1.6;margin:8px 0;padding:10px 12px;border-left:4px solid #be5b4e;border-radius:6px;background:#fff1ef;color:#903e33}.coach-field-error button{margin-left:8px}
+
+/* Guided lifecycle — no changes to original academy or production simulation styles. */
+.j42-intro,.j42-shell,.j42-finish{max-width:1060px;margin-inline:auto}
+.j42-label{display:block;font-size:12px;font-weight:800;color:#0f7864;letter-spacing:.05em;margin-bottom:7px}
+.j42-shell h2,.j42-intro h2{margin-bottom:12px}
+.j42-mini{padding:13px 15px;margin:14px 0;background:#eef6fa;border:1px solid #cfe6ee;border-radius:10px;font-size:13px;line-height:1.6;color:#385b66}
+.j42-progress{width:100%;height:8px;border-radius:8px;background:#e8f0ed;overflow:hidden;margin:15px 0 20px}
+.j42-progress i{display:block;background:#14846e;height:100%;border-radius:8px;transition:width .25s}
+.j42-guide{padding:18px 20px;background:#eaf7f2;border:1px solid #c1e2d6;border-radius:14px;margin:14px 0 20px}
+.j42-guide>strong{font-size:17px;color:#155e4c}.j42-guide p{margin:7px 0 11px;line-height:1.75}
+.j42-card{padding:20px;border-radius:12px;border:1px solid #e1e8e5;background:#fff;margin-bottom:17px}
+.j42-card h3{margin:0 0 10px;font-size:17px}.j42-card p{margin:7px 0;line-height:1.75}
+.j42-table{display:grid;gap:8px;margin-top:12px}.j42-table>div,.j42-factory{border:1px solid #dee9e6;border-radius:9px;padding:10px 13px;background:#f8fbf9}
+.j42-factory{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;margin:8px 0;font-size:13px}
+.j42-target{display:grid;gap:9px;font-weight:700;margin:12px 0 17px}.j42-input{width:100%;max-width:600px}
+.j42-checks{display:grid;gap:12px;border:1px solid #d4e3dc;border-radius:10px;padding:16px;margin:13px 0}.j42-checks label{display:flex;gap:10px;align-items:flex-start;font-size:14px}.j42-checks input{margin-top:5px;accent-color:#117d65}
+.j42-hint{border-left:4px solid #c27b18;background:#fff7e9;padding:13px 16px;margin-top:15px;border-radius:8px}.j42-hint p{margin:8px 0 12px}
+.j42-feedback{border:1px solid #ebcfcb;border-left:5px solid #aa3f41;border-radius:12px;padding:17px 18px;margin-top:18px;background:#fff5f5}
+.j42-feedback.good{border-color:#c0dfd2;border-left-color:#187c5e;background:#f1fbf6}
+.j42-feedback>strong{display:block;font-size:17px;margin-bottom:7px}.j42-feedback p{margin:8px 0 12px;line-height:1.7}
+.j42-kinds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px}
+.j42-kinds>div{background:#f5faf7;border:1px solid #d8e6dd;border-radius:11px;padding:16px}
+.j42-kinds b,.j42-kinds small{display:block}.j42-kinds small{color:#5a7469;margin-top:7px}
+.j42-result{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:20px}.j42-result>div{padding:9px 12px;background:#f4faf6;border-radius:8px;color:#26664e}
+@media(max-width:720px){.j42-kinds,.j42-result{grid-template-columns:1fr}.j42-card,.j42-guide{padding:13px}.j42-shell .line{flex-wrap:wrap}}
+</style></head>
+<body><div class="shell"><aside><div class="brand"><div class="logo">◈ 生管養成學院</div><small>食品 OEM／ODM<br>十門核心課程・六級能力・工作週模擬</small></div><div class="asidecaption">由零開始學習</div><nav class="nav" aria-label="主要功能">
+<button data-nav="academy" class="active">✦　專業養成課程</button>
+<button data-nav="journey">★　完整訂單跟班實作</button>
+<button data-nav="overview">◫　今日生管總覽</button>
+<button data-nav="orders">▤　訂單與產能排程</button>
+<button data-nav="materials">◈　BOM、原物料與庫存</button>
+<button data-nav="factories">▦　代工廠與生產進度</button>
+<button data-nav="cases">◎　突發事件決策訓練</button>
+<button data-nav="issues">☑　事件處理與追蹤</button>
+<button data-nav="erp">⇄　ERP 資料概念練習</button>
+<button data-nav="learning">✦　學習成果與管理思維</button></nav>
+<div class="asidefoot">全系統使用虛構案例資料，未連線任何實際 ERP 或企業系統。僅供學習，不可作為正式排產或食品品質放行依據。<br><span id="saveStatus">此瀏覽器本機儲存</span></div></aside>
+<main><header class="toolbar"><div><div class="crumb">FOOD OPERATIONS · PROFESSIONAL ACADEMY V4.2</div><h1 id="pageTitle">食品生管專業養成學院</h1><p id="pageSub">從專業基礎到排程、預防、風險控制與管理判斷。</p></div>
+<div class="tools"><label>工作台示範情境<select class="select" id="caseSelect" aria-label="選擇訓練案例"></select></label><label>模擬日期<input class="field" id="simDate" type="date"></label><button class="btn" id="resetCase" title="重置示範情境，不刪除課程進度">重置工作台案例</button><button class="btn" id="helpTop">名詞百科</button><button class="btn danger" id="clearAll">重置全部進度</button></div></header>
+<div class="content"><div id="panel"></div><div class="footer">食品 OEM／ODM 生管專業養成 v4.2｜單檔離線可用｜模擬案例與模型均為虛構｜試排不等於正式交貨承諾｜法律要求請核對官方現行規定</div></div></main></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div><script>/* Generic fictional food OEM/ODM production learning engine; no third party dependencies. */
+(function(root,factory){const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;root.PC=api;})(typeof globalThis!=='undefined'?globalThis:this,function(){'use strict';
+const clone=x=>JSON.parse(JSON.stringify(x));
+const date=(s,delta=0)=>{const d=new Date(s+'T12:00:00Z');d.setUTCDate(d.getUTCDate()+delta);return d.toISOString().slice(0,10)};
+const daydiff=(a,b)=>Math.round((Date.parse(b+'T12:00:00Z')-Date.parse(a+'T12:00:00Z'))/86400000);
+const workday=s=>![0,6].includes(new Date(s+'T12:00:00Z').getUTCDay());
+const nextWork=s=>{let d=s;while(!workday(d))d=date(d,1);return d};
+const plusWork=(s,n)=>{let d=s;for(let i=0;i<n;i++){do{d=date(d,1)}while(!workday(d));}return d};
+const round=n=>Math.round((n+Number.EPSILON)*1000)/1000;
+const PRODUCTS=[
+ {id:'P-M',name:'芒果飲品（12 瓶／箱）',bom:{'M-MANGO':1.4,'M-SUGAR':.35,'M-BOTTLE':12,'M-CARTON':1,'M-LABEL':12}},
+ {id:'P-O',name:'柳橙飲品（12 瓶／箱）',bom:{'M-ORANGE':1.2,'M-SUGAR':.3,'M-BOTTLE':12,'M-CARTON':1,'M-LABEL':12}},
+ {id:'P-P',name:'百香果飲品（12 瓶／箱）',bom:{'M-PASSION':1.0,'M-SUGAR':.25,'M-BOTTLE':12,'M-CARTON':1,'M-LABEL':12}}
+];
+const MATERIALS=[
+ {id:'M-MANGO',name:'芒果果泥',unit:'kg'}, {id:'M-ORANGE',name:'柳橙濃縮汁',unit:'kg'},
+ {id:'M-PASSION',name:'百香果濃縮汁',unit:'kg'},{id:'M-SUGAR',name:'糖',unit:'kg'},
+ {id:'M-BOTTLE',name:'PET 瓶',unit:'支'},{id:'M-CARTON',name:'外箱',unit:'個'},{id:'M-LABEL',name:'標籤',unit:'張'}
+];
+const product=id=>PRODUCTS.find(x=>x.id===id);
+const mat=id=>MATERIALS.find(x=>x.id===id);
+const SCENARIOS=[
+ {id:'rush',name:'01｜客戶急單插入',tag:'急單',desc:'今日上午客戶要求提前交貨；既有兩張訂單共用一條產線。先查料況與客戶接受條件，再比較是否插單。',goal:'避免未確認就承諾急單，並揭露受影響的原訂單。',facts:[
+  {id:'spec',q:'確認規格、數量與最晚出貨日',answer:'新單 R-900：芒果飲 280 箱，原交期＋2 天；規格已確認。',value:'pass'},
+  {id:'material',q:'確認急單的原料及包材',answer:'主原料及包材帳上有足夠可用庫存，但尚須扣除其他排程的需求。',value:'pass'},
+  {id:'qa',q:'確認品質與配方放行',answer:'既有核可配方；示範資料無品質封鎖。',value:'pass'},
+  {id:'line',q:'詢問既有工廠可用時段',answer:'F-A 已確認檔期；需和 SO-102 競爭產能。',value:'pass'},
+  {id:'approval',q:'詢問主管與業務是否授權更動原訂單',answer:'本次示範允許「內部試排」，但對客戶承諾仍須主管／業務正式核准。',value:'pass'},
+  {id:'alt',q:'確認外部代工廠是否可接',answer:'代工廠 B 可做芒果飲，但可用檔期尚未確認。',value:'unknown'}],
+  options:[{id:'keep',name:'A｜維持既有順序，急單排隊',kind:'keep',req:['spec','material','qa','line'],reason:'保護既有承諾，但急單可能無法滿足交期。'},
+  {id:'insert',name:'B｜急單改為第一優先試排',kind:'priority',order:['R-900','SO-101','SO-102','SO-103'],req:['spec','material','qa','line','approval'],reason:'提高急單機會，但可能推遲其他訂單。'},
+  {id:'transfer',name:'C｜轉由代工廠 B 承接急單',kind:'route',oid:'R-900',fid:'F-B',req:['alt','qa','approval'],reason:'相容但檔期 UNKNOWN，僅能做條件式預案。'}],coach:'急單不是特權。先核對規格、可用物料與放行，再檢查產能；試排後必須把被延後的訂單列出供業務與主管決策。'},
+ {id:'delay',name:'02｜主要原料延遲到貨',tag:'缺料',desc:'百香果果泥原訂近期到貨，供應商通知延後；SO-103 的交期受威脅。',goal:'缺料不能偷占其他原料；追料與重排可同步進行。',facts:[
+  {id:'eta',q:'向採購確認新到貨與可靠度',answer:'新的到貨日尚未取得供應商書面確認：UNKNOWN。',value:'unknown'},
+  {id:'stock',q:'查詢可用庫存、已預留及其他訂單',answer:'百香果原料可用量不足；不能用未放行的原料。',value:'pass'},
+  {id:'alternative',q:'確認可用的其他配方或供應商',answer:'目前無核准替代配方，替代物料不可直接使用。',value:'fail'},
+  {id:'sales',q:'詢問業務能否協調交期',answer:'客戶回覆時間尚未確定：UNKNOWN。',value:'unknown'}],
+  options:[{id:'wait',name:'A｜暫緩缺料單，先做料齊訂單',kind:'keep',req:['stock'],reason:'不讓產線空等，並同步請採購追料。'},
+  {id:'early',name:'B｜把缺料單強行排到第一順位',kind:'priority',order:['SO-103','SO-101','SO-102'],req:['stock','eta'],reason:'缺料與到貨未知；不能當可執行排程。'},
+  {id:'promise',name:'C｜先承諾客戶改交期',kind:'keep',req:['sales'],reason:'需業務及客戶確認，未確認前不可擅自改承諾。'}],coach:'缺料單是「處理優先」而非「開工優先」。物料不齊時先讓可執行訂單使用產能，採購追料與業務談交期可以同步。'},
+ {id:'breakdown',name:'03｜代工廠機台故障',tag:'停機',desc:'F-A 灌裝線故障，今日預估停機 8 小時；一批在製飲品等待灌裝。',goal:'先保護在製品及食安，再確認修復時程和改派可能性。',facts:[
+  {id:'wip',q:'先查在製品保存條件',answer:'在製品是否仍符合保存時限由品保判定：目前 UNKNOWN，必須先隔離或採取適當控管。',value:'unknown'},
+  {id:'repair',q:'確認設備修復估計',answer:'維修估計當日無法復原，次日是否能恢復仍待確認。',value:'unknown'},
+  {id:'slot',q:'確認代工 B 的檔期與相容性',answer:'B 可生產 P-M，但原定本週的可用空檔不足以接收全部數量；是否能加開時段 UNKNOWN。',value:'unknown'},
+  {id:'orders',q:'盤點故障會影響哪些訂單',answer:'SO-101、SO-102 在 F-A，須比較可能延誤與可轉移的在製品。',value:'pass'}],
+  options:[{id:'replan',name:'A｜保留 F-A，等待修復再重排',kind:'keep',req:['orders'],reason:'不新增轉廠風險，但修復時間須持續追蹤。'},
+  {id:'move',name:'B｜嘗試改派 SO-101 至代工 B',kind:'route',oid:'SO-101',fid:'F-B',req:['slot','wip','orders'],reason:'尚須確認檔期、製程接續與品保權責。'}],coach:'設備停機若涉及已調配在製品，先採品質保護措施，再談交期；不要只盯著產能報表。'},
+ {id:'quality',name:'04｜原料／產品檢驗異常',tag:'品質',desc:'SO-101 使用的芒果原料其中一批尚未放行，且成品出現待判定的品保事件。',goal:'品質限制應先控制，不能直接排產或出貨。',facts:[
+  {id:'batch',q:'確認異常批號及隔離範圍',answer:'批號 L-M-HOLD 目前隔離；不能納入可用量。',value:'pass'},
+  {id:'qa',q:'確認品保是否已正式放行',answer:'尚未放行，品保判定結果 UNKNOWN。',value:'unknown'},
+  {id:'affected',q:'追查共用批號及受影響訂單',answer:'本示範先鎖定 SO-101；實務還要核對批次追溯記錄。',value:'pass'}],
+  options:[{id:'hold',name:'A｜維持隔離，先安排其他可用訂單',kind:'keep',req:['batch','affected'],reason:'停止錯誤開工及出貨，避免擴大影響。'},
+  {id:'unhold',name:'B｜直接解除品質限制趕交期',kind:'release',oid:'SO-101',req:['qa'],reason:'未放行不得解除。'}],coach:'P0 事件要先保護食安、停止不合格品流出，釐清批號與影響範圍，品保正式授權後才可重新評估。'},
+ {id:'label',name:'05｜標籤與包材錯誤',tag:'包材',desc:'SO-102 的標籤印刷版本不符核可稿，部分包材需隔離重印。',goal:'物料帳面有數量，不等於可用來生產。',facts:[
+  {id:'design',q:'比對客戶核准的標籤版次',answer:'本批印刷版次與客戶核准版次不同，不能使用。',value:'fail'},
+  {id:'available',q:'確認其餘合格標籤數量',answer:'合格標籤帳面 2,100 張，其中預留 1,000 張；目前可用 1,100 張。SO-102 需要 220×12＝2,640 張，缺口至少 1,540 張（尚未分配給其他訂單）。',value:'pass'},
+  {id:'reprint',q:'詢問重印交期',answer:'印刷廠尚未提供可承諾到貨日：UNKNOWN。',value:'unknown'}],
+  options:[{id:'hold',name:'A｜先做其他料齊的產品',kind:'keep',req:['available','design'],reason:'錯誤標籤封存，避免錯標產品流入市場。'},
+  {id:'reprint',name:'B｜等待重印後補生產',kind:'keep',req:['reprint'],reason:'到貨日未確認，僅能條件式預排。'}],coach:'標籤、規格、版次必須確認一致；不是有 5,000 張帳面數就能全部開工。'},
+ {id:'variance',name:'06｜ERP 與實物盤點不符',tag:'帳實差',desc:'系統顯示 PET 瓶 6,000 支，現場實盤僅 3,600 支。未經調查不應擅自直接調整庫存。',goal:'釐清差異、隔離錯誤資料影響與盤點責任。',facts:[
+  {id:'count',q:'重新盤點及確認計量單位',answer:'複盤確認可使用 PET 瓶 3,600 支，差額 2,400 支。',value:'pass'},
+  {id:'records',q:'查近期領料、退料與入庫單',answer:'目前仍需庫管查核，帳差原因 UNKNOWN。',value:'unknown'},
+  {id:'orders',q:'盤點哪些訂單會受影響',answer:'芒果、柳橙與百香果產品都使用 PET 瓶，共用物料受到影響。',value:'pass'}],
+  options:[{id:'conservative',name:'A｜以現場確認量作保守試算',kind:'adjustStock',mid:'M-BOTTLE',qty:3600,req:['count','orders'],reason:'先做風險試算；不代表已正式修改 ERP 帳。'},
+  {id:'blind',name:'B｜直接以 ERP 帳面數承諾交期',kind:'keep',req:['records'],reason:'帳實差未解，直接承諾有超賣及停線風險。'}],coach:'帳實差要複盤、追單據、核對批號與庫存狀態。盤點結果可用於保守試算，但正式調帳須依授權流程。'},
+ {id:'change',name:'07｜客戶修改數量與交期',tag:'變更',desc:'SO-102 客戶希望數量從 220 箱增至 330 箱並提前一天，需先查是否已正式變更。',goal:'先管理訂單版本，再試算改單的交期和物料影響。',facts:[
+  {id:'confirm',q:'確認客戶正式改單文件',answer:'業務已收到書面變更需求；是否接受尚須內部評估。',value:'pass'},
+  {id:'materials',q:'確認新增 110 箱的 BOM 用料',answer:'增量用料需要重新核對目前可用庫存及預留。',value:'pass'},
+  {id:'approve',q:'確認主管與業務是否同意承諾',answer:'目前尚未核准新交期，正式承諾 UNKNOWN。',value:'unknown'}],
+  options:[{id:'old',name:'A｜維持舊版訂單，先評估影響',kind:'keep',req:['confirm'],reason:'避免尚未核准就直接覆蓋既有承諾。'},
+  {id:'new',name:'B｜試算客戶要求的新數量與交期',kind:'orderChange',oid:'SO-102',newQty:330,dueOffset:2,req:['confirm','materials'],reason:'只做可行性試算，不能視為新交期已獲核准。'}],coach:'需求變更必須區分「收到要求、確認可行、正式接受」三個狀態，否則 ERP 訂單版本容易混亂。'},
+ {id:'conflict',name:'08｜兩張重要訂單爭用產線',tag:'產能衝突',desc:'SO-101 與 SO-102 共用 F-A，兩張都是已確認訂單；測試兩種合理的優先順序，對照交期與換線負荷。',goal:'同一條線的產能不能重複賣給兩張訂單。',facts:[
+  {id:'capacity',q:'確認 F-A 工作日、已占產能及清洗時間',answer:'每天 8 小時，單日基準 300 箱；改變產品需清洗換線約 1 小時。',value:'pass'},
+  {id:'duedate',q:'確認兩張訂單交期與出貨前置',answer:'SO-101 交期＋2 天；SO-102 交期＋2 天；兩者都有品檢與物流前置時間。',value:'pass'},
+  {id:'material',q:'確認兩張是否可完整備料',answer:'示範庫存足以支應 SO-101、SO-102 的剩餘需求。',value:'pass'},
+  {id:'client',q:'確認延遲風險與客戶溝通權責',answer:'此情境未提供違約罰款；成本 UNKNOWN，交期協調由業務負責。',value:'pass'}],
+  options:[{id:'aFirst',name:'A｜SO-101 優先，再排 SO-102',kind:'priority',order:['SO-101','SO-102','SO-103'],req:['capacity','duedate','material'],reason:'先保護 SO-101，觀察 SO-102 是否落後。'},
+  {id:'bFirst',name:'B｜SO-102 優先，再排 SO-101',kind:'priority',order:['SO-102','SO-101','SO-103'],req:['capacity','duedate','material'],reason:'先保護 SO-102，觀察 SO-101 是否落後。'}],coach:'兩張都可開工時，可以比較交期、必要工時、換線及各自的客戶承諾；不能宣稱有永遠正確的固定順序。'},
+ {id:'multi',name:'09｜上午四件事件同時發生',tag:'多重事件',desc:'09:00 品質批號疑慮；09:03 F-A 故障；09:05 客戶急單；09:08 下週盤點報表待更新。請分級、指定權責並同步追蹤。',goal:'P0 先止損，多部門工作可並行，不必將所有事情機械式串行。',facts:[
+  {id:'qstatus',q:'確認疑似異常批號是否涉及已出貨品',answer:'批號範圍與是否涉及出貨尚在查核，需立即依品質流程管控。',value:'unknown'},
+  {id:'machine',q:'確認停機對在製品的影響',answer:'F-A 今日停機 8 小時，SO-101 在製量 40 箱須請品保確認保存條件。',value:'pass'},
+  {id:'rush',q:'查客戶急單是否具備接單條件',answer:'數量、規格、核可與交期尚未全數確認，不能先承諾。',value:'unknown'},
+  {id:'report',q:'確認報表的期限與責任',answer:'盤點週報下週一才需要，本日可排低優先。',value:'pass'}],
+  options:[{id:'safe',name:'A｜品質先控制，維修與業務同步分工',kind:'keep',req:['machine'],reason:'先執行風險控制，再由不同單位各自確認。'},
+  {id:'rush',name:'B｜先處理大客戶急單再處理品質',kind:'priority',order:['R-900','SO-101'],req:['rush','qstatus'],reason:'忽略 P0 風險，不應執行。'}],coach:'P0 品保先隔離／暫停有風險的流向；設備部門同步修復、採購查料、業務核對急單；生管整合影響並追蹤。'}
+];
+const MULTI_EVENTS=[
+ {id:'E-Q',time:'09:00',name:'批號疑慮，可能涉及已出貨批次',expected:'P0',owner:'品保',stop:true},
+ {id:'E-M',time:'09:03',name:'F-A 灌裝線故障，在製品待確認',expected:'P1',owner:'設備',stop:false},
+ {id:'E-R',time:'09:05',name:'客戶追加急單但規格未確認',expected:'P2',owner:'業務',stop:false},
+ {id:'E-D',time:'09:08',name:'下週盤點週報尚未更新',expected:'P3',owner:'資材',stop:false}
+];
+function initial(id='rush',today=null){
+ if(!SCENARIOS.some(s=>s.id===id))throw Error('未知情境');
+ if(!today){const parts=Object.fromEntries(new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Taipei',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date()).map(x=>[x.type,x.value]));today=`${parts.year}-${parts.month}-${parts.day}`;}
+ const start=nextWork(today);
+ const d=n=>date(start,n);
+ const s={version:3,scenarioId:id,date:start,products:PRODUCTS,materials:MATERIALS,
+  orders:[
+   {id:'SO-101',productId:'P-M',qty:360,good:0,wip:0,consumed:{},shipped:0,due:d(3),factoryId:'F-A',rush:false,qa:'pending',approval:true},
+   {id:'SO-102',productId:'P-O',qty:220,good:0,wip:0,consumed:{},shipped:0,due:d(3),factoryId:'F-A',rush:false,qa:'pending',approval:true},
+   {id:'SO-103',productId:'P-P',qty:180,good:0,wip:0,consumed:{},shipped:0,due:d(6),factoryId:'F-C',rush:false,qa:'pending',approval:true}
+  ],
+  factories:[
+   {id:'F-A',name:'示範自有灌裝線 A',capacity:300,compatible:['P-M','P-O'],confirmed:true,setupHours:1,qcDays:1,shipDays:0,reserved:{},downtime:{}},
+   {id:'F-B',name:'示範代工廠 B',capacity:250,compatible:['P-M','P-O'],confirmed:false,setupHours:1.25,qcDays:1,shipDays:1,reserved:{},downtime:{}},
+   {id:'F-C',name:'示範代工廠 C',capacity:220,compatible:['P-P'],confirmed:true,setupHours:.75,qcDays:1,shipDays:1,reserved:{},downtime:{}}
+  ],
+  lots:[
+   {id:'L-M-1',mid:'M-MANGO',qty:850,reserved:0,status:'released'},
+   {id:'L-M-HOLD',mid:'M-MANGO',qty:120,reserved:0,status:'hold'},
+   {id:'L-O-1',mid:'M-ORANGE',qty:700,reserved:0,status:'released'},
+   {id:'L-P-1',mid:'M-PASSION',qty:150,reserved:0,status:'released'},
+   {id:'L-S-1',mid:'M-SUGAR',qty:350,reserved:35,status:'released'},
+   {id:'L-B-1',mid:'M-BOTTLE',qty:15000,reserved:1200,status:'released'},
+   {id:'L-C-1',mid:'M-CARTON',qty:1200,reserved:50,status:'released'},
+   {id:'L-L-1',mid:'M-LABEL',qty:14500,reserved:1000,status:'released'}
+  ],
+  arrivals:[{id:'PO-P-01',mid:'M-PASSION',qty:300,date:d(2),confirmed:false,qaReleased:false}],
+  issues:[],checkedFacts:[],triage:{},learning:{reason:'',protect:'',tradeoff:'',contact:'',follow:''},draft:null,logs:[],userPriority:[]};
+ if(['rush','multi'].includes(id))s.orders.push({id:'R-900',productId:'P-M',qty:160,good:0,wip:0,consumed:{},shipped:0,due:d(2),factoryId:'F-A',rush:true,qa:'pending',approval:false});
+ if(id==='rush'){s.orders.find(o=>o.id==='R-900').approval=true;s.orders.find(o=>o.id==='R-900').qty=280;s.lots.find(x=>x.id==='L-M-1').qty=1100;s.lots.find(x=>x.id==='L-S-1').qty=450;s.userPriority=['SO-101','SO-102','R-900','SO-103'];} // feasibility checked by user's verified facts
+ if(id==='delay'){s.arrivals[0]={id:'PO-P-01',mid:'M-PASSION',qty:300,date:d(6),confirmed:false,qaReleased:false};}
+ if(id==='breakdown'){s.factories.find(f=>f.id==='F-A').downtime[d(0)]=480;s.orders.find(o=>o.id==='SO-101').wip=40;}
+ if(id==='quality'){
+  s.issues.push({id:'EX-Q',name:'SO-101 成品檢驗待判定',orderIds:['SO-101'],type:'品質',severity:'P0',owner:'品保',status:'open',hardBlock:true,next:d(0),resolution:'取得品保正式放行並核對批次',note:'疑似批號異常；暫停相關品項出貨'});
+  s.lots.find(x=>x.id==='L-M-1').status='hold';
+ }
+ if(id==='label'){
+  s.lots.find(x=>x.id==='L-L-1').qty=2100;
+  s.lots.push({id:'L-L-WRONG',mid:'M-LABEL',qty:5000,reserved:0,status:'hold'});
+  s.issues.push({id:'EX-L',name:'標籤印刷版本錯誤',orderIds:['SO-102'],type:'品質',severity:'P0',owner:'品保',status:'open',hardBlock:true,next:d(0),resolution:'確認正確版次的標籤並由品保授權',note:'錯誤版本不得使用'});
+ }
+ if(id==='variance'){s.lots.find(x=>x.id==='L-B-1').qty=6000;}
+ if(id==='conflict'){s.userPriority=['SO-101','SO-102','SO-103'];s.lots.find(x=>x.id==='L-P-1').qty=340;s.orders.find(x=>x.id==='SO-101').due=d(2);s.orders.find(x=>x.id==='SO-102').due=d(2);}
+ if(id==='multi'){
+  s.factories.find(f=>f.id==='F-A').downtime[d(0)]=480;
+  s.orders.find(o=>o.id==='SO-101').wip=40;
+  s.issues.push({id:'EX-M',name:'疑似批號異常、須立即控制',orderIds:['SO-101'],type:'品質',severity:'P0',owner:'品保',status:'open',hardBlock:true,next:d(0),resolution:'品保核查批號、影響範圍及授權放行',note:'可能涉及已出貨批次'});
+ }
+ return s;
+}
+function usable(stock,mid,onDate){const released=stock.lots.filter(x=>x.mid===mid&&x.status==='released').reduce((a,x)=>a+Math.max(0,x.qty-x.reserved),0);
+ const incoming=stock.arrivals.filter(x=>x.mid===mid&&x.confirmed&&x.qaReleased&&x.date<=onDate).reduce((a,x)=>a+x.qty,0);
+ return round(released+incoming);
+}
+function orderRemaining(o){return Math.max(0,o.qty-o.good-o.wip)}
+function kitNeeds(o){const p=product(o.productId);if(!p)return {};return Object.fromEntries(Object.entries(p.bom).map(([k,v])=>[k,round(v*orderRemaining(o))]));}
+function blockingIssues(s,o){return s.issues.filter(i=>i.status!=='closed'&&i.hardBlock&&i.orderIds.includes(o.id));}
+function explainMaterials(s,o,onDate,ledger={}){const needs=kitNeeds(o),shortages=[];for(const [mid,need] of Object.entries(needs)){
+ const free=Math.max(0,round(usable(s,mid,onDate)-(ledger[mid]||0)));
+ if(free+1e-7<need)shortages.push({mid,need,free,short:round(need-free)});
+}return {needs,shortages};}
+function ordered(s,strategy='slack'){const arr=s.orders.filter(o=>o.good<o.qty||o.wip>0).slice();
+ const base={...Object.fromEntries(arr.map(o=>[o.id,0]))};s.userPriority.forEach((id,i)=>{base[id]=1000-i*10});
+ return arr.sort((a,b)=>{
+  if(strategy==='rush')return Number(b.rush)-Number(a.rush)||a.due.localeCompare(b.due);
+  if(strategy==='due')return a.due.localeCompare(b.due);
+  if(strategy==='user')return (base[b.id]||0)-(base[a.id]||0)||a.due.localeCompare(b.due);
+  const as=daydiff(s.date,a.due)-Math.ceil(orderRemaining(a)/(s.factories.find(f=>f.id===a.factoryId)?.capacity||1));
+  const bs=daydiff(s.date,b.due)-Math.ceil(orderRemaining(b)/(s.factories.find(f=>f.id===b.factoryId)?.capacity||1));
+  return as-bs||a.due.localeCompare(b.due);
+ });}
+function plan(s,strategy='slack',horizon=22){const daily={},timeline=[],byOrder={},materialAlloc={},limits={}, reasons=[];
+ s.factories.forEach(f=>{limits[f.id]={};for(let i=0;i<horizon;i++){const d=date(s.date,i);if(!workday(d))continue;const downtime=f.downtime[d]||0;const reserved=f.reserved[d]||0;limits[f.id][d]={minutes:Math.max(0,480-downtime-reserved*(480/f.capacity)),reserved,downtime,capacity:f.capacity};}});
+ for(const o of ordered(s,strategy)){
+  const remaining=orderRemaining(o), f=s.factories.find(x=>x.id===o.factoryId), item={id:o.id,qty:o.qty,good:o.good,wip:o.wip,remaining,first:null,finish:null,delivery:null,slack:null,lateDays:null,status:'READY',blockers:[],materialShort:[],reason:''};
+  if(o.good===o.qty){item.status='PRODUCTION_DONE';item.finish=s.date;item.delivery=o.qa==='released'?s.date:null;byOrder[o.id]=item;continue;}
+  if(o.wip>0){item.blockers.push(`已有 ${o.wip} 箱在製，完工時間需另外確認`);item.status='CONDITIONAL';}
+  if(blockingIssues(s,o).length){item.status='BLOCKED';item.blockers.push('品質事件尚未結案，禁止排產與出貨');}
+  if(!f){item.status='BLOCKED';item.blockers.push('未指派工廠');}
+  else if(!f.compatible.includes(o.productId)){item.status='BLOCKED';item.blockers.push(`${f.name} 無此品項核可相容資格`)}
+  else if(!f.confirmed){item.status='CONDITIONAL';item.blockers.push(`${f.name} 檔期未確認，不可視為已確認可執行`)}
+  if(o.approval===false){item.status='CONDITIONAL';item.blockers.push('訂單／產能安排尚待主管／業務核准')}
+  if(item.status==='BLOCKED'||item.status==='CONDITIONAL'){const check=explainMaterials(s,o,s.date,materialAlloc);item.materialShort=check.shortages;byOrder[o.id]=item;continue;}
+  let start=null,ready=null,notReady=null;
+  for(let i=0;i<horizon;i++){const d=date(s.date,i);if(!workday(d))continue;
+    const check=explainMaterials(s,o,d,materialAlloc);
+    if(!check.shortages.length){start=d;ready=check;break}if(i===0||!notReady)notReady=check.shortages;
+  }
+  if(!start){item.status='BLOCKED';item.blockers.push('未有可確認的完整備料日（在途未放行／到貨不確定不計入）');item.materialShort=notReady||[];byOrder[o.id]=item;continue;}
+  let left=remaining,last=null,first=null;const tentative=[];
+  for(let i=0;i<horizon&&left>0;i++){
+    const d=date(s.date,i);if(d<start||!workday(d))continue;
+    const cap=limits[f.id][d];if(!cap||cap.minutes<=0)continue;
+    const key=f.id+'|'+d;
+    const used=(daily[key]||[]).reduce((a,x)=>a+x.minutes+x.setupMinutes,0);
+    const previous=timeline.filter(x=>x.fid===f.id&&x.day<=d).sort((x,y)=>y.day.localeCompare(x.day)).at(0);
+    const pendingPrev=tentative.at(-1);
+    const lastProduct=(daily[key]||[]).at(-1)?.productId||pendingPrev?.productId||previous?.productId||null;
+    const setup= lastProduct&&lastProduct!==o.productId?f.setupHours*60:0;
+    const leftMinutes=Math.max(0,cap.minutes-used-setup);
+    const n=Math.min(left,Math.floor((leftMinutes/480)*f.capacity+1e-7));if(n<=0)continue;
+    const ev={oid:o.id,fid:f.id,day:d,qty:n,productId:o.productId,minutes:round(n*480/f.capacity),setupMinutes:setup};
+    tentative.push(ev);last=d;first=first||d;left-=n;
+    // staged items are not visible to other orders until a fully schedulable order is confirmed
+    // same-order next-day lookup uses tentative above
+  }
+  if(left>0){item.status='CONDITIONAL';item.blockers.push(`可用期間產能不足，仍有 ${left} 箱尚未排入；不占用已確認庫存／產能`);item.materialShort=[];byOrder[o.id]=item;continue;}
+  for(const [mid,need] of Object.entries(ready.needs))materialAlloc[mid]=round((materialAlloc[mid]||0)+need);
+  for(const ev of tentative){const key=ev.fid+'|'+ev.day;(daily[key]??=[]).push(ev);timeline.push(ev)}
+  item.first=first;item.finish=last;
+  const lead=f.qcDays+f.shipDays;item.delivery=plusWork(last,lead);
+  item.slack=daydiff(item.delivery,o.due);item.lateDays=Math.max(0,-item.slack);
+  if(item.lateDays>0)item.status='RISK';
+  if(o.wip>0){item.status='CONDITIONAL';item.blockers.push('在製品完成日 UNKNOWN，整單完成與交貨日期需重新確認');item.delivery=null;item.slack=null;item.lateDays=null;}
+  item.reason= `${f.name}；${first} 起排 ${remaining} 箱；預留品檢／物流 ${lead} 個工作天`;
+  byOrder[o.id]=item;
+ }
+ const byStatus=Object.values(byOrder),late=byStatus.filter(o=>o.lateDays>0);
+ return {byOrder,timeline,daily,limits,materialAlloc,summary:{confirmed:byStatus.filter(x=>['READY','RISK'].includes(x.status)).length,blocked:byStatus.filter(x=>x.status==='BLOCKED').length,conditional:byStatus.filter(x=>x.status==='CONDITIONAL').length,late:late.length,lateDays:late.reduce((n,x)=>n+x.lateDays,0),total:byStatus.length},assumptions:['示範工作日為週一至週五，未納入國定假日','每箱工時為日產能線性換算，跨批換線以示範工時估算','在製品仍需品保／製程確認；僅排剩餘待投入量','僅計入已確認且放行的在途物料','非經過驗證的 ERP／APS 正式承諾工具']};
+}
+function optionStatus(s,option){const scene=SCENARIOS.find(x=>x.id===s.scenarioId);const lacks=[],failed=[],unknown=[];
+ for(const id of option.req||[]){const q=scene.facts.find(x=>x.id===id);if(!s.checkedFacts.includes(id))lacks.push(q.q);else if(q.value==='fail')failed.push(q.q);else if(q.value==='unknown')unknown.push(q.q)}
+ if(option.kind==='route'){const f=s.factories.find(x=>x.id===option.fid),o=s.orders.find(x=>x.id===option.oid);if(!f?.compatible.includes(o?.productId))failed.push('製程相容性不符');if(!f?.confirmed)unknown.push('代工廠檔期尚未確認')}
+ if(option.kind==='release')failed.push('未授權的品質放行禁止執行');
+ if(option.kind==='orderChange')unknown.push('客戶改單尚未獲正式核准；僅能試算');
+ return {status:failed.length?'BLOCKED':lacks.length||unknown.length?'CONDITIONAL':'FEASIBLE',lacks,failed,unknown};}
+function applyOption(base,option){const s=clone(base);s.draft=null;
+ if(option.kind==='priority')s.userPriority=option.order.slice();
+ if(option.kind==='route'){const o=s.orders.find(x=>x.id===option.oid);if(o&&o.wip===0&&o.good===0)o.factoryId=option.fid;}
+ if(option.kind==='adjustStock'){const lots=s.lots.filter(x=>x.mid===option.mid&&x.status==='released');const amount=lots.reduce((a,x)=>a+x.qty,0);let reduce=Math.max(0,amount-option.qty);
+  for(const lot of lots.slice().reverse()){const d=Math.min(lot.qty,reduce);lot.qty=round(lot.qty-d);reduce=round(reduce-d);}}
+ if(option.kind==='orderChange'){const o=s.orders.find(x=>x.id===option.oid);if(o){o.qty=option.newQty;o.due=date(s.date,option.dueOffset);}}
+ return s;}
+function compare(s,option,strategy='slack'){const baseline=plan(s,strategy),feasibility=optionStatus(s,option),candidate=applyOption(s,option),alternative=plan(candidate,option.kind==='priority'?'user':strategy);
+ const rows=s.orders.map(o=>{const a=baseline.byOrder[o.id],b=alternative.byOrder[o.id];return {id:o.id,oldStatus:a?.status||'UNKNOWN',newStatus:b?.status||'UNKNOWN',oldFinish:a?.finish||null,newFinish:b?.finish||null,oldDelivery:a?.delivery||null,newDelivery:b?.delivery||null,oldLate:a?.lateDays,newLate:b?.lateDays,changed: a?.finish!==b?.finish||a?.delivery!==b?.delivery||a?.status!==b?.status};});
+ const loads=f=>f.timeline.reduce((z,x)=>(z[x.fid]=(z[x.fid]||0)+x.minutes+x.setupMinutes,z),{});
+ const shortages=p=>{const result={};for(const entry of Object.values(p.byOrder)){for(const x of entry.materialShort||[])result[x.mid]=round((result[x.mid]||0)+x.short)}return result;};
+ const setupH=p=>round(p.timeline.reduce((n,x)=>n+x.setupMinutes,0)/60);
+ return {feasibility,baseline,alternative,rows,oldLoad:loads(baseline),newLoad:loads(alternative),oldAlloc:baseline.materialAlloc,newAlloc:alternative.materialAlloc,oldMissing:shortages(baseline),newMissing:shortages(alternative),oldSetupHours:setupH(baseline),newSetupHours:setupH(alternative),extraCost:null,tradeoffs:option.reason,assumptions:['額外加班、急運、轉廠費用：UNKNOWN（不可直接換算成本）','變更客戶交期須業務正式確認；試排不是交貨承諾']};}
+function commitOption(s,option){const f=optionStatus(s,option);if(f.status!=='FEASIBLE')throw Error('尚有未確認／不允許的前提，禁止正式套用');
+ if(option.kind==='release')throw Error('品質放行只能走品保授權流程');
+ if(option.kind==='orderChange')throw Error('此案例新交期尚未核准，僅能試算，不得直接覆寫訂單');
+ if(option.kind==='route'){
+  const o=s.orders.find(x=>x.id===option.oid);if(!o||o.good||o.wip)throw Error('已開工訂單不可直接改派');
+ }
+ const newS=applyOption(s,option);newS.logs.push({at:s.date,action:'套用示範決策',detail:option.name});return newS;
+}
+function consume(s,mid,qty){let left=round(qty);const lots=s.lots.filter(x=>x.mid===mid&&x.status==='released').sort((a,b)=>a.id.localeCompare(b.id));
+ if(round(lots.reduce((a,x)=>a+Math.max(0,x.qty-x.reserved),0))<left-1e-7)throw Error(`${mat(mid)?.name||mid} 可用量不足`);
+ for(const lot of lots){let take=Math.min(left,Math.max(0,lot.qty-lot.reserved));lot.qty=round(lot.qty-take);left=round(left-take);if(left<=1e-7)break;}}
+function reportGood(s,oid,target){const n=clone(s),o=n.orders.find(x=>x.id===oid);if(!o)throw Error('訂單不存在');target=Number(target);
+ if(!Number.isInteger(target)||target<o.good||target>o.qty)throw Error('良品累計必須介於現值與訂單量之間');
+ if(blockingIssues(n,o).length)throw Error('品質封鎖中，禁止新增完工良品');
+ const d=target-o.good;const fromWip=Math.min(d,o.wip),needMaterial=d-fromWip;
+ if(needMaterial>0){const needed=Object.entries(product(o.productId).bom).map(([mid,r])=>[mid,round(needMaterial*r)]);
+  for(const [mid,qty] of needed)if(usable(n,mid,n.date)<qty-1e-7)throw Error(`${mat(mid).name} 可用量不足，無法回報`);
+  for(const [mid,qty] of needed){consume(n,mid,qty);o.consumed[mid]=round((o.consumed[mid]||0)+qty);}}
+ o.wip-=fromWip;o.good=target;if(d>0)o.qa='pending';n.logs.push({at:n.date,action:'回報累計良品',detail:`${oid} ${target} 箱（增加 ${d} 箱）`});return n;}
+function qaRelease(s,oid){const n=clone(s),o=n.orders.find(x=>x.id===oid);if(!o)throw Error('訂單不存在');if(o.good<o.qty)throw Error('良品尚未完成全部訂單量');if(blockingIssues(n,o).length)throw Error('品質事件尚未解除，不能放行');o.qa='released';n.logs.push({at:n.date,action:'模擬品保放行',detail:oid});return n;}
+function ship(s,oid,qty){const n=clone(s),o=n.orders.find(x=>x.id===oid);qty=Number(qty);if(!o)throw Error('訂單不存在');
+ if(o.qa!=='released'||blockingIssues(n,o).length)throw Error('未完成品保放行，不得出貨');
+ if(!Number.isInteger(qty)||qty<=0||qty>o.good-o.shipped)throw Error('出貨量不得超過已放行、尚未出貨的良品');
+ o.shipped+=qty;n.logs.push({at:n.date,action:'模擬出貨',detail:`${oid} ${qty} 箱`});return n;}
+function closeIssue(s,id,proof){const n=clone(s),i=n.issues.find(x=>x.id===id);if(!i)throw Error('事件不存在');
+ if(!proof||proof.trim().length<10)throw Error('請至少說明 10 字的結案證據／核准依據');
+ if(i.hardBlock)throw Error('品質／食安限制不可由一般異常結案功能解除；需品保授權程序');
+ i.status='closed';i.proof=proof.trim();n.logs.push({at:n.date,action:'結案',detail:id});return n;}
+function qaResolve(s,id,proof,checks){const n=clone(s),i=n.issues.find(x=>x.id===id);if(!i||!i.hardBlock)throw Error('沒有可處理的品質封鎖事件');
+ if(!checks||!checks.batch||!checks.disposition||!checks.authorized)throw Error('需完成批次追溯、品保處置、模擬品保授權核對');
+ if(!proof||proof.trim().length<12)throw Error('請至少提供 12 字的模擬品保放行證據');
+ i.status='closed';i.proof=proof.trim();i.qaResolved=true;n.logs.push({at:n.date,action:'模擬品保解除限制',detail:`${id}（非正式品保證明）`});return n;}
+function qaReleaseLot(s,lid,proof,checks){const n=clone(s),lot=n.lots.find(x=>x.id===lid);if(!lot)throw Error('批號不存在');
+ if(lot.status==='released')throw Error('批號已放行，無須重複處理');
+ if(lot.status==='rejected'||lid==='L-L-WRONG')throw Error('已拒收／確認錯版標籤不可透過本功能放行');
+ if(!checks?.batch||!checks?.disposition||!checks?.authorized)throw Error('必須核對批號、品質結果與模擬授權');
+ if(!proof||proof.trim().length<12)throw Error('請輸入至少12字的品質處置依據');
+ if(n.issues.some(i=>i.hardBlock&&i.status!=='closed'&&i.type==='品質'))throw Error('仍有品質事件未解除，不允許先放行相關原料');
+ lot.status='released';n.logs.push({at:n.date,action:'模擬原料批次放行',detail:`${lid}｜${proof.trim()}`});return n;}
+function grade(s,option,triage){const scene=SCENARIOS.find(x=>x.id===s.scenarioId),feasibility=optionStatus(s,option);const out=[];
+ const checks=s.checkedFacts.length;out.push(checks>=2?'已主動查詢至少兩項關鍵資料。':'關鍵資料不足：建議先查物料、品質、產能與客戶條件。');
+ if(feasibility.status==='FEASIBLE')out.push('選擇的方案已符合本案例列出的已知前提；仍須區分試排與正式承諾。');
+ if(feasibility.status==='CONDITIONAL')out.push('仍有待確認的前提，不應當成可執行方案。');
+ if(feasibility.status==='BLOCKED')out.push('方案違反已知限制，應停止並找替代方案。');
+ if(s.learning.reason.trim().length>=10&&s.learning.protect.trim()&&s.learning.contact.trim()&&s.learning.follow)out.push('你有寫出判斷理由、保護目標、溝通對象與下次追蹤。');
+ else out.push('記得補上「原因、保護目標、聯絡對象、下次追蹤時間」。');
+ if(s.scenarioId==='multi'){
+  const evaluated=MULTI_EVENTS.map(e=>({id:e.id,right:triage[e.id]?.priority===e.expected,owner:triage[e.id]?.owner===e.owner}));
+  const safe=triage['E-Q']?.priority==='P0'&&triage['E-Q']?.owner==='品保';
+  out.push(safe?'品質事件已先列為 P0 並分派品保；其餘單位可同步行動。':'品質疑慮應先列 P0 並由品保啟動管控，其他事件可以同步委辦。');
+  out.push(`事件分級符合示範判斷 ${evaluated.filter(x=>x.right).length}/4；分工符合 ${evaluated.filter(x=>x.owner).length}/4。沒有以填答順序扣分。`);
+ }
+ return {feasibility,feedback:out,coach:scene.coach,decisionSummary:`我會先釐清${scene.tag}事件的影響範圍、資料可靠度與品質限制，再核對物料、產能和交期。能同步處理的部分會分工請相關單位確認，自己則試算替代方案、列出對原訂單的影響，經主管及業務核准後才更新排程，並追蹤到問題解除。`};}
+return {clone,date,daydiff,workday,nextWork,plusWork,round,PRODUCTS,MATERIALS,SCENARIOS,MULTI_EVENTS,initial,product,mat,usable,orderRemaining,kitNeeds,blockingIssues,explainMaterials,plan,optionStatus,applyOption,compare,commitOption,reportGood,qaRelease,ship,closeIssue,qaResolve,qaReleaseLot,grade};
+});
+</script><script>/* OEM / ODM Food Production Academy v4 — works offline with PC v3 model. */
+(function(root,factory){const a=factory(root.PC);if(typeof module==='object'&&module.exports)module.exports=a;root.ACADEMY=a;})(typeof globalThis!=='undefined'?globalThis:this,function(E){'use strict';
+const STORE='food-production-academy-neutral-v42', PREVIOUS_STORE='food-production-academy-neutral-v41';
+const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const num=x=>Number(x||0).toLocaleString('zh-TW',{maximumFractionDigits:2});
+const nround=x=>Math.round((x+Number.EPSILON)*1000)/1000;
+const o=(s,id)=>s.orders.find(x=>x.id===id);
+const m=(s,id)=>s.lots.filter(x=>x.mid===id);
+const funits=['角色與流程','訂單與需求','生產計畫','BOM 與 MRP','產能與排程','庫存與批次','委外生產','食品品質','進度與績效','ERP 與協作'];
+const glossary=[
+ ['OEM','受品牌方委託，依約定規格製造產品','明確核准規格、產能與責任歸屬','品牌公司委託工廠製作飲品','誤以為代工廠可直接修改配方'],
+ ['ODM','除製造外，也可能參與配方／產品開發','確認設計驗證與規格版次','委外開發新口味並生產','誤以為 ODM 可跳過規格核准'],
+ ['ATP 可承諾量','在特定日期依庫存與供應、既有承諾估算可承諾數量','協助業務回覆可交貨量','今天庫存 100、已分配 60，可自由承諾不超過 40（簡化示例）','把帳面量直接當 ATP'],
+ ['MPS 主生產計畫','決定各週預計生產什麼、多少及何時做','把需求轉成中期供應規劃','下週規劃芒果飲 360 箱','把需求預測直接當確定產能'],
+ ['BOM 物料清單','產品每單位需要哪些材料與數量','計算材料需求並控管配方版次','每箱芒果飲需果泥 1.4 公斤','忘記損耗率、版本或計量單位'],
+ ['MRP 物料需求計畫','根據 BOM、需求、庫存與到貨時間推算缺口','決定何時請購或追料','需求 504 公斤，當日可用 400，淨缺 104 公斤','未放行在途料當現貨'],
+ ['有限產能排程','排程不能超過工廠可用工作時間與資源','避免兩筆訂單搶同一條線','每天 480 分鐘，停機 120 分只剩 360 分','把名目日產能當成永遠能達成'],
+ ['交期緩衝','交貨承諾日與預估可交付日期之間的時間差','及早發現可能遲交的訂單','交期 11/15、可交 11/13，緩衝 2 天','只看交期不看品檢、物流前置'],
+ ['FEFO 先到期先出','優先考量先到期且符合放行條件的批次','降低短效期庫存及報廢風險','已放行且較早到期的果泥優先評估領用','只看效期、不看品質狀態和客戶規格'],
+ ['隔離／待驗','原料或產品尚未被授權使用的管制狀態','避免未合格品投入生產與出貨','L-M-HOLD 在示範系統屬隔離','把帳面庫存視為已放行數量'],
+ ['委外製令','委託外部工廠依核准規格與排程製作的工作指令','追蹤送料、投產、完工、驗收與交付','代工廠 C 承接百香果飲訂單','以電話說有空就視為已確認產能'],
+ ['GHP','食品業者良好衛生規範的基本管理要求','食品衛生、製程及紀錄管理','作業區清潔及衛生操作的管理','直接套用所有細項而未核對實際適用條文'],
+ ['HACCP','食品危害分析與重要管制點的系統性管理方法','協助辨識與管控食安危害','製程危害分析、監測與矯正','誤以為生管可自行決定危害放行'],
+ ['ISO 22000','食品安全管理系統國際標準','整合管理系統、前提方案與危害控制','廠商可能採行 ISO 22000 系統','誤認所有食品廠都必須取得驗證'],
+ ['計畫達成率','實際完成量 ÷ 計畫量','檢視排程的執行狀況','計畫 300 箱、良品 270 箱＝90%','拿在製數當已完成良品'],
+ ['達交率','準時符合承諾的交付筆數／總交付筆數（須定義分母）','檢視承諾交期履約','10 筆中 9 筆準時為 90%','忽略部分出貨與變更承諾版本'],
+ ['ERP','將訂單、採購、庫存、製造與財務資料串起的資訊系統','形成可查核的流程資料','訂單 → 物料需求 → 領用／製造 → 驗收 → 出貨','認為只輸入 ERP 就代表資料正確']
+];
+const sourceInfo=`<div class="academy-sources">參考：<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=L0040001" target="_blank" rel="noopener">食品安全衛生管理法</a> · <a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=L0040122" target="_blank" rel="noopener">食品良好衛生規範準則</a> · <a href="https://www.iso.org/standard/65464.html" target="_blank" rel="noopener">ISO 22000 官方說明</a>。法規適用及施行日期需以官方最新全文核對；不是任何特定企業的內部規範。</div>`;
+const LESSONS=[
+ {id:'m01',module:1,level:1,title:'食品 OEM／ODM 與生管的權責',concept:'先理解品牌商、代工廠、採購、業務、倉管、品保與生管的協作。生管整合計畫與進度，但不能越權放行產品或擅自答應變更。',why:'正常工作的第一步是知道自己該查誰、找誰拍板，不是先操作系統。',terms:['OEM','ODM'],example:'一批原料檢驗未完成。生管可以調整預排並通知相關單位，但不可以代替品保決定可否使用。',inspection:['訂單 SO-101 的品保狀態','原料 L-M-HOLD 的品質狀態','生管、業務、品保三方權責'],question:'誰有權依規定判定產品是否完成品質放行？',type:'pick',choices:[['生管','生管'],['品保／授權人員','品保'],['業務','業務'],['代工廠窗口','代工廠']],answer:()=> '品保',explain:'生管可以反映交期與資訊，但不能替代品保及授權流程。',risk:'越權決策可能造成食品安全及法規風險。',transfer:'發現未放行原料時，你會聯絡誰、暫時停止什麼？'},
+ {id:'m02',module:2,level:1,title:'訂單、預測與交期承諾',concept:'正式訂單、需求預測與客戶口頭加單不能混在一起。交期承諾要同時確認規格、數量、物料、產能、品檢及物流，並保存訂單版本。',why:'不經查證就答應交貨，很容易把問題轉嫁給生產與採購。',terms:['ATP 可承諾量','交期緩衝'],example:'客戶要求兩天後交貨，但代工廠檔期未確認；只能回覆正在評估，不能把試算日當正式承諾。',inspection:['SO-101 原始交期','目前試排交貨日期','未確認的在途與外包資訊'],question:'尚未確認代工廠檔期與品質條件時，對外最適合怎麼回覆？',type:'pick',choices:[['先答應客戶再追產線','promise'],['列出待確認條件、提供評估時點','check'],['只看訂單交期直接開製令','start']],answer:()=> 'check',explain:'交期要經過可行性檢查、權責核准才是正式承諾。',risk:'先答應客戶可能造成多張單一起延誤。',transfer:'試排日期與正式承諾日期不一致時，你會如何向業務說明？'},
+ {id:'m03',module:3,level:3,title:'主生產計畫 MPS：把需求變成週計畫',concept:'MPS 是決定週別、品項、數量與預計工廠的計畫；需求量不等於已經確認可以生產。已核可訂單、預測與缺料待確認要分層管理。',why:'先做週計畫，才能預先發現瓶頸，而不是每早重新救火。',terms:['MPS 主生產計畫','有限產能排程'],example:'本週 MPS 打算生產 500 箱，但確認可執行產能只有 350 箱，差額 150 箱須提前協調。',inspection:['今日工廠 F-A 的已安排時數','五個工作天內實際列入 F-A 的箱數','有多少訂單被列為禁止或條件式'],question:'依目前工作台試排，從本日起五個工作天內，F-A 已列入試排的總箱數為多少？',type:'number',answer:(s,p)=>{const end=E.plusWork(s.date,4);return p.timeline.filter(x=>x.fid==='F-A'&&x.day<=end).reduce((t,x)=>t+x.qty,0)},unit:'箱',explain:'將工作台排程明細中 F-A 在五個工作天內的每日箱數加總；未成功排入的訂單不算確認產能。',risk:'排入試排只代表示範模型成立，真實還需產線、品保與物料確認。',transfer:'如果需求 500 箱但只排進 350 箱，下週計畫要如何處理缺口？'},
+ {id:'m04',module:4,level:3,title:'BOM 與 MRP：自己算出毛需求與缺口',concept:'BOM 告訴你生產一箱要多少材料；MRP 再將總需求、可用庫存、已預留及已確認到貨時間比較，算出需補量與最晚採購時間。',why:'有訂單但沒料，計畫就無法執行；過量採購也會增加短效期庫存。',terms:['BOM 物料清單','MRP 物料需求計畫'],example:'示範芒果飲每箱需 1.4 公斤果泥；100 箱毛需求是 140 公斤。若可用 90 公斤，簡化淨缺 50 公斤。',inspection:['SO-101 訂單剩餘待投入箱數','P-M 芒果果泥每箱用量','M-MANGO 已放行可用量'],question:'依目前 SO-101 剩餘待投入數量及 BOM，還需要多少公斤芒果果泥（毛需求）？',type:'number',answer:s=>nround(E.orderRemaining(o(s,'SO-101'))*E.product('P-M').bom['M-MANGO']),unit:'公斤',explain:'剩餘待投入箱數 × BOM 每箱 1.4 公斤；已完成良品與有在製品不能重複展開待投入需求。',risk:'計量單位、耗損、BOM 版次若沒確認，數字再準也可能用錯。',transfer:'毛需求算出後，下一步如何查可用量與到貨可信度？'},
+ {id:'m05',module:5,level:4,title:'有限產能、瓶頸與換線工時',concept:'名目產能不是可用產能。要扣掉停機、已承諾產能、換線與清洗，再看品項相容性、工作日與品檢物流前置。',why:'只依每日日產量排訂單，容易把同一天工時重複出售。',terms:['有限產能排程','交期緩衝'],example:'每日 480 分鐘，停機 120 分、既有作業 60 分，可用 300 分；還得扣換線清洗時間。',inspection:['F-A 的標準日工時 480 分','今日 F-A 的停機分鐘數','F-A 今天已承諾的箱數'],question:'依目前 F-A 資料，今天扣除停機及已承諾產能後，可用生產分鐘數是多少（尚未扣新訂單換線）？',type:'number',answer:s=>{const f=s.factories.find(x=>x.id==='F-A');return nround(Math.max(0,480-(f.downtime[s.date]||0)-(f.reserved[s.date]||0)*(480/f.capacity)))},unit:'分鐘',explain:'480 − 停機分鐘 −（已承諾箱數 × 480 ÷ 基準日產量）。後續仍應扣不同產品的清洗換線工時。',risk:'不是每天都有相同工作時數；國定假日、設備維護與品項換線可能變動。',transfer:'瓶頸產線塞滿時，如何說明哪些訂單要調整？'},
+ {id:'m06',module:6,level:2,title:'可用庫存、待驗批次與 FEFO',concept:'帳面數只是起點。真正可用要扣已預留，並排除待驗、隔離、拒收批次；在途品沒有到貨並完成必要驗收前不能當作已可用。',why:'避免帳面數看起來夠，實際發料卻缺料停線。',terms:['FEFO 先到期先出','隔離／待驗'],example:'已放行 5,000 支瓶器、預留 1,300 支，可用 3,700 支；另有隔離 800 支不能算入。',inspection:['瓶器的已放行總數','瓶器批號的已預留量','若有待驗或隔離批次是否被排除'],question:'依目前工作台，PET 瓶本日已放行且扣除預留後的可用量是多少？',type:'number',answer:s=>nround(m(s,'M-BOTTLE').filter(x=>x.status==='released').reduce((t,x)=>t+Math.max(0,x.qty-x.reserved),0)),unit:'支',explain:'只加總 status=released 的每批 qty−reserved；不可以把未放行或未確認到貨計入。',risk:'實務需確認效期、儲位、實盤數及客戶／配方限制；現有模型沒有完整 FEFO 自動領料。',transfer:'ERP 帳面與盤點不符時，如何避免直接誤改庫存？'},
+ {id:'m07',module:7,level:4,title:'代工廠相容性、檔期與送廠',concept:'委外排程至少要確認工廠有核准的製程能力、可用檔期、物料送達時間、品檢與物流安排。能做同類產品不等於能隨時接單。',why:'從帳面轉廠雖容易，但未確認的外包檔期可能把風險轉移到其他廠。',terms:['委外製令','有限產能排程'],example:'代工廠 B 可以做芒果飲，但檔期未確認，系統只可列為條件式預案；C 可做百香果飲且檔期確認。',inspection:['三家工廠各自核可的產品','各家工廠 confirmed 檔期狀態','跨廠品檢及物流天數'],question:'以目前示範資料，百香果飲 P-P 要在「製程相容且檔期已確認」前提下，應選哪家工廠？',type:'pick',choices:[['示範自有灌裝線 A','F-A'],['示範代工廠 B','F-B'],['示範代工廠 C','F-C']],answer:s=>{const f=s.factories.find(x=>x.compatible.includes('P-P')&&x.confirmed);return f?.id||'UNKNOWN'},explain:'需同時滿足品項相容與已確認檔期；轉廠還要評估送廠、驗收、在製品與批准。',risk:'當下資料如果沒有任何合格且確認的工廠，答案應是 UNKNOWN，不可強選。',transfer:'當業務要求今天轉廠，你需要拿到哪些書面確認？'},
+ {id:'m08',module:8,level:5,title:'食安管理、品質放行與追溯',concept:'GHP 是食品衛生基礎管理；HACCP 是危害分析與控制方法；ISO 22000 是食品安全管理系統標準。三者層次不同，實際義務須依台灣法規、公告類別及工廠適用性確認。',why:'食品品質事件的代價可能遠大於一般交期延誤，生管不能自行解除品質封鎖。',terms:['GHP','HACCP','ISO 22000'],example:'批號 L-M-HOLD 隔離 120 公斤，縱使訂單很急仍不能拿來補料。放行權責必須回到品保授權流程。',inspection:['SO-101 是否存在品質硬封鎖','L-M-HOLD 是否已獲品質放行','已出貨狀態與品質放行是不同欄位'],question:'當原料批號尚在隔離、品保未放行時，哪個行動正確？',type:'pick',choices:[['先用料趕工，稍後補驗收','use'],['保留隔離、由品保確認並調整排程','hold'],['讓業務口頭同意即可使用','sales']],answer:()=> 'hold',explain:'依品質程序先控制風險，追查批號與受影響訂單，並由品保依授權程序處置。',risk:'本系統不是品質授權平台，也未取代真實法規判斷。部分 2025 GHP 修正條文分階段施行。',transfer:'食品品質有疑慮但客戶催出貨，你會向主管怎麼說？'},
+ {id:'m09',module:9,level:2,title:'日常進度、計畫與績效差異',concept:'生管要看計畫量、累計良品、在製量及剩餘待投入量。良品完成不等於品保放行，更不代表已出貨。每天比較昨天計畫與實際，找出缺口原因。',why:'先看差異才能提早協調，不必等到交期當天才知道來不及。',terms:['計畫達成率','達交率'],example:'訂單 1,000 箱、已完成良品 800 箱、在製 40 箱，尚待投入 160 箱。計畫 300、良品 270＝90% 達成率。',inspection:['SO-101 總訂單量','SO-101 良品與在製量','同一張訂單的已出貨箱數'],question:'依目前 SO-101 的良品與在製進度，尚待投入生產的數量是多少？',type:'number',answer:s=>E.orderRemaining(o(s,'SO-101')),unit:'箱',explain:'訂單量 − 已完成良品 − 已列在製量。良品、在製與已出貨互不等同。',risk:'不能把生產完成率當準時達交率，後者必須以承諾交期與出貨證據計算。',transfer:'昨天計畫 300 箱只做出 270 箱，今天如何調整且不掩蓋問題？'},
+ {id:'m10',module:10,level:1,title:'ERP 資料鏈與跨部門協作',concept:'ERP 將訂單、BOM、採購、庫存、製令、委外、完工與出貨串成資料流，但各企業的 ERP 版本、核准權限、作業程序不同。系統紀錄有數字不代表資料一定正確。',why:'懂資料從哪來、由誰確認、什麼時候更新，比硬記某套 ERP 按鈕位置更重要。',terms:['ERP','MRP 物料需求計畫'],example:'新訂單要依 BOM 展開物料需求；採購入庫但未驗收放行的原料，不能直接當成生產可用量。',inspection:['訂單頁的 SO-101 數量與交期','物料頁的批次庫存與待驗狀態','完成良品與出貨是兩次不同的資料動作'],question:'對於未提供版本與權限資料的 ERP 系統，以下哪個判斷正確？',type:'pick',choices:[['本教學系統已與實際 ERP 串接','connected'],['未取得資料，版本、操作功能及授權仍是 UNKNOWN','unknown'],['生管一定有權直接放行所有原料','qa']],answer:()=> 'unknown',explain:'學習的是 ERP 資料關聯的通用概念，不能把教學模擬當成企業實際版本與職務權限。',risk:'版本與權限不同會影響流程；真實導入須先做資料盤點與權責確認。',transfer:'發現 ERP 資料與現場不符，你會如何確認而非直接改數字？'}
+];
+const EXTRA_GLOSSARY=[
+ ['WIP 在製品','已投入但尚未完成良品認定的產品','分開控管投料、製程進度與待完工量','訂單 1,000 箱，800 良品、40 在製，尚待投入 160','將在製直接當良品或重複扣料'],
+ ['理論產能','設備在理想條件下的最大生產能力','作為規劃上限的參考','每小時 50 箱、8 小時理論 400 箱','以理論產能直接向客戶承諾'],
+ ['有效產能','扣除合理停機、清洗、換線與現有承諾後可用的能力','判斷有限產能下實際能排多少','480 分扣 60 分清洗剩 420 分','忘記品項不同的換線限制'],
+ ['瓶頸資源','限制整體流量的機台、製程、物料或廠商','集中優先管理關鍵限制','灌裝比配料慢，灌裝成為瓶頸','只增加非瓶頸部門的產出'],
+ ['順排','從可開工日往後排出預估完工日','評估最早可交付時間','今天料齊，下週有三個工作天產能可排','把排出日期當確定交貨承諾'],
+ ['倒排','從客戶交期扣回出貨、品檢、製造和採購前置時間','估計最晚開工／下單時間','週五出貨、品檢一天、生產兩天，需更早備料','忽略假日、可靠度和準備時間'],
+ ['毛需求','訂單或 MPS 需要的總物料數量，未扣供應','確認物料總用量','360 箱 × 1.4 公斤＝504 公斤','將毛需求直接當採購量'],
+ ['淨需求','扣除符合條件的可用供應後仍需補足的需求','決定請購、催料或調撥量','毛需求 504、公認可用 400，簡化淨缺 104 公斤','把待驗、在途未確認當作供應'],
+ ['安全庫存','為不確定需求與補貨時間保留的緩衝量','減少缺料，但增加庫存與效期成本','平均每天 50 箱物料，另設示例安全緩衝','把安全庫存當永遠可以任意使用'],
+ ['採購前置時間','從提出採購／核准到實際可用所需的時間','倒推最晚請購日期','供應商 5 工作天、入廠品檢 1 天','只計運送、不計驗收及供應可靠度'],
+ ['已預留庫存','已分配給其它訂單或用途的可用量','防止同一批料重複承諾','有 1,000 支瓶器，其中 300 支已分配其他訂單','帳面總量全部拿來供新急單'],
+ ['批號追溯','將原物料批號連到投入、製造與出貨紀錄','當異常發生時鎖定受影響範圍','一批果泥對應幾張製令、哪些出貨紀錄','只記品名而沒有批次關聯'],
+ ['效期管理','確認原料、半成品及成品符合保存期限與使用規定','避免過期、短效期庫存積壓','下月到期的已放行批次優先評估','只看先進先出不看效期'],
+ ['領退料','將物料從倉庫領到製令，或將未用量依程序退回','建立實際耗用量與庫存異動的依據','領 140 公斤，未用 10 公斤依程序退庫','實耗與領用完全混淆'],
+ ['盤點差異','系統帳面量與經複盤的現場實物量不一致','找出單據、批次與計量單位問題','ERP 6,000 支、複盤 3,600 支，差異 2,400','未查原因就私自調整 ERP'],
+ ['換線／清洗時間','切換品項、包材或製程前必須花費的準備時間','決定排程可用分鐘與食品安全風險','改品項需示例 60 分鐘，會占用產線工時','清洗驗證程序可被排程任意縮短'],
+ ['委外在製管理','追蹤送廠物料、實際投產、良品和品檢狀態','讓外包進度可追溯且可對帳','送廠 800 箱包材，回報良品 650 箱','只收到口頭完工就當作正式入庫'],
+ ['計畫負荷率','已排需求工時 ÷ 可用工時的比率','提早看哪週接近滿載','需 420 分／可用 480 分＝87.5%','把超過 100% 的預排當成可執行'],
+ ['訂單版次','記錄客戶確認的產品規格、數量和交期變更版本','避免用舊規格排到新訂單','SO-101 v1 300 箱、v2 核准後改 350 箱','收到修改需求就立即覆蓋正式訂單'],
+ ['品檢放行','依規定完成檢驗與授權後允許後續流向','區分生產完工、品質允許與出貨','做完 500 箱，未經授權放行仍不得出貨','生管自行核准待驗批次'],
+ ['交期達成（OTD）','在正確的承諾版本與時間點準時交付的表現','評估整體交貨可靠性','10 筆中 9 筆按約定交期完成交付＝90%','沒有定義是否以訂單筆數或數量計算'],
+ ['預防性追蹤','在事件發生前定期查異常前兆與未確認條件','降低急單、缺料與延誤的突發機率','每週主動查下週原料到貨與代工檔期','只看今天有沒有紅色警示']
+];
+glossary.push(...EXTRA_GLOSSARY);
+const TOPICS=[
+ ['區分品牌商、代工廠、原料供應商的責任；確認規格與變更版本','生管負責整合訂單、產能與進度，品保負責品質授權','業務確認客戶承諾；採購確認供應；倉管確認帳實與批次','同一事件可以多部門同時處理，但決策權限不能混淆'],
+ ['需求預測不等於正式訂單；每筆訂單先確認 SKU、數量、規格版次','對交期承諾先計算物料、產能、品檢及物流的可行性','客戶改單應保留原版次與核准歷程，不可默默覆寫','將需優先協調的訂單和需優先開工的訂單分開'],
+ ['從正式需求整理週別、品項、箱數、工廠與預計日期','MPS 是計畫：必須和實際可用產能、備料狀態再次核對','週檢討比較 MPS 與現場回報，提前調整下一週瓶頸','中期評估關鍵物料的補貨週期、產能缺口及安全庫存'],
+ ['先確認 BOM 版本、單位、單位用量與合理製程損耗','毛需求＝待投入數量 × 每單位用量；在製與良品不能重算','淨需求再扣已放行可用、必要預留與可靠到貨','最晚請購時間要從投產日期扣回供應與品檢前置'],
+ ['辨認瓶頸：產線、機台、關鍵物料或特殊製程限制','有效工時需扣停機、換線、清洗和既有承諾','順排估最早可交；倒排估最晚應開工與備料','比較急單插入對其它訂單、換線次數與整體延誤的影響'],
+ ['庫存要分帳面、已預留、已放行、待驗、隔離與拒收','FEFO 須同時滿足效期、品質、規格與可追溯性','批次紀錄要能追查原料流向到製令、成品與出貨','遇到帳實差先複盤與查單據，再依授權進行調整'],
+ ['確認代工廠製程相容、產能檔期、交期及必要核准','進廠物料的數量與狀態要留紀錄，不能只靠電話','將委外在製、良品、品檢、退料與物流分別追蹤','成本與檔期未確定時將轉廠列為條件式方案'],
+ ['GHP 是衛生基本要求，HACCP 是危害分析與管制概念','ISO 22000 是食品安全管理系統；驗證不是所有廠的法定統一義務','品質疑慮先控制流向、查批號，生管不可自己解除封鎖','適用法律、公告業別與修正後分階段施行須查官方原文'],
+ ['每天分開查看計畫、良品、在製、品保放行和實際出貨','計畫達成率與達交率定義不同，分母及時間點要先說清楚','異常追蹤需要責任人、承諾日期、下一次追蹤及結案證據','報表應能解釋差異原因與下一步，不只是漂亮數字'],
+ ['ERP 訂單、BOM、庫存、採購、製令、委外、出貨存在資料關係','規格及資料來源未確認前，不能假定資料是正確的','每一個資料更新都有權責；品質放行不能由生管取代','不同 ERP 版本、模組與權限屬 UNKNOWN，必須另行查證']
+];
+LESSONS.forEach((l,i)=>l.topics=TOPICS[i]);
+
+// No fabricated real plant/brand data: v3 PC state is synthetic and all calculations below read that model.
+function fresh(){return {version:4,view:'catalog',active:null,stage:1,done:{},inspected:{},answers:{},notes:{},day:0,dayDone:{},planPref:null,planPreview:false,weekReview:null,monthReview:null,levels:{},history:[]};}
+function load(){try{const x=JSON.parse(localStorage.getItem(STORE)||localStorage.getItem(PREVIOUS_STORE)||'null');if(x&&x.version===4&&x.done&&x.inspected&&x.answers&&x.dayDone)return x;}catch(_){}return fresh();}
+let st=load(),notice='';
+function save(){try{localStorage.setItem(STORE,JSON.stringify(st));return true;}catch(_){notice='瀏覽器本機儲存不可用，進度可能不會保留。';return false;}}
+function update(fn){fn();save();}
+function state(){return JSON.parse(JSON.stringify(st));}
+function go(v){if(!['catalog','lesson','week','levels','glossary'].includes(v))return;st.view=v;notice='';save();}
+function status(){return {finished:LESSONS.filter(x=>st.done[x.id]).length,lessons:LESSONS.length,levels:Object.keys(st.levels).length,days:Object.keys(st.dayDone).length};}
+function percent(){return Math.round(status().finished/LESSONS.length*100)}
+function stepTag(i){return ['','① 專業觀念','② 數據示範','③ 引導查資料','④ 獨立實作','⑤ 專家回饋','⑥ 延伸應用'][i]}
+function glossaryHtml(term){const v=glossary.find(x=>x[0]===term);if(!v)return '';return `<details class="ac-gloss"><summary>${esc(v[0])} <span>點開解釋</span></summary><div class="ac-gloss-detail"><b>白話說法：</b>${esc(v[1])}<br><b>正式用途：</b>${esc(v[2])}<br><b>實務例子：</b>${esc(v[3])}<br><b>常見誤解：</b>${esc(v[4])}</div></details>`}
+function inspectionData(s,p,l){const oid=o(s,'SO-101'),pa=p.byOrder[oid.id],fa=s.factories.find(x=>x.id==='F-A'),first=s.orders.map(x=>x.id+'：'+x.due).join('、');return {
+ '訂單 SO-101 的品保狀態':`SO-101｜${oid.qty} 箱；良品 ${oid.good}，品保 ${oid.qa==='released'?'已放行':'尚未放行'}`,
+ '原料 L-M-HOLD 的品質狀態':`L-M-HOLD｜${m(s,'M-MANGO').find(x=>x.id==='L-M-HOLD')?.qty??'UNKNOWN'} 公斤；狀態：${m(s,'M-MANGO').find(x=>x.id==='L-M-HOLD')?.status||'UNKNOWN'}`,
+ '生管、業務、品保三方權責':'生管：整合計畫與追蹤；業務：確認客戶需求與承諾；品保／授權人員：檢驗與放行判定。',
+ 'SO-101 原始交期':`${oid.id}｜${oid.due}，此日期是模擬訂單承諾交期。`,
+ '目前試排交貨日期':`${oid.id}｜${pa.delivery||'UNKNOWN'}；狀態 ${pa.status}。未確認不代表會準時。`,
+ '未確認的在途與外包資訊':s.arrivals.map(x=>`${x.id}：到貨 ${x.confirmed?'已確認':'UNKNOWN'}；品質 ${x.qaReleased?'已放行':'未放行'}`).join('；')+'。代工 B 檔期：'+(s.factories.find(f=>f.id==='F-B')?.confirmed?'已確認':'UNKNOWN'),
+ '今日工廠 F-A 的已安排時數':`今日試排 F-A ${(p.timeline.filter(x=>x.fid==='F-A'&&x.day===s.date).reduce((a,x)=>a+x.minutes+x.setupMinutes,0)/60).toFixed(2)} 小時（含示範換線），標準日 8 小時。`,
+ '五個工作天內實際列入 F-A 的箱數':`F-A 前五個工作天：${p.timeline.filter(x=>x.fid==='F-A'&&x.day<=E.plusWork(s.date,4)).map(x=>`${x.day} ${x.oid} ${x.qty}箱`).join('、')||'沒有成功排入的產量'}。`,
+ '有多少訂單被列為禁止或條件式':`禁止 ${p.summary.blocked} 筆、條件式 ${p.summary.conditional} 筆；不能算為已可執行。`,
+ 'SO-101 訂單剩餘待投入箱數':`訂單 ${oid.qty} − 良品 ${oid.good} − 在製 ${oid.wip} = ${E.orderRemaining(oid)} 箱。`,
+ 'P-M 芒果果泥每箱用量':`P-M 使用 M-MANGO 每箱 ${E.product('P-M').bom['M-MANGO']} 公斤（虛構 BOM）。`,
+ 'M-MANGO 已放行可用量':`今天芒果果泥模型可用 ${num(E.usable(s,'M-MANGO',s.date))} 公斤；不含隔離批次。`,
+ 'F-A 的標準日工時 480 分':'教學假設每天 8 小時 = 480 分鐘；未計真實排休與國定假日。',
+ '今日 F-A 的停機分鐘數':`${s.date} F-A 停機 ${fa.downtime[s.date]||0} 分鐘。`,
+ 'F-A 今天已承諾的箱數':`${s.date} F-A 已承諾 ${fa.reserved[s.date]||0} 箱；基準 ${fa.capacity} 箱／日。`,
+ '瓶器的已放行總數':`PET 瓶：${num(m(s,'M-BOTTLE').filter(x=>x.status==='released').reduce((a,x)=>a+x.qty,0))} 支。`,
+ '瓶器批號的已預留量':`PET 瓶：${num(m(s,'M-BOTTLE').filter(x=>x.status==='released').reduce((a,x)=>a+x.reserved,0))} 支已預留。`,
+ '若有待驗或隔離批次是否被排除':`未放行批次不能計入可用量。PET 瓶隔離量 ${num(m(s,'M-BOTTLE').filter(x=>x.status!=='released').reduce((a,x)=>a+x.qty,0))} 支。`,
+ '三家工廠各自核可的產品':s.factories.map(f=>`${f.id}：${f.compatible.join('、')}`).join('；'),
+ '各家工廠 confirmed 檔期狀態':s.factories.map(f=>`${f.id}：${f.confirmed?'已確認':'UNKNOWN'}`).join('；'),
+ '跨廠品檢及物流天數':s.factories.map(f=>`${f.id}：品檢 ${f.qcDays} 工作日＋運送 ${f.shipDays} 工作日`).join('；'),
+ 'SO-101 是否存在品質硬封鎖':`${s.issues.filter(x=>x.status!=='closed'&&x.hardBlock&&x.orderIds.includes('SO-101')).length} 筆硬封鎖事件。`,
+ 'L-M-HOLD 是否已獲品質放行':`${m(s,'M-MANGO').find(x=>x.id==='L-M-HOLD')?.status||'UNKNOWN'}；不得以急單理由繞過品保。`,
+ '已出貨狀態與品質放行是不同欄位':`${oid.id}：良品 ${oid.good} 箱、品質 ${oid.qa}、已出貨 ${oid.shipped} 箱。`,
+ 'SO-101 總訂單量':`${oid.id} 總量 ${oid.qty} 箱。`,
+ 'SO-101 良品與在製量':`已完工良品 ${oid.good} 箱、在製 ${oid.wip} 箱。`,
+ '同一張訂單的已出貨箱數':`已出貨 ${oid.shipped} 箱；請勿與良品混用。`,
+ '訂單頁的 SO-101 數量與交期':`${oid.id}｜${oid.qty} 箱／交期 ${oid.due}。`,
+ '物料頁的批次庫存與待驗狀態':s.lots.map(x=>`${x.id}:${x.status}`).join('、'),
+ '完成良品與出貨是兩次不同的資料動作':'本教學將「回報良品」、「品保放行」、「出貨」分為獨立操作，不可視為同一件事。'
+ }[l]||'UNKNOWN';}
+function phaseControls(l){return `<div class="ac-phase">${Array.from({length:6},(_,i)=>`<button type="button" class="ac-phase-btn ${st.stage===i+1?'on':''}" data-ac-phase="${i+1}" aria-current="${st.stage===i+1?'step':'false'}">${i+1}<span>${['觀念','示範','查資料','練習','回饋','應用'][i]}</span></button>`).join('')}</div>`}
+function catalog(s,p){const z=status();return `<div class="ac-hero"><span class="ac-eyebrow">從零開始 · FOOD OEM / ODM LEARNING PATH</span><h2>先學會管理，再學會應變。</h2><p>把正常工作流程、BOM 與物料計算、有限產能、預防管理和危機決策串成一條學習路徑。所有練習讀取目前工作台的虛構資料，不代表任何真實企業的數據。</p><div class="ac-hero-actions"><button type="button" class="btn primary" data-ac-go="lesson" data-ac-lesson="${LESSONS.find(x=>!st.done[x.id])?.id||'m01'}">${z.finished?'繼續下一課':'開始第一課'}</button><button type="button" class="btn" data-ac-go="week">體驗模擬生管工作週</button></div></div>
+<div class="ac-stat-grid"><div class="ac-stat"><small>專業課程</small><strong>${z.finished} / ${z.lessons}</strong><span>課程完成數</span></div><div class="ac-stat"><small>能力等級</small><strong>${z.levels} / 6</strong><span>獨立實作關卡</span></div><div class="ac-stat"><small>工作週練習</small><strong>${z.days} / 5</strong><span>完成的工作日</span></div><div class="ac-stat"><small>資料來源</small><strong>同步</strong><span>使用目前模擬工作台狀態</span></div></div>
+<div class="ac-subnav"><button class="btn" data-ac-go="levels">六階段能力驗收</button><button class="btn" data-ac-go="week">每日／每週／中期管理</button><button class="btn" data-ac-go="glossary">生管專業名詞百科</button></div>
+<div class="ac-course-list">${LESSONS.map((l,i)=>`<button type="button" class="ac-course" data-ac-lesson="${l.id}" data-ac-go="lesson"><span class="ac-number">${String(i+1).padStart(2,'0')}</span><span class="ac-course-info"><b>${esc(l.title)}</b><small>${esc(funits[i])} · Level ${l.level} · 六步驟實作</small></span><span class="ac-status ${st.done[l.id]?'ok':''}">${st.done[l.id]?'✓ 已完成':'開始學習 ›'}</span></button>`).join('')}</div><div class="panel">${sourceInfo}</div>`}
+function lesson(s,p){const l=LESSONS.find(x=>x.id===st.active)||LESSONS[0];const inspect=st.inspected[l.id]||[];const previous=st.answers[l.id];const res=previous&&previous.stamp===dataStamp(s)?previous:null;const remaining=LESSONS.findIndex(x=>x.id===l.id);const exampleBox=`<div class="ac-worked"><div class="ac-eyebrow">示例數字不是公司真實資料</div><p>${esc(l.example)}</p></div>`;
+let content='';switch(st.stage){
+case 1:content=`<div class="ac-paragraph"><p>${esc(l.concept)}</p><p><b>這件事為什麼重要？</b> ${esc(l.why)}</p></div><h3>這門課要建立的專業觀念</h3><div class="ac-topic-list">${l.topics.map(x=>`<div class="ac-topic"><span>✓</span><span>${esc(x)}</span></div>`).join('')}</div><h3>學會這些關鍵名詞</h3>${l.terms.map(glossaryHtml).join('')}`;break;
+case 2:content=`${exampleBox}<div class="ac-worked"><b>計算原則</b><p>示範數字用於教學，下一步請直接查看目前工作台的資料。試排完成、正式開工、品保放行與客戶交期承諾必須分開。</p></div>`;break;
+case 3:content=`<p>請依序點選下面資料卡，打開實際數值及相關說明。先自己想想這些資料會影響哪個決定，再進入練習。</p><div class="ac-inspect">${l.inspection.map((a,i)=>`<button class="ac-inspect-card" data-ac-inspect="${i}"><b>${inspect.includes(i)?'✓ 已查看':'＋ 查詢'}　${esc(a)}</b>${inspect.includes(i)?`<span>${esc(inspectionData(s,p,a))}</span>`:'<small>點擊展開來源資料</small>'}</button>`).join('')}</div><p class="tiny">至少查閱 2 項資訊才能進入獨立操作；所有資料取自目前工作台的同一份模擬狀態。</p>`;break;
+case 4:content=`<div class="ac-question"><div class="ac-eyebrow">獨立練習 · 先自己判斷</div><h3>${esc(l.question)}</h3><form id="acPractice"><input type="hidden" name="lesson" value="${l.id}">${l.type==='number'?`<label class="fieldlabel">填入計算結果 (${esc(l.unit||'')})<input name="answer" type="number" step="any" required class="field ac-input" placeholder="輸入你的答案" value="${esc(res?.input??'')}"></label>`:`<div class="ac-radio">${l.choices.map(([label,value])=>`<label><input type="radio" name="answer" value="${esc(value)}" ${res?.input===value?'checked':''} required> ${esc(label)}</label>`).join('')}</div>`}<label class="fieldlabel">你的判斷理由（至少 12 字，避免只猜答案）<textarea class="field" required minlength="12" name="reason" placeholder="我會先查……，因為……；需要……確認。">${esc(res?.reason||'')}</textarea></label><button type="submit" class="btn primary">送出練習、查看計算回饋</button></form></div>${res?`<div class="ac-result ${res.ok?'pass':'retry'}"><b>${res.ok?'PASS｜數值／選項已符合示範模型':'需要修正｜再確認資料與公式'}</b><p>${esc(res.message)}</p><p><b>你的判斷理由：</b>${esc(res.reason)}</p></div>`:''}`;break;
+case 5:content=`<div class="ac-coach"><div class="ac-eyebrow">資深生管主管的回饋</div><h3>${res?.ok?'你掌握了核心條件':'先回到第 4 步重新練習'}</h3><p>${esc(l.explain)}</p><p><b>管理風險：</b>${esc(l.risk)}</p><p><b>審查你的理由：</b>${res?.reason?`你寫了「${esc(res.reason)}」。${res.reason.includes('確認')||res.reason.includes('品保')||res.reason.includes('查')?'已表達部分查證／權責意識；請繼續思考後續追蹤與代價。':'建議補上「要向誰確認、依據什麼資料、何時再追蹤」。'}`:'尚未填寫'}</p><p><b>其它可行路線：</b>若資訊不足，先確認品質、物料與產能；可同步請業務、採購、代工廠查證，不一定只有一條處理路線。</p></div>`;break;
+case 6:content=`<div class="ac-worked"><b>延伸到日常管理與決策說明</b><p>${esc(l.transfer)}</p></div><form id="acTransfer"><label class="fieldlabel">用自己的話說明：先做什麼、查哪些資料、通知誰、如何追蹤（至少 20 字）<textarea name="transfer" class="field" minlength="20" required placeholder="我會先……，再跟……確認，並於……追蹤。">${esc(st.notes[l.id]||'')}</textarea></label><button type="submit" class="btn primary">提交我的管理說明並完成本課</button></form>${st.done[l.id]?'<div class="ac-result pass">✓ 已完成本課。可以到能力驗收或繼續下一門課。</div>':''}`;break;
+}
+return `<div class="ac-breadcrumb"><button class="btn small" data-ac-go="catalog">← 返回課程地圖</button><span>課程 ${String(remaining+1).padStart(2,'0')} ／ 10　·　Level ${l.level}</span></div><div class="panel ac-lesson"><div class="ac-eyebrow">${esc(funits[l.module-1])} · 六階段循序學習</div><h2>${esc(l.title)}</h2><p class="ac-muted">${esc(l.why)}</p>${phaseControls(l)}<div class="ac-lesson-body"><h3>${stepTag(st.stage)}</h3>${content}</div><div class="ac-actions">${st.stage>1?`<button class="btn" data-ac-stage="prev">← 上一步</button>`:''}${st.stage<6?`<button class="btn primary" data-ac-stage="next">下一步 →</button>`:`<button class="btn" data-ac-go="catalog">返回課程地圖</button>${st.done[l.id]&&LESSONS[remaining+1]?`<button class="btn primary" data-ac-lesson="${LESSONS[remaining+1].id}" data-ac-go="lesson">下一門課 →</button>`:''}`}</div></div><div class="panel"><b>與目前工作台的關聯</b><p>切換「訂單與產能排程」、「BOM、原物料與庫存」或「代工廠」操作後，回來重新查資料即可看到更新的數值。題目答案會根據當下狀態重新計算；練習作答保留的是當次結果。</p><div class="line"><button class="btn" data-ac-work="orders">前往訂單工作台</button><button class="btn" data-ac-work="materials">前往物料工作台</button></div></div>`;}
+function dataStamp(s){return JSON.stringify([s.scenarioId,s.date,s.orders.map(x=>[x.id,x.qty,x.good,x.wip,x.qa,x.shipped,x.due,x.factoryId]),s.lots.map(x=>[x.id,x.qty,x.reserved,x.status]),s.factories.map(x=>[x.id,x.confirmed,x.capacity,x.downtime,x.reserved]),s.issues.map(x=>[x.id,x.status])]);}
+function checkPractice(l,s,p,input,reason){const expected=l.answer(s,p);let ok=false;const value=l.type==='number'?Number(input):String(input);if(l.type==='number')ok=String(input).trim()!==''&&Number.isFinite(value)&&Math.abs(value-expected)<0.011;else ok=value===expected;
+if(reason.trim().length<12)ok=false;
+const explanation=ok?`已符合目前資料的示範計算／權責條件；${l.explain}`:`目前模型對應的結果為 ${l.type==='number'?num(expected)+' '+(l.unit||''):l.choices.find(x=>x[1]===expected)?.[0]||'UNKNOWN'}。${l.explain} 請比較查到的資料，修正後重新送出。`;
+return {ok,input:String(input),reason:reason.trim(),message:explanation,expected:String(expected),date:s.date,stamp:dataStamp(s)};}
+function listRisk(s,p){const risks=[];for(const o of s.orders){const z=p.byOrder[o.id];if(z.status==='BLOCKED'||z.status==='CONDITIONAL')risks.push({priority:z.status==='BLOCKED'?0:1,name:`${o.id}｜${z.status==='BLOCKED'?'不能開工':'條件式待確認'}`,detail:(z.blockers||[]).join('；')||'仍需查證',owner:z.blockers.some(x=>x.includes('物料'))?'採購／倉管':z.blockers.some(x=>x.includes('品質'))?'品保':'生管／代工廠'});if(z.lateDays>0)risks.push({priority:2,name:`${o.id}｜試排可能遲交 ${z.lateDays} 天`,detail:'需確認客戶承諾與可行替代方案',owner:'生管／業務'});}if(!risks.length)risks.push({priority:3,name:'當前試排未見阻擋，不代表未來無風險',detail:'確認七日內到貨、工廠檔期與品質放行',owner:'生管'});return risks.sort((a,b)=>a.priority-b.priority);}
+
+function makeWeekPlan(s){if(!st.planPref)return null;const ids=s.orders.map(x=>x.id),first=st.planPref;if(!ids.includes(first))return null;const alt=E.clone(s);alt.userPriority=[first,...s.userPriority.filter(x=>x!==first&&ids.includes(x)),...ids.filter(x=>x!==first&&!s.userPriority.includes(x))];return {alternative:alt,model:E.plan(alt,'user')};}
+function weeklyPlanner(s){const before=E.plan(s,'user'),info=st.planPreview?makeWeekPlan(s):null,after=info?.model;const current=s.userPriority[0]||s.orders[0]?.id||'UNKNOWN';return `<div class="panel"><div class="line"><h2>MPS 週排程優先序：親自試排</h2><span class="pill info">先比較，不修改工作台</span></div><p>正常生管要先編製可行的週計畫。請選一張要優先安排的訂單，觀察其它訂單是否延後。這裡僅是<b>內部試排排序</b>，不會跳過缺料／品質限制，也不是對客戶的正式交期承諾。</p><form id="acPlanForm" class="ac-plan-form"><label class="fieldlabel">這次週計畫先試排哪張訂單？<select class="select" name="first" required>${s.orders.map(x=>`<option value="${esc(x.id)}" ${st.planPref===x.id?'selected':''}>${esc(x.id)}｜${esc(E.product(x.productId)?.name||x.productId)}｜交期 ${esc(x.due)}</option>`).join('')}</select></label><button type="submit" class="btn primary">試算優先順序的影響</button></form>${after?`<div class="ac-plan-result"><div class="ac-stat-grid inner"><div class="ac-stat"><small>目前可試排</small><strong>${before.summary.confirmed}</strong><span>筆；不代表已出貨</span></div><div class="ac-stat"><small>新順序可試排</small><strong>${after.summary.confirmed}</strong><span>筆；仍需確認限制</span></div><div class="ac-stat"><small>目前逾期風險</small><strong>${before.summary.late}</strong><span>筆</span></div><div class="ac-stat"><small>新順序逾期風險</small><strong>${after.summary.late}</strong><span>筆</span></div></div><div class="tablewrap"><table><thead><tr><th>訂單</th><th>原預估交貨日</th><th>試排交貨日</th><th>原狀態</th><th>新狀態</th><th>變化／未確認</th></tr></thead><tbody>${s.orders.map(x=>{const a=before.byOrder[x.id],b=after.byOrder[x.id],changed=a?.delivery!==b?.delivery||a?.status!==b?.status;return `<tr><td>${esc(x.id)}</td><td>${esc(a?.delivery||'UNKNOWN')}</td><td>${esc(b?.delivery||'UNKNOWN')}</td><td>${esc(a?.status||'UNKNOWN')}</td><td>${esc(b?.status||'UNKNOWN')}</td><td>${changed?'有影響':'未見變化'}${b?.blockers?.length?`<br><small>${esc(b.blockers.join('；'))}</small>`:''}</td></tr>`}).join('')}</tbody></table></div><div class="note warn topspace"><b>試算限制：</b>加班、轉廠、物流或違約成本 UNKNOWN；未確認條件不能直接當成可執行。選擇不同順序只代表產能分配的示範結果，不會修改品保與客戶承諾。</div><div class="line topspace"><button type="button" class="btn" data-ac-retry-plan>修改選擇再試算</button><button type="button" class="btn primary" data-ac-commit-plan>明確確認：套用到模擬工作台的內部排序</button></div></div>`:''}</div>`;}
+
+const DAY_TASKS=[
+ ['晨會前整理','確認昨天計畫與回報、今日應生產與交期','缺料、品質或到貨未知要先標示，不能口頭假設完成','列出今天需要查證的責任人與追蹤時間'],
+ ['看物料與供應','以 BOM 和已放行庫存檢查未來三日需求','查供應商承諾與到貨可靠度，未確認則 UNKNOWN','分配採購追料與倉管盤點，可並行'],
+ ['檢查委外與產能','對照廠商相容性、已承諾產能與換線','查 F-A 排程和 F-B 未確認檔期','提供維持原排、暫排或協調交期的方案'],
+ ['更新進度與品質','分開記錄完成良品、在製與品保放行','檢查異常是否有責任人、追蹤時間、結案條件','向主管說明落差而非只說「很趕」'],
+ ['週結算與下週預排','彙整本週已處理事項、仍有的風險','更新下一週物料、可用產能及已確認交期','完成週檢討與中期風險評估']
+];
+function week(s,p){const risks=listRisk(s,p),day=st.day,details=DAY_TASKS[day],complete=st.dayDone[day],checks=st.inspected['day'+day]||[];const date=E.plusWork(s.date,day);const planDay=p.timeline.filter(x=>x.day===date);return `<div class="ac-hero week"><span class="ac-eyebrow">NORMAL OPERATIONS · 不等事情出問題才管理</span><h2>模擬生管工作週</h2><p>以同一份示範訂單和庫存，練習五個工作日的「查資料 → 發現風險 → 分工 → 回報」。切換日期不會自動產生或扣除完工量，仍需在原工作台回報進度。</p></div><div class="ac-day-strip">${DAY_TASKS.map((x,i)=>`<button class="ac-day ${day===i?'current':''} ${st.dayDone[i]?'finished':''}" data-ac-day="${i}"><b>DAY ${i+1}</b><small>${esc(x[0])}</small>${st.dayDone[i]?'✓':''}</button>`).join('')}</div><div class="grid two"><div class="panel"><div class="ac-eyebrow">DAY ${day+1} · ${esc(date)}｜模擬工作日</div><h2>${esc(details[0])}</h2><p>今天的管理目標：不只處理眼前訂單，更要及早辨識未來的交期、物料與產能風險。</p><div class="ac-stat-grid inner"><div class="ac-stat"><small>今日示範排產</small><strong>${num(planDay.reduce((a,x)=>a+x.qty,0))}</strong><span>箱；不是實際完工</span></div><div class="ac-stat"><small>阻擋／條件式</small><strong>${p.summary.blocked+p.summary.conditional}</strong><span>筆需協調</span></div></div><h3>主動查核清單</h3>${details.slice(1).map((x,i)=>`<button type="button" class="ac-inspect-card" data-ac-daycheck="${i}"><b>${checks.includes(i)?'✓ 已查核':'＋ 查閱'}　${esc(x)}</b>${checks.includes(i)?`<span>${esc(i===0?'今日模擬試排總量 '+planDay.reduce((a,x)=>a+x.qty,0)+' 箱；仍要檢查良品與品保進度。':i===1?'主要風險：'+risks[0].name+'；'+risks[0].detail:'依風險分派採購、品保、業務與代工廠確認；生管負責整合追蹤。')}</span>`:''}</button>`).join('')}</div><div class="panel"><h2>你的管理判斷</h2><p>請先查閱至少兩項資料，再決定今天該追蹤哪類問題；在正常工作日也要預測下週風險。</p><form id="acDayForm"><label class="fieldlabel">今天最值得優先確認的事情<select class="select" name="focus" required><option value="">選擇一項</option><option value="quality">食安、品質或未放行限制</option><option value="material">缺料、到貨或庫存可用性</option><option value="capacity">工廠產能與檔期</option><option value="delivery">訂單交期、完成與客戶承諾</option></select></label><label class="fieldlabel">需要同步聯繫的角色<select class="select" name="owner" required><option value="">請選擇</option>${['品保','採購','倉管','業務','代工廠','主管'].map(x=>`<option>${x}</option>`).join('')}</select></label><label class="fieldlabel">下一次追蹤日期<input name="follow" class="field" type="date" min="${esc(s.date)}" required value="${esc(complete?.follow||date)}"></label><label class="fieldlabel">用數字或資料說明原因，並寫出下一步（至少 20 字）<textarea name="reason" class="field" required minlength="20" placeholder="我看到……，因此先向……查……，預定……再確認">${esc(complete?.reason||'')}</textarea></label><button class="btn primary" type="submit">保存今天的管理紀錄</button></form>${complete?`<div class="ac-result pass"><b>✓ 本日管理紀錄已保存</b><p>${esc(complete.feedback)}</p><p>追蹤：${esc(complete.follow)}；聯絡：${esc(complete.owner)}</p></div>`:''}</div></div>
+<div class="panel"><div class="line"><h2>未來七天的主動風險掃描</h2><span class="pill warn">以目前工作台的試排為準</span></div>${risks.slice(0,6).map(x=>`<div class="ac-risk"><b>${esc(x.name)}</b><span>${esc(x.detail)}</span><small>建議同步詢問：${esc(x.owner)}</small></div>`).join('')}<div class="line topspace"><button class="btn" data-ac-work="orders">查產能試排</button><button class="btn" data-ac-work="materials">查 BOM 與庫存</button><button class="btn" data-ac-work="issues">查事件追蹤</button></div></div>
+${weeklyPlanner(s)}<div class="grid two"><div class="panel"><h2>每週管理檢討</h2><p>選擇你認為下週最容易讓交期失準的因素，並以當前報表為依據說明。未提供的資料不要自行填成本。</p><form id="acWeekForm"><label class="fieldlabel">本週需要最先確認的整體風險<select class="select" name="risk" required><option value="">請選</option><option value="material">供應商到貨與庫存可用</option><option value="capacity">工廠可用產能與換線時間</option><option value="quality">品質放行與批次控制</option><option value="delivery">訂單與交期壓力</option></select></label><label class="fieldlabel">佐證與下週管理措施（至少 20 字）<textarea class="field" name="note" minlength="20" required>${esc(st.weekReview?.note||'')}</textarea></label><button class="btn primary" type="submit">儲存週檢討</button></form>${st.weekReview?'<div class="ac-result pass">✓ 週檢討已保存，已列入學習紀錄。</div>':''}</div><div class="panel"><h2>中期供應／產能檢討</h2><p>從未來 2～4 週的角度，想想要提前確認的瓶頸。此 DEMO 無真實供應商承諾與成本，只能建立「待確認」行動。</p><form id="acMonthForm"><label class="fieldlabel">選擇一項應提前追蹤的中期風險<select class="select" name="risk" required><option value="">請選</option><option value="material">關鍵原料前置時間與安全庫存</option><option value="factory">代工廠下一週檔期與核准產能</option><option value="shelf">批次效期與可能呆滯</option></select></label><label class="fieldlabel">提早多久確認？下一步是什麼？（至少 20 字）<textarea class="field" name="note" minlength="20" required>${esc(st.monthReview?.note||'')}</textarea></label><button class="btn primary" type="submit">儲存中期管理計畫</button></form>${st.monthReview?'<div class="ac-result pass">✓ 中期風險計畫已保存。這不是對真實供應商的正式通知。</div>':''}</div></div>`;}
+const LEVELS=[
+ {title:'Level 1｜能辨識流程與權責',label:'品質放行由哪個部門判定？',type:'pick',choices:[['生管','pm'],['品保／授權人員','qa'],['業務','sales']],answer:()=> 'qa',reason:'權責正確、知道越權風險'},
+ {title:'Level 2｜能讀懂可用庫存',label:'目前芒果果泥已放行、扣預留的當日可用量是多少公斤？',type:'number',answer:s=>E.usable(s,'M-MANGO',s.date),reason:'帳面與可用量分離'},
+ {title:'Level 3｜能展開基本 BOM',label:'SO-101 剩餘投入量需要多少公斤芒果果泥？',type:'number',answer:s=>nround(E.orderRemaining(o(s,'SO-101'))*1.4),reason:'使用剩餘待投入量而非盲用整張訂單'},
+ {title:'Level 4｜能辨識不可執行計畫',label:'目前有多少筆訂單被標為禁止開工或條件式待確認？',type:'number',answer:(s,p)=>p.summary.blocked+p.summary.conditional,reason:'試排與正式承諾必須區分'},
+ {title:'Level 5｜能處理品質風險',label:'發現未放行批次但客戶催出貨，先做什麼？',type:'pick',choices:[['先出貨，稍後補文件','ship'],['控制批次流向、通知品保並評估交期','hold'],['先用其它同類批次不做紀錄','replace']],answer:()=> 'hold',reason:'重大品質風險先止損，不能越權'},
+ {title:'Level 6｜能同步管理四起事件',label:'依現有四件示範事件，完成各事件的等級與負責人分派（處理可並行，沒有固定步驟排序）。',type:'multi',reason:'先控制食安，其他部門同步確認；說出下次追蹤與交期影響'}
+];
+function levelView(s,p){const done=status().levels;return `<div class="ac-hero"><div class="ac-eyebrow">SKILL CHECK · 給自己的實務能力驗收</div><h2>六階段能力挑戰</h2><p>每一級都需要實際查數字或作出權責判斷，並寫出理由。不只看按鈕或背題目。若先前修改過工作台，題目會反映當下資料。</p></div><div class="ac-levels">${LEVELS.map((l,i)=>{const available=i===0||!!st.levels[i-1];const complete=st.levels[i];return `<div class="panel ac-level ${!available?'locked':''}"><div class="line"><h2>${esc(l.title)}</h2><span class="pill ${complete?'good':available?'info':'warn'}">${complete?'✓ 已通過':available?'可進行':'先通過前一級'}</span></div><p>${esc(l.label)}</p>${available&&!complete?`<form class="acLevelForm" data-level="${i}">${l.type==='number'?`<input class="field" type="number" step="any" name="answer" required placeholder="輸入答案">`:l.type==='pick'?`<div class="ac-radio">${l.choices.map(([label,value])=>`<label><input type="radio" name="answer" value="${esc(value)}" required>${esc(label)}</label>`).join('')}</div>`:`<div class="ac-multi">${E.MULTI_EVENTS.map(e=>`<div class="ac-multi-row"><b>${esc(e.time)} ${esc(e.name)}</b><label>事件分級<select name="p_${e.id}" class="select" required><option value="">請選</option>${['P0','P1','P2','P3'].map(q=>`<option value="${q}">${q}</option>`).join('')}</select></label><label>負責角色<select name="o_${e.id}" class="select" required><option value="">請選</option>${['品保','設備','業務','資材','採購','生管'].map(q=>`<option>${q}</option>`).join('')}</select></label></div>`).join('')}</div>`}<label class="fieldlabel">判斷依據＋協調／追蹤安排（至少 20 字）<textarea class="field" name="reason" minlength="20" required placeholder="我先……，因為……，會同步請……確認，並在……再追。"></textarea></label><button type="submit" class="btn primary">送出本級驗收</button></form>`:complete?`<div class="ac-result pass">${esc(complete.reason)}<p>已通過驗收（以提交時資料為準）。</p></div>`:'<p class="tiny">請完成前一級，再進行此關。</p>'}</div>`}).join('')}</div>${notice?`<div class="ac-result retry">${esc(notice)}</div>`:''}`;}
+function glossaryView(){return `<div class="ac-hero"><span class="ac-eyebrow">專業術語 · 實務用途 · 常見誤解</span><h2>食品生管知識庫</h2><p>用台灣職場常見說法學專業名詞，每個詞都有白話說明、正式用途、例子與容易犯的錯誤。</p></div><div class="panel">${glossary.map(x=>glossaryHtml(x[0])).join('')}${sourceInfo}</div>`;}
+function render(s,p){let v=st.view;if(v==='lesson'&&!st.active){st.active='m01';}return `<div class="academy">${v==='catalog'?catalog(s,p):v==='lesson'?lesson(s,p):v==='week'?week(s,p):v==='levels'?levelView(s,p):glossaryView()}${notice?`<div class="ac-flash" role="status">${esc(notice)}</div>`:''}</div>`;}
+function click(event,s,p,api){const b=event.target.closest('button');if(!b)return false;
+if(b.dataset.acWork){api.navigate(b.dataset.acWork);return true;}
+if(b.hasAttribute('data-ac-retry-plan')){st.planPreview=false;save();api.render();return true;}
+if(b.hasAttribute('data-ac-commit-plan')){const z=makeWeekPlan(s);if(!z){notice='請先試算方案。';api.render();return true;}if(!confirm('僅套用模擬工作台的排序偏好，不等於可正式開工或對客戶承諾。確認套用？'))return true;try{const opt={name:'教學週計畫排序',kind:'priority',order:z.alternative.userPriority,req:[]};const changed=E.commitOption(s,opt);api.setState(changed);notice='已更新模擬工作台內部排程偏好，仍須查看未確認與阻擋條件。';api.render();}catch(err){notice='不可套用：'+err.message;api.render();}return true;}
+if(b.dataset.acGo){if(b.dataset.acLesson){st.active=b.dataset.acLesson;st.stage=1;}go(b.dataset.acGo);notice='';api.render();return true;}
+if(b.dataset.acLesson){st.active=b.dataset.acLesson;st.stage=1;go('lesson');api.render();return true;}
+if(b.dataset.acPhase){const to=Number(b.dataset.acPhase),l=LESSONS.find(x=>x.id===st.active);if(to<st.stage||to<=2||to===st.stage){st.stage=to;save();api.render();}else if(to>st.stage)notice='請完成目前階段後再往下。';api.render();return true;}
+if(b.dataset.acStage){const l=LESSONS.find(x=>x.id===st.active);if(b.dataset.acStage==='prev'){st.stage=Math.max(1,st.stage-1);notice='';save();api.render();return true;}
+if(st.stage===3&&(st.inspected[l.id]||[]).length<2){notice='請先查閱至少兩個資料來源再進入練習。';api.render();return true;}
+if(st.stage===4&&(!st.answers[l.id]?.ok||st.answers[l.id]?.stamp!==dataStamp(s))){notice='請以目前工作台資料重新完成獨立練習，再查看專家回饋。';api.render();return true;}
+st.stage=Math.min(6,st.stage+1);notice='';save();api.render();return true;}
+if(b.dataset.acInspect!==undefined){const l=LESSONS.find(x=>x.id===st.active);const i=Number(b.dataset.acInspect);st.inspected[l.id]||=[];if(!st.inspected[l.id].includes(i))st.inspected[l.id].push(i);save();api.render();return true;}
+if(b.dataset.acDay!==undefined){st.day=Number(b.dataset.acDay);notice='';save();api.render();return true;}
+if(b.dataset.acDaycheck!==undefined){const key='day'+st.day;st.inspected[key]||=[];const i=Number(b.dataset.acDaycheck);if(!st.inspected[key].includes(i))st.inspected[key].push(i);save();api.render();return true;}
+return false;}
+function submit(event,s,p,api){const f=event.target;if(!['acPractice','acTransfer','acDayForm','acWeekForm','acMonthForm','acPlanForm'].includes(f.id)&&!f.classList.contains('acLevelForm'))return false;
+event.preventDefault();const fd=new FormData(f);notice='';
+if(f.id==='acPlanForm'){st.planPref=String(fd.get('first')||'');st.planPreview=true;notice='已完成週計畫試排。請比較各訂單的新舊狀態，注意成本 UNKNOWN 與阻擋條件。';save();api.render();return true;}
+if(f.id==='acPractice'){const l=LESSONS.find(x=>x.id===fd.get('lesson'));if(!l)return true;st.answers[l.id]=checkPractice(l,s,p,fd.get('answer')??'',String(fd.get('reason')||''));notice=st.answers[l.id].ok?'測試結果已保存。請前往專家回饋。':'先比較資料與公式，再重新練習。';save();api.render();return true;}
+if(f.id==='acTransfer'){const id=st.active,note=String(fd.get('transfer')||'').trim();if(!st.answers[id]?.ok||st.answers[id]?.stamp!==dataStamp(s)){st.stage=4;notice='工作台數字已變更，請先重新完成當前練習。';api.render();return true;}if(note.length<20){notice='請至少寫 20 字的實際決策說明。';api.render();return true;}st.notes[id]=note;st.done[id]={date:s.date,answer:st.answers[id]?.input??null};save();api.render();return true;}
+if(f.id==='acDayForm'){if((st.inspected['day'+st.day]||[]).length<2){notice='請先主動查閱至少兩項管理資料，不能只填答案。';api.render();return true;}const reason=String(fd.get('reason')||'').trim();if(reason.length<20){notice='請說明數據依據、協調對象及後續追蹤，至少 20 字。';api.render();return true;}const risk=listRisk(s,p)[0];st.dayDone[st.day]={focus:fd.get('focus'),owner:fd.get('owner'),follow:fd.get('follow'),reason,feedback:`本次將「${risk.name}」納入檢視。注意：選擇的處理方向需要與實際訂單的品質、料況及工廠條件比對，不能只憑急單標記。`};save();api.render();return true;}
+if(f.id==='acWeekForm'){st.weekReview={risk:fd.get('risk'),note:String(fd.get('note')||'').trim(),date:s.date};save();api.render();return true;}
+if(f.id==='acMonthForm'){st.monthReview={risk:fd.get('risk'),note:String(fd.get('note')||'').trim(),date:s.date};save();api.render();return true;}
+if(f.classList.contains('acLevelForm')){const i=Number(f.dataset.level);const lvl=LEVELS[i];if(i>0&&!st.levels[i-1]){notice='需先通過上一級。';api.render();return true;}let ok;if(lvl.type==='multi'){
+const q=E.MULTI_EVENTS.map(x=>({p:fd.get('p_'+x.id)===x.expected,owner:fd.get('o_'+x.id)===x.owner}));ok=q[0].p&&q[0].owner&&q.filter(x=>x.p).length>=3&&q.filter(x=>x.owner).length>=3;
+}else{const ans=lvl.answer(s,p);ok=lvl.type==='number'?Number.isFinite(Number(fd.get('answer')))&&String(fd.get('answer')).trim()!==''&&Math.abs(Number(fd.get('answer'))-ans)<0.011:fd.get('answer')===ans;}
+const reason=String(fd.get('reason')||'').trim();if(reason.length<20)ok=false;if(ok){st.levels[i]={reason,date:s.date};notice=`Level ${i+1} PASS｜${lvl.reason}。`;}
+else notice=`Level ${i+1} 尚未通過：請核對原始資料、權責、日期與處理方式，再重新嘗試；不同合理處理順序不扣分。`;
+save();api.render();return true;}
+return false;}
+function reset(){st=fresh();notice='已清除課程學習進度。';save();}
+return {LESSONS,glossary,LEVELS,sourceInfo,render,click,submit,reset,status,state,go,__teacherUpdate:(fn)=>{fn(st);save();},__test:{dataStamp,checkPractice,inspectionData,listRisk,makeWeekPlan,fresh}};
+});
+</script><script>/* v4.1 teaching layer — incremental, never replaces PC calculation/quality restrictions. */
+(function(root){'use strict';
+const A=root.ACADEMY,E=root.PC;if(!A||!E)throw Error('v4 academy and engine are required');
+const OLD={render:A.render,click:A.click,submit:A.submit,reset:A.reset,go:A.go};
+const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt=x=>Number(x).toLocaleString('zh-TW',{maximumFractionDigits:2});
+const base=()=>({mode:'guide',welcomeSeen:false,draft:{},progress:{},feedback:null,missing:null,route:null,rounds:{scene:'delay',round:0,checked:{},options:{},drafts:{},logs:{}}});
+function teacher(){return Object.assign(base(),A.state().teacher||{});}
+function update(fn){A.__teacherUpdate(st=>{if(!st.teacher)st.teacher=base();fn(st.teacher,st);});}
+function progress(l){return teacher().progress[l.id]||{attempts:0,hint:0,passed:null,variantPassed:null,full:false};}
+function stamp(s){return A.__test.dataStamp(s)}
+function currentLesson(){return A.LESSONS.find(x=>x.id===A.state().active)||A.LESSONS[0]}
+function focus(id){const el=document.getElementById(id);if(!el)return false;el.scrollIntoView({behavior:'smooth',block:'center'});el.classList.add('ac-focus');if(el.focus){el.setAttribute('tabindex',el.hasAttribute('tabindex')?el.getAttribute('tabindex'):'-1');el.focus({preventScroll:true});}root.setTimeout(()=>el.classList.remove('ac-focus'),1700);return true;}
+function noticeBox(kind,title,body,button='',target=''){return `<div class="coach-note ${kind}" role="status" aria-live="polite"><b>${esc(title)}</b><p>${esc(body)}</p>${button?`<button class="btn small" type="button" data-teach-focus="${esc(target)}">${esc(button)}</button>`:''}</div>`}
+const hints={
+ m01:['生管負責協調，不代表具有品質放行權。','想想食品檢驗合格或隔離解除由哪個授權角色判定。'],
+ m02:['先確認交期承諾的必要條件。','工廠檔期 UNKNOWN 時，對業務只能說明評估狀態，不能直接允諾客戶。'],
+ m03:['把本週 F-A 每一天排到的箱數加總。','從工作台「訂單與產能排程」看 F-A 排程時間軸，僅納入本日起五個工作天。'],
+ m04:['毛需求的單位是公斤，不是箱。','請先查剩餘待投入箱數，再查 BOM 每箱用量；計算為「箱數 × 公斤／箱」。'],
+ m05:['可用時間不是標準 480 分鐘。','先扣停機分鐘，再扣已承諾的箱數換算成分鐘：箱數 × 480 ÷ 日產能。'],
+ m06:['可用庫存不是帳面總量。','只加總已放行批次的 qty－reserved；待驗、隔離和在途品先排除。'],
+ m07:['兼容的產品，還需廠商「檔期已確認」。','查看工廠清單的 compatible 和 confirmed 兩個欄位，缺一不可。'],
+ m08:['品質限制優先於趕交期。','原料隔離時，由品保或授權人員判定；生管只能配合停止、查證、調整。'],
+ m09:['良品與在製品都已進入流程，不能重排全部訂單。','尚待投入＝訂單箱數－累計良品－目前在製箱數，不能把出貨量再扣一次。'],
+ m10:['本系統是模擬工具，並未連到公司 ERP。','不知實際 ERP 版本、權限或設定時，應標示 UNKNOWN 並向公司確認。']
+};
+const variants={
+ m01:{text:'變化題：客戶正式改交期，要由哪個角色對外確認承諾？',type:'pick',choices:[['品保','qa'],['業務（依授權流程）','sales'],['倉管','warehouse']],answer:()=> 'sales',explain:'客戶交期溝通由業務與授權主管確認；生管先提供可行性試算。'},
+ m02:{text:'變化題：採購表示「原料可能後天到」，但尚無正式確認，能否當成今天可用？',type:'pick',choices:[['可以，估計會到','yes'],['不可以，標 UNKNOWN 並追正式資訊','unknown']],answer:()=> 'unknown',explain:'預計到貨與今天可用原料是兩回事。'},
+ m03:{text:'變化題：把剛才 F-A 五日排定總數中的 20 箱移至下週，這週的試算總量剩多少箱？（僅練習計畫加減，實際改排還需驗證）',type:'number',answer:(s,p)=>Math.max(0,A.LESSONS[2].answer(s,p)-20),unit:'箱',explain:'原本本週 F-A 排入箱數－20；此練習不會真的修改排程。'},
+ m04:{text:'變化題：假設在目前 SO-101 待投入箱數上，再新增 50 箱需求；若仍使用 1.4 公斤／箱，毛需求會變成幾公斤？（只是試算，不修改正式訂單）',type:'number',answer:(s,p)=>Math.round((A.LESSONS[3].answer(s,p)+50*1.4)*1000)/1000,unit:'公斤',explain:'新的試算毛需求＝(原本剩餘箱數＋50) × 1.4。'},
+ m05:{text:'變化題：如果今天另外多停機 30 分鐘，剩餘可用分鐘數會變多少？',type:'number',answer:(s,p)=>Math.max(0,A.LESSONS[4].answer(s,p)-30),unit:'分鐘',explain:'可用分鐘數再扣 30；若原本已不足 30 分，結果不得低於 0。'},
+ m06:{text:'變化題：另外入庫一批「已完成品保放行」200 支 PET 瓶，其中 50 支已預留，新的可用量是多少？',type:'number',answer:(s,p)=>A.LESSONS[5].answer(s,p)+150,unit:'支',explain:'新批次只增加 200－50＝150 支可用量。'},
+ m07:{text:'變化題：F-B 可以做 P-M，但檔期還沒確認，可把轉廠當正式可執行方案嗎？',type:'pick',choices:[['可以，產品相容就夠','yes'],['不可以，僅列條件式待確認','conditional']],answer:()=> 'conditional',explain:'相容性與可用檔期是兩個獨立限制。'},
+ m08:{text:'變化題：已完成生產良品，但品保未授權放行，能直接登記出貨嗎？',type:'pick',choices:[['能，良品已完成','yes'],['不能，須先經品質授權放行','no']],answer:()=> 'no',explain:'生產完成不等於品質放行，也不等於已出貨。'},
+ m09:{text:'變化題：假設 SO-101 又多完成 20 箱良品（在製與訂單量不變），新的「尚待投入」箱數是多少？',type:'number',answer:(s,p)=>Math.max(0,A.LESSONS[8].answer(s,p)-20),unit:'箱',explain:'原本尚待投入量－新增的 20 箱良品，且不可低於零。'},
+ m10:{text:'變化題：ERP 顯示有 200 公斤原料，品保狀態為隔離，生管可直接把它算入開工可用量嗎？',type:'pick',choices:[['可以，有帳面數即可','yes'],['不行，須排除並追品保判定','no']],answer:()=> 'no',explain:'系統有紀錄不代表原料已獲放行。'}
+};
+function exactNumeric(input){if(String(input).trim()==='')return {valid:false,message:'這個欄位還沒填數字。請看題目單位，輸入實際計算結果。'};const n=Number(input);if(!Number.isFinite(n))return {valid:false,message:'這個欄位需要填數字，不能填文字或單位。例：504 公斤只輸入 504。'};if(n<0)return {valid:false,message:'這裡不能填負數。請重新確認數量、扣除項目與單位。'};if(n>1e9)return {valid:false,message:'輸入值超出本教學題的合理範圍，請核對是否多打零或單位換算有誤。'};return {valid:true,value:n};}
+function grade(l,s,p,input,reason,variation=false){const v=variation?variants[l.id]:l;const expected=v.answer(s,p);let candidate=input,wrong='';if(v.type==='number'){const valid=exactNumeric(input);if(!valid.valid)return {ok:false,kind:'field',reason:valid.message};candidate=valid.value;if(Math.abs(candidate-expected)>0.011){if(l.id==='m04'&&!variation&&Math.abs(candidate-E.orderRemaining(s.orders.find(x=>x.id==='SO-101')))<0.011)wrong='這個數字看起來是剩餘箱數，而不是公斤重量。';else if(l.id==='m04'&&!variation&&Math.abs(candidate-140)<0.011)wrong='140 公斤是示範題「100 箱」的結果，不是這一題的即時訂單量。';else wrong='目前無法確定你在哪一步算錯。請先核對資料與計算單位。';}}
+else{if(!String(input).trim())return {ok:false,kind:'field',reason:'還沒有選擇答案。請先選一個方案或權責角色，再送出。'};if(candidate!==expected)wrong='這個判斷目前不符合題目條件，請重新核對權責或限制；無法單從選項確定你的思考原因。';}
+if(!variation&&String(reason||'').trim().length<12)return {ok:false,kind:'field',reason:'你的判斷理由不足 12 字。請說明「依據哪個資料、為什麼、要找誰確認」。'};
+if((v.type==='number'&&Math.abs(candidate-expected)>0.011)||(v.type!=='number'&&candidate!==expected))return {ok:false,kind:'answer',reason:wrong};
+return {ok:true,kind:'success',reason:variation?v.explain:`你的答案符合目前示範資料；${l.explain} 請繼續完成不同數字或條件的變化題。`};}
+function instruction(l,s,p,stage){const x=teacher(),checked=(A.state().inspected[l.id]||[]).length,pr=progress(l),valid=!!pr.passed&&pr.passed.stamp===stamp(s),changed=pr.passed&&!valid;
+if(stage===1)return ['認識這項工作的專業觀念','先理解為什麼要做，否則遇到不同情境會只記得按鈕。','閱讀下方觀念與名詞，然後按「下一步：看數字示範」。','coach-next'];
+if(stage===2)return ['跟著看一個完整的例子','看懂數字的來源、單位與公式，再進入工作台資料。','確認示範計算後，按「下一步：查詢實際模擬資料」。','coach-next'];
+if(stage===3)return ['查詢資料，建立判斷依據','生管先查證，不把未知的到貨與品質狀態當成已確認。',checked<2?`目前已查 ${checked}/2 項，請點「＋ 查詢 ${l.inspection.find((v,i)=>!(A.state().inspected[l.id]||[]).includes(i))||l.inspection[0]}」。`:'資料查詢已達標，請按「下一步：獨立練習」。','coach-inspect-0'];
+if(stage===4)return ['獨立計算與變化題','把查到的資料轉成自己的判斷；答錯時先看提示，不會立即公布答案。',changed?'工作台資料已變更，舊答案失效。請按「重新讀取最新資料」再算。':!valid?'先回答目前資料題，填寫理由，再按「驗證我的答案」。':!pr.variantPassed||pr.variantPassed.stamp!==stamp(s)?'第一題已通過，接著回答不同數字／條件的變化題。':'兩題都通過了，請按「下一步：主管講評」。','coach-answer'];
+if(stage===5)return ['理解主管回饋與不同方案','能說出為什麼合理、有哪些限制、誰負責確認，才算掌握原理。','閱讀講評後按「下一步：延伸應用」。','coach-next'];
+return ['應用到日常管理與決策說明','說明依據、風險、責任單位及追蹤方式，不只是寫「我會處理」。','填寫至少 20 字的處理說明，按「完成本課」。','coach-transfer'];}
+function coachFrame(l,s,p,stage,content){const t=teacher(),ins=instruction(l,s,p,stage),ind=A.LESSONS.indexOf(l),checked=(A.state().inspected[l.id]||[]).length,pr=progress(l),st=A.state();const stageNames=['專業觀念','數據示範','查閱資料','獨立練習','專家回饋','延伸應用'];return `<div class="academy ac41"><div class="ac-breadcrumb"><button class="btn small" data-teach-action="catalog">← 返回課程地圖</button><span>第 ${String(ind+1).padStart(2,'0')} 課／10 · ${esc(t.mode==='guide'?'新手引導模式':'獨立挑戰模式')}</span></div><section class="panel ac-lesson"><div class="line ac41-top"><div><span class="ac-eyebrow">FOOD OEM／ODM · V4.2</span><h2>${esc(l.title)}</h2></div><div class="coach-switch"><button class="btn small ${t.mode==='guide'?'primary':''}" data-teach-mode="guide">新手引導</button><button class="btn small ${t.mode==='challenge'?'primary':''}" data-teach-mode="challenge">獨立挑戰</button></div></div><div class="ac-phase">${stageNames.map((x,i)=>`<button type="button" class="ac-phase-btn ${stage===i+1?'on':''}" data-teach-stage="${i+1}" aria-current="${stage===i+1?'step':'false'}">${i+1}<span>${esc(x)}</span></button>`).join('')}</div>${t.mode==='guide'?`<section class="coach-guide" aria-label="目前學習目標"><span class="ac-eyebrow">現在該做什麼 · 第 ${stage}／6 步</span><h3>${esc(ins[0])}</h3><p><b>為什麼：</b>${esc(ins[1])}</p><p><b>下一步：</b>${esc(ins[2])}</p><div class="line"><button class="btn small" data-teach-help>我看不懂</button><button class="btn small" data-teach-action="restart-example">重新示範</button><button class="btn small" data-teach-focus="${esc(ins[3])}">帶我去操作</button></div></section>`:`<section class="coach-guide challenge" aria-label="獨立挑戰模式"><span class="ac-eyebrow">獨立挑戰 · 第 ${stage}／6 步</span><h3>${esc(ins[0])}</h3><p>請先自行閱讀目前資料、完成練習並說明依據。此模式不會主動指出應先點哪張卡或公布答案；必要時可以主動要求協助。</p><div class="line"><button class="btn small" data-teach-help>需要提示時按這裡</button><button class="btn small" data-teach-mode="guide">切換回新手引導</button></div></section>`}<section class="ac-lesson-body"><h3>${stage}｜${stageNames[stage-1]}</h3>${content}${t.feedback&&t.feedback.lesson===l.id&&t.feedback.stage===stage?feedbackView(t.feedback):''}</section><div class="ac-actions">${stage>1?'<button class="btn" data-teach-stage="prev">← 上一步</button>':''}${stage<6?`<button id="coach-next" class="btn primary" data-teach-stage="next">${['下一步：看數字示範','下一步：查詢資料','下一步：獨立練習','下一步：主管講評','下一步：延伸應用'][stage-1]} →</button>`:`<button class="btn" data-teach-action="catalog">返回課程地圖</button>${st.done[l.id]&&A.LESSONS[ind+1]?`<button class="btn primary" data-teach-lesson="${A.LESSONS[ind+1].id}">下一課 →</button>`:''}`}</div></section><section class="panel"><b>需要回工作台查資料？</b><p>會保留本課所在階段與尚未送出的文字。查完可直接按「返回剛才的課程」。</p><div class="line"><button class="btn" data-teach-work="orders">前往訂單與產能頁</button><button class="btn" data-teach-work="materials">前往物料頁</button><button class="btn" data-teach-work="factories">前往代工廠頁</button></div></section></div>`;}
+function feedbackView(f){const kind=f.ok?'success':f.kind==='field'?'error':'warning';return `<div class="coach-note ${kind}" role="status" aria-live="polite"><b>${esc(f.title|| (f.ok?'驗證通過':'請再修正'))}</b><p>${esc(f.reason)}</p>${f.next?`<p><b>下一步：</b>${esc(f.next)}</p>`:''}<div class="line"><button type="button" class="btn small" data-teach-focus="${esc(f.target||'coach-answer')}">帶我去修正</button>${f.kind==='answer'?'<button class="btn small" data-teach-hint>我需要一點提示</button>':''}<button type="button" class="btn small" data-teach-dismiss>關閉提示</button></div></div>`;}
+function reminder(l,s,p){const pr=progress(l);if(pr.passed&&pr.passed.stamp!==stamp(s))return noticeBox('warning','先前答案已失效',`工作台的訂單、良品、物料或排程資料已變更；當時的正確答案不適用目前狀態。你的草稿與完成紀錄仍保留，但需重新驗證。`)+`<button class="btn primary" type="button" data-teach-refresh>重新讀取最新資料</button>`;return '';}
+function renderLesson(s,p){const st=A.state(),l=currentLesson(),stage=st.stage,pr=progress(l),t=teacher(),draft=t.draft[l.id]||{},valid=!!pr.passed&&pr.passed.stamp===stamp(s),vpass=!!pr.variantPassed&&pr.variantPassed.stamp===stamp(s);let content='';
+if(stage===1)content=`<div class="ac-paragraph"><p>${esc(l.concept)}</p><p><b>為什麼要學：</b>${esc(l.why)}</p><h3>專業主管會先想的事</h3>${(l.topics||[]).map(x=>`<p>✓ ${esc(x)}</p>`).join('')}</div><h3>關鍵名詞</h3>${l.terms.map(x=>{const g=A.glossary.find(z=>z[0]===x);return g?`<details class="ac-gloss"><summary>${esc(g[0])}　點開白話說明</summary><p>${esc(g[1])}</p><p><b>用途：</b>${esc(g[2])}</p><p><b>例子：</b>${esc(g[3])}</p><p><b>常見誤解：</b>${esc(g[4])}</p></details>`:''}).join('')}`;
+if(stage===2){const demo=l.id==='m04'?'100 箱 × 1.4 公斤／箱＝140 公斤（毛需求）。假設已放行且未預留的可用量是 90 公斤，簡化缺口為 140－90＝50 公斤。注意：今天在途未驗收不能直接扣。':l.id==='m05'?'標準 480 分鐘；停機 120 分鐘；另有已承諾工作 60 分鐘，可供新工作安排 480－120－60＝300 分鐘。清洗換線還要另扣。':l.example;content=`<div class="ac-worked" id="coach-example"><strong>先看示範（虛構數據）</strong><p>${esc(demo)}</p></div><p>下面會改用工作台現有的訂單與批號資料；示範題數字不一定與現在的題目相同。</p><div class="coach-note tip"><b>觀念提醒</b><p>${esc(l.risk)}</p></div>`;}
+if(stage===3){const seen=st.inspected[l.id]||[];content=`<p>請點選下列資料卡，查到的數值會依目前工作台計算。至少查 2 項才能前進。</p><div class="coach-counter">已查閱 <b>${seen.length}／${l.inspection.length}</b> 項；至少需要 2 項。</div><div class="ac-inspect">${l.inspection.map((x,i)=>`<button id="coach-inspect-${i}" class="ac-inspect-card" type="button" data-teach-inspect="${i}" aria-expanded="${seen.includes(i)}"><b>${seen.includes(i)?'✓ 已查閱':'＋ 查詢'} ${esc(x)}</b>${seen.includes(i)?`<span>${esc(A.__test.inspectionData(s,p,x))}</span>`:'<small>點此查看與題目相關的資料</small>'}</button>`).join('')}</div><div class="line topspace"><button class="btn small" data-teach-why>為什麼要查這些資料？</button></div>`;}
+if(stage===4){const variant=variants[l.id],vd=t.draft[l.id]?.variant||'',reason=t.draft[l.id]?.reason||'';content=`${reminder(l,s,p)}<div class="ac-question"><h3>${esc(l.question)}</h3><form id="coachPractice" novalidate><input type="hidden" name="lesson" value="${l.id}">${answerField(l,draft.answer??'',false)}<label class="fieldlabel" for="coach-reason">你的判斷理由（至少 12 字）<textarea id="coach-reason" name="reason" class="field" placeholder="我查到……，因此……；若有未確認資料會請……協助。">${esc(reason)}</textarea></label><div class="line"><button type="submit" class="btn primary">驗證我的答案</button><button type="button" class="btn" data-teach-hint>我需要提示</button></div></form>${pr.hint>0||pr.full?hintView(l,s,p,pr):''}</div>${valid?`<div class="coach-note success"><b>第一題已符合目前示範模型</b><p>但還需要通過一題數字或條件不同的題目，才能確認不是照抄答案。</p></div><div class="coach-variant"><h3>變化題｜重新驗證是否理解</h3><p>${esc(variant.text)}</p><form id="coachVariant" novalidate>${answerField(variant,vd,true)}<button type="submit" class="btn primary">驗證變化題</button></form>${vpass?noticeBox('success','變化題通過','不同條件下仍能正確計算／判斷，可進入專家回饋。'):''}</div>`:''}`;}
+if(stage===5)content=`<div class="ac-coach"><h3>資深生管主管講評</h3><p><b>正確觀念：</b>${esc(l.explain)}</p><p><b>常見風險：</b>${esc(l.risk)}</p><p><b>你的理由：</b>${esc(draft.reason||'（未保留）')}</p><p><b>其他方案：</b>可先確認品質、物料與工廠，再由採購、品保、業務同步查證。尚未確認的限制不能因排程順序而消失。</p></div>`;
+if(stage===6)content=`<div class="ac-worked"><b>把知識用在每日管理與決策說明</b><p>${esc(l.transfer)}</p></div><form id="coachTransfer" novalidate><label class="fieldlabel" for="coach-transfer">用你的話說明先做什麼、查什麼、找誰、何時追蹤（至少 20 字）<textarea class="field" name="transfer" id="coach-transfer" placeholder="我會先查看……，與……確認，預計在……追蹤。">${esc(t.draft[l.id]?.transfer??st.notes[l.id]??'')}</textarea></label><button class="btn primary" type="submit">完成本課並保存學習紀錄</button></form>${st.done[l.id]?noticeBox('success','此課已記錄完成','已保存當時的學習結果。若工作台資料改變，計算題仍需依新資料重新驗證。'):''}`;
+return coachFrame(l,s,p,stage,content);}
+function answerField(q,value,variation){const id=variation?'coach-variant-answer':'coach-answer';if(q.type==='number')return `<label class="fieldlabel" for="${id}">請填入數字（${esc(q.unit||'')}）<input id="${id}" name="answer" inputmode="decimal" type="number" step="any" min="0" class="field ac-input" value="${esc(value)}" placeholder="只輸入數字，例如 504" aria-describedby="${id}-tip"><small id="${id}-tip">單位是 ${esc(q.unit||'數量')}；不要把箱數誤當公斤數。</small></label>`;
+return `<fieldset class="coach-radio" id="${id}" tabindex="-1"><legend>選擇合理的判斷</legend>${(q.choices||[]).map(([label,key])=>`<label><input name="answer" type="radio" value="${esc(key)}" ${String(value)===String(key)?'checked':''}> ${esc(label)}</label>`).join('')}</fieldset>`;}
+function hintView(l,s,p,pr){const parts=hints[l.id]||['核對題目來源資料。','再確認條件、單位與責任人。'];const detail=l.type==='number'?`將本課公式代入目前資料：${esc(l.explain)}`:`先找出題目中的關鍵權責或限制：${esc(l.explain)}`;const expected=l.answer(s,p);return `<div class="coach-note tip" role="status"><b>分層提示 ${pr.full?'｜已查看完整解法':`第 ${Math.min(pr.hint,4)} 層`}</b><p>${esc(pr.hint===1?parts[0]:pr.hint===2?parts[1]:pr.hint>=3?detail:parts[0])}</p>${pr.full?`<p><b>示範解法：</b>${esc(detail)}；此份資料的結果為「${esc(l.type==='number'?fmt(expected)+' '+(l.unit||''):l.choices.find(x=>x[1]===expected)?.[0]||'UNKNOWN')}」。</p><p>請再回答不同數字／條件的變化題，不能直接用原答案當作已掌握。</p>`:''}<div class="line"><button class="btn small" type="button" data-teach-hint>再給一點提示</button><button class="btn small" type="button" data-teach-full>直接看完整解法</button><button class="btn small" type="button" data-teach-focus="coach-answer">返回題目輸入欄位</button></div></div>`;}
+function welcome(){return `<section class="panel coach-welcome" role="dialog" aria-label="第一次使用導覽"><span class="ac-eyebrow">WELCOME · 食品生管從零學習</span><h2>歡迎來到食品生管專業養成學院</h2><p>我們先學正常的生產管理，再看懂訂單、算物料、排產能、練習預防風險，最後才進入突發狀況。</p><p>完全不懂 ERP 沒關係。每一課都會告訴你下一步要按哪裡、為什麼要查，做錯也可以透過分層提示修正。</p><div class="line"><button type="button" class="btn primary" data-teach-welcome="start">開始第一課（推薦）</button><button type="button" class="btn" data-teach-welcome="skip">我已經會操作，進入工作台</button></div></section>`;}
+function header(){const t=teacher();return `<div class="coach-toolbar"><span><b>學習模式：</b>${t.mode==='guide'?'新手引導':'獨立挑戰'}</span><div class="line"><button type="button" class="btn small" data-teach-mode="${t.mode==='guide'?'challenge':'guide'}">切換為${t.mode==='guide'?'獨立挑戰':'新手引導'}</button><button type="button" class="btn small" data-teach-welcome="again">重新開啟新手導覽</button><button type="button" class="btn small" data-teach-action="rounds">三輪連續決策訓練</button></div></div>`;}
+const ROUND_TEXT={delay:[['供應商通知原料延遲；目前新交期 UNKNOWN。','先查缺料與既有訂單，不要只改急單優先級。'],['採購取得書面通知：果泥預計於第 4 個工作日到貨，但品質驗收尚未完成。','有了到貨預估仍不能當今日可用，應重算條件式交期。'],['供應商另提出先送 100 公斤，品保需驗收；替代配方未獲核准。','部分到貨不等於整張訂單可開工，應查淨缺與分批可行性。']],breakdown:[['F-A 今日設備停機，在製品保存條件 UNKNOWN。','先控制在製品品質與查修復時間。'],['維修通知停機延長至下一工作日，原排程須重算。','先確認新瓶頸與受影響訂單，不要擅自轉廠。'],['代工 B 已確認可用檔期，但 SO-101 有 40 箱在製，仍未取得跨廠移轉與品保核准。','比較備援時仍需先確認相容、品保與可用檔期。']],rush:[['客戶臨時要求 280 箱急單；規格已確認。','先查原料、品保與原訂單產能。'],['業務通知急單交期想再提前 1 天，正式核准 UNKNOWN。','變更需求需重新試排，不可默默改原交期。'],['主管要求提出保護既有 SO-101 的方案並列出轉廠前提。','比較不同方案的原訂單延誤與未知成本。']]};
+function roundsSnapshot(scene,round,date){const x=E.initial(scene,date);if(scene==='delay'&&round>=1){x.arrivals[0].date=E.plusWork(x.date,4);x.arrivals[0].confirmed=true;x.arrivals[0].qaReleased=false;}if(scene==='delay'&&round>=2){x.arrivals.push({id:'PO-P-PARTIAL',mid:'M-PASSION',qty:100,date:E.plusWork(x.date,2),confirmed:true,qaReleased:false});}if(scene==='breakdown'&&round>=1)x.factories[0].downtime[E.plusWork(x.date,1)]=480;if(scene==='breakdown'&&round>=2)x.factories[1].confirmed=true;
+if(scene==='rush'&&round>=1){const order=x.orders.find(z=>z.id==='R-900');order.due=E.date(order.due,-1);order.approval=false;}return x;}
+function roundFeasibility(s,sc,opt,checked,round){
+ const lacks=[],unknown=[],failed=[];
+ for(const id of opt.req||[]){const fact=sc.facts.find(x=>x.id===id);if(!fact)continue;if(!checked.includes(id)){lacks.push(fact.q);continue;}
+ if(sc.id==='delay'&&id==='eta'&&round>=1){unknown.push('新到貨日期已獲供應商確認，但尚未到貨與完成品保驗收');continue;}
+ if(fact.value==='fail')failed.push(fact.q);else if(fact.value==='unknown')unknown.push(fact.q);
+ }
+ if(opt.kind==='route'){const f=s.factories.find(x=>x.id===opt.fid),ord=s.orders.find(x=>x.id===opt.oid);if(!f?.compatible.includes(ord?.productId))failed.push('產品與工廠製程不相容');if(!f?.confirmed)unknown.push('代工廠檔期未確認');if(ord?.wip||ord?.good)failed.push('已開工訂單不能未經審核直接改派');}
+ if(opt.kind==='release')failed.push('未授權的品質放行禁止執行');
+ if(sc.id==='delay'&&opt.id==='early')failed.push('缺少關鍵原料，調成第一優先也無法開工');
+ if(sc.id==='rush'&&round>=1&&opt.id==='insert')unknown.push('提前交期尚未獲業務與主管正式核准');
+ return {status:failed.length?'BLOCKED':(lacks.length||unknown.length)?'CONDITIONAL':'FEASIBLE',lacks,unknown,failed};
+}
+function roundFactText(scene,round,f,snap){
+ if(scene==='delay'&&f.id==='eta'&&round>=1)return `已取得供應商書面到貨預計日 ${snap.arrivals[0].date}，但原料仍未入庫且未經品保放行；目前只能條件式預排。`;
+ if(scene==='delay'&&f.id==='stock'&&round>=2)return `供應商另提部分先到 100 公斤（${snap.arrivals.at(-1).date}），未驗收不能算可用；原有可用原料仍不足整張訂單。`;
+ if(scene==='breakdown'&&f.id==='slot'&&round>=2)return `代工 B 已確認可用檔期，但 SO-101 有在製品，轉廠需生管、品保與主管核准，不能直接改派。`;
+ if(scene==='rush'&&f.id==='approval'&&round>=1)return `業務提出再提前一天的需求，尚未完成內部主管與對外承諾核准：UNKNOWN。`;
+ return f.answer;
+}
+function roundsView(s){const t=teacher(),r=t.rounds,scene=['delay','breakdown','rush'].includes(r.scene)?r.scene:'delay',round=r.round||0,snap=roundsSnapshot(scene,round,s.date),sc=E.SCENARIOS.find(x=>x.id===scene),facts=ROUND_TEXT[scene][round],k=scene+'-'+round,checked=r.checked[k]||[],optionid=r.options[k]||'',basePlan=E.plan(snap,'user'),choice=sc.options.find(x=>x.id===optionid);if(choice)snap.checkedFacts=checked;
+const cmp=choice?E.compare(snap,choice,'user'):null;const term=cmp?roundFeasibility(snap,sc,choice,checked,round):null;const rd=r.drafts?.[k]||{},log=r.logs?.[k];return `<div class="academy ac41"><div class="ac-breadcrumb"><button class="btn small" data-teach-action="catalog">← 返回課程地圖</button><span>突發狀況進階訓練 · 實際模型試算（不會修改工作台）</span></div><section class="panel"><span class="ac-eyebrow">MULTI-ROUND DECISIONS</span><h2>三輪連續決策：資訊變了，方案也要重新評估</h2><div class="coach-switch">${[['delay','原物料延遲'],['breakdown','設備故障'],['rush','客戶急單']].map(([id,label])=>`<button class="btn small ${id===scene?'primary':''}" data-teach-scene="${id}">${label}</button>`).join('')}</div><h3>第 ${round+1}／3 輪：${esc(facts[0])}</h3><p>${esc(facts[1])}</p><p>日期：${esc(snap.date)}；本區僅使用獨立虛構快照，品質限制由原引擎判斷。</p><div class="coach-counter">這輪已確認資料 ${checked.length}／${sc.facts.length}</div><div class="ac-inspect">${sc.facts.map((f,i)=>`<button class="ac-inspect-card" data-teach-round-fact="${esc(f.id)}" id="coach-roundfact-${i}"><b>${checked.includes(f.id)?'✓ 已詢問':'＋ 查詢'} ${esc(f.q)}</b>${checked.includes(f.id)?`<span>${esc(f.answer)} ${f.value==='unknown'?'（UNKNOWN：未獲確認）':''}</span>`:''}</button>`).join('')}</div><h3>比較處理方案</h3><div class="coach-options">${sc.options.map(opt=>`<button class="btn ${opt.id===optionid?'primary':''}" data-teach-round-option="${opt.id}">${esc(opt.name)}</button>`).join('')}</div>${cmp?`<div class="coach-note ${term.status==='FEASIBLE'?'success':'warning'}"><b>方案狀態：${esc(term.status)}</b><p>${esc([...term.lacks,...term.unknown,...term.failed].join('；')||'前置查證符合目前示範條件，但仍不代表客戶或品保正式核准。')}</p><p><b>換線工時：</b>原 ${cmp.oldSetupHours} 小時 → 試排 ${cmp.newSetupHours} 小時；額外成本 UNKNOWN。</p></div><div class="tablewrap"><table><thead><tr><th>訂單</th><th>原交貨日</th><th>方案交貨日</th><th>原狀態</th><th>新狀態</th><th>延誤天數變化</th></tr></thead><tbody>${cmp.rows.map(x=>`<tr><td>${esc(x.id)}</td><td>${esc(x.oldDelivery||'UNKNOWN')}</td><td>${esc(x.newDelivery||'UNKNOWN')}</td><td>${esc(x.oldStatus)}</td><td>${esc(x.newStatus)}</td><td>${x.oldLate??'UNKNOWN'} → ${x.newLate??'UNKNOWN'}</td></tr>`).join('')}</tbody></table></div>`:noticeBox('tip','先做試算','請先查詢關鍵資訊並選擇一個方案，再看排程前後差異。')}${cmp?`<form id="coachRoundForm" novalidate><h3>寫下這輪的處置與追蹤</h3><label class="fieldlabel">這輪先通知哪個角色？<select class="select" name="owner"><option value="">請選</option>${['採購','品保','生管','業務','設備','主管'].map(z=>`<option ${rd.owner===z?'selected':''}>${z}</option>`).join('')}</select></label><label class="fieldlabel">我的理由（至少 16 字）<textarea class="field" name="reason" placeholder="我查到了……，目前還有……未確認，因此先……">${esc(rd.reason||'')}</textarea></label><label class="fieldlabel">下次追蹤與未確認事項<input class="field" name="follow" placeholder="例如：今天 15:00 再跟採購確認到貨與品保結果" value="${esc(rd.follow||'')}"></label><button class="btn primary" type="submit">送出本輪決策，查看主管回饋</button></form>${log?noticeBox(log.status==='FEASIBLE'?'success':'warning','已記錄本輪決策',`你向${log.owner}確認；方案狀態 ${log.status}。${log.note}；下一次追蹤：${log.follow}`):''}`:''}<div class="coach-note tip"><b>主管提醒</b><p>${esc(sc.coach)}</p><p>第二輪、第三輪的條件會改變；上一輪的判斷不會自動被當作下一輪的答案。</p></div><div class="line">${t.feedback?.lesson==='rounds'?noticeBox('warning','請補齊本輪步驟',t.feedback.reason):''}${round>0?'<button class="btn" data-teach-round-nav="prev">← 上一輪</button>':''}${round<2?'<button class="btn primary" data-teach-round-nav="next">進入下一輪資訊變化 →</button>':'<button class="btn" data-teach-round-nav="reset">重新練習三輪</button>'}</div></section></div>`;}
+A.render=(s,p)=>{const t=teacher(),v=A.state().view;if(!t.welcomeSeen&&v==='catalog')return `<div class="academy ac41">${welcome()}</div>`;if(v==='lesson')return renderLesson(s,p);if(v==='rounds')return roundsView(s);const out=OLD.render(s,p);return out.replace('<div class="academy">','<div class="academy ac41">'+header());};
+A.hasReturn=()=>!!teacher().route;
+A.globalClick=(event,s,p,api)=>{const b=event.target.closest('button[data-coach-return]');if(!b)return false;const r=teacher().route;if(!r)return false;update((t,st)=>{st.view='lesson';st.active=r.active;st.stage=r.stage;t.route=null;});api.navigate('academy');return true;};
+function report(l,stage,data){update(t=>{t.feedback=Object.assign({lesson:l.id,stage},data);});}
+A.click=(event,s,p,api)=>{const b=event.target.closest('button');if(!b)return false;const ds=b.dataset;if(!Object.keys(ds).some(x=>x.startsWith('teach')))return OLD.click(event,s,p,api);
+if(ds.teachFocus){focus(ds.teachFocus);return true;}
+if(ds.teachWelcome){update((t,st)=>{t.welcomeSeen=ds.teachWelcome!=='again';if(ds.teachWelcome==='again')st.view='catalog';if(ds.teachWelcome==='start'){t.welcomeSeen=true;st.active='m01';st.view='lesson';st.stage=1;}if(ds.teachWelcome==='skip')st.view='catalog';});if(ds.teachWelcome==='skip')api.navigate('overview');else api.render();return true;}
+if(ds.teachMode){update(t=>t.mode=ds.teachMode);api.render();return true;}
+if(ds.teachAction){if(ds.teachAction==='restart-example'){update((t,st)=>{st.stage=2;t.feedback=null;});}else if(ds.teachAction==='rounds'){update((t,st)=>{st.view='rounds';t.welcomeSeen=true;});}else if(ds.teachAction==='catalog'){update((t,st)=>{st.view='catalog';t.feedback=null;});}api.render();return true;}
+if(ds.teachLesson){update((t,st)=>{st.active=ds.teachLesson;st.stage=1;st.view='lesson';t.feedback=null;});api.render();return true;}
+if(ds.teachWork){const st=A.state();update(t=>{t.route={active:st.active,stage:st.stage};t.feedback=null;});api.navigate(ds.teachWork);return true;}
+if(ds.teachInspect!==undefined){const i=Number(ds.teachInspect),l=currentLesson();update((t,st)=>{st.inspected[l.id]||=[];if(!st.inspected[l.id].includes(i))st.inspected[l.id].push(i);t.feedback=null;});api.render();return true;}
+if(ds.teachStage!==undefined){const l=currentLesson(),cur=A.state().stage;const to=ds.teachStage==='prev'?cur-1:ds.teachStage==='next'?cur+1:Number(ds.teachStage);if(to<=cur){update((t,st)=>{st.stage=Math.max(1,to);t.feedback=null;});api.render();return true;}if(to>cur+1){report(l,cur,{kind:'field',ok:false,title:'還不能跳到後面的階段',reason:'請先完成目前的資料查詢與練習。',next:'使用本頁下一步操作，或先按「我看不懂」。',target:'coach-next'});api.render();return true;}
+if(cur===3&&(A.state().inspected[l.id]||[]).length<2){const seen=A.state().inspected[l.id]||[],idx=l.inspection.findIndex((x,i)=>!seen.includes(i));report(l,3,{ok:false,kind:'field',title:'目前還不能進入第 4 步',reason:`你目前只查了 ${seen.length}／2 項必要資料。請先查詢「${l.inspection[idx]}」。`,next:'按「帶我去修正」，點資料卡查詢後，再按下一步。',target:'coach-inspect-'+idx});api.render();return true;}
+if(cur===4){const pr=progress(l);if(!pr.passed||pr.passed.stamp!==stamp(s)||!pr.variantPassed||pr.variantPassed.stamp!==stamp(s)){report(l,4,{ok:false,kind:'field',title:'目前還不能進入第 5 步',reason:pr.passed?.stamp!==stamp(s)?'工作台數字已改變，原答案失效。':'獨立題及變化題都需要通過。',next:'按「帶我去修正」，查看題目並重新送出。',target:'coach-answer'});api.render();return true;}}
+update((t,st)=>{st.stage=Math.min(6,to);t.feedback=null;});api.render();return true;}
+if(ds.teachWhy!==undefined){const l=currentLesson();report(l,3,{ok:false,kind:'tip',title:'為什麼先查資料？',reason:l.why+'。'+l.risk,next:'按「帶我去修正」查閱資料卡，至少 2 項，再進入計算。',target:'coach-inspect-0'});api.render();return true;}
+if(ds.teachHelp!==undefined){const st=A.state(),l=currentLesson(),stage=st.stage,pr=progress(l);if(stage===4){update(t=>{t.progress[l.id]||={};t.progress[l.id].hint=Math.max(1,(t.progress[l.id].hint||0));});}else report(l,stage,{ok:false,kind:'tip',title:'這一步該做什麼？',reason:instruction(l,s,p,stage)[2],next:stage===3?'按「帶我去修正」到第一張資料卡。':'先閱讀這一步的說明，再按下方下一步。',target:stage===3?'coach-inspect-0':'coach-next'});api.render();return true;}
+if(ds.teachHint!==undefined){const l=currentLesson();update(t=>{const x=t.progress[l.id]||(t.progress[l.id]={});x.hint=Math.min(3,(x.hint||0)+1);});api.render();return true;}
+if(ds.teachFull!==undefined){const l=currentLesson();update(t=>{const x=t.progress[l.id]||(t.progress[l.id]={});x.full=true;x.hint=4;});api.render();return true;}
+if(ds.teachDismiss!==undefined){update(t=>t.feedback=null);api.render();return true;}
+if(ds.teachRefresh!==undefined){const l=currentLesson();update(t=>{t.progress[l.id]={attempts:0,hint:0,passed:null,variantPassed:null,full:false};t.feedback=null;});api.render();return true;}
+if(ds.teachScene){update(t=>{t.rounds.scene=ds.teachScene;t.rounds.round=0;});api.render();return true;}
+if(ds.teachRoundFact){update(t=>{const k=t.rounds.scene+'-'+t.rounds.round;t.rounds.checked[k]||=[];if(!t.rounds.checked[k].includes(ds.teachRoundFact))t.rounds.checked[k].push(ds.teachRoundFact);});api.render();return true;}
+if(ds.teachRoundOption){update(t=>t.rounds.options[t.rounds.scene+'-'+t.rounds.round]=ds.teachRoundOption);api.render();return true;}
+if(ds.teachRoundNav){const r=teacher().rounds,k=r.scene+'-'+r.round;if(ds.teachRoundNav==='next'&&(!r.options[k]||!r.logs?.[k])){update(t=>{t.feedback={lesson:'rounds',stage:0,reason:'請先選擇方案、比較訂單影響，並填寫「處置與追蹤」送出本輪決策後才能前往下一輪。'};});api.render();focus('coach-roundfact-0');return true;}update(t=>{t.rounds.round=ds.teachRoundNav==='prev'?Math.max(0,t.rounds.round-1):ds.teachRoundNav==='reset'?0:Math.min(2,t.rounds.round+1);});api.render();return true;}
+return false;};
+A.input=(event)=>{const f=event.target.closest('#coachPractice,#coachVariant,#coachTransfer');if(!f){const roundForm=event.target.closest('#coachRoundForm');if(roundForm){const r=teacher().rounds,k=r.scene+'-'+r.round;update(t=>{t.rounds.drafts||={};t.rounds.drafts[k]||={};t.rounds.drafts[k][event.target.name]=event.target.value;});return true;}return false;}const l=currentLesson(),field=event.target.name;if(!field)return false;update(t=>{t.draft[l.id]||={};t.draft[l.id][f.id==='coachVariant'?'variant':f.id==='coachTransfer'?'transfer':field]=event.target.type==='radio'?(f.querySelector('input[name="answer"]:checked')?.value||''):event.target.value;});if(event.target.hasAttribute('aria-invalid'))event.target.removeAttribute('aria-invalid');return true;};
+A.submit=(event,s,p,api)=>{const f=event.target;if(!['coachPractice','coachVariant','coachTransfer','coachRoundForm'].includes(f.id))return OLD.submit(event,s,p,api);event.preventDefault();if(f.id==='coachRoundForm'){const r=teacher().rounds,k=r.scene+'-'+r.round,fd=new FormData(f),owner=String(fd.get('owner')||''),reason=String(fd.get('reason')||'').trim(),follow=String(fd.get('follow')||'').trim();if(!r.options[k]||!owner||reason.length<16||follow.length<8){update(t=>t.feedback={lesson:'rounds',reason:'請先選方案、選擇負責角色、至少寫 16 字理由，並填寫具體的下一次追蹤事項（至少 8 字）。'});api.render();return true;}const snap=roundsSnapshot(r.scene,r.round,s.date),sc=E.SCENARIOS.find(x=>x.id===r.scene),opt=sc.options.find(x=>x.id===r.options[k]),fe=roundFeasibility(snap,sc,opt,r.checked[k]||[],r.round);update(t=>{t.rounds.logs[k]={owner,reason,follow,status:fe.status,note:fe.status==='FEASIBLE'?'已符合本次示範所列前置條件；真實企業仍需正式核准':'仍有未確認或不可執行的前提，不能直接承諾或開工'};t.feedback=null;});api.render();return true;}const l=currentLesson(),fd=new FormData(f),raw=String(fd.get('answer')??''),reason=String(fd.get('reason')??''),isVariant=f.id==='coachVariant';if(f.id==='coachTransfer'){const note=String(fd.get('transfer')||'').trim(),pr=progress(l);if(note.length<20){report(l,6,{ok:false,kind:'field',title:'還不能完成本課',reason:'至少要寫 20 字，包含數據依據、協調對象與追蹤方式。',next:'按「帶我去修正」返回說明欄位補充。',target:'coach-transfer'});api.render();return true;}
+if(pr.passed?.stamp!==stamp(s)||pr.variantPassed?.stamp!==stamp(s)){update((t,st)=>st.stage=4);report(l,4,{ok:false,kind:'field',title:'請先重新完成當前練習',reason:'原資料已改變或變化題未通過，不能當作已掌握。',target:'coach-answer'});api.render();return true;}
+update((t,st)=>{t.draft[l.id]||={};t.draft[l.id].transfer=note;st.notes[l.id]=note;st.done[l.id]={date:s.date,answer:pr.passed.input,variation:pr.variantPassed.input,stamp:stamp(s)};t.feedback={lesson:l.id,stage:6,ok:true,reason:'已完成本課並保存。',title:'完成'};});api.render();return true;}
+update(t=>{t.draft[l.id]||={};t.draft[l.id][isVariant?'variant':'answer']=raw;if(!isVariant)t.draft[l.id].reason=reason;});const result=grade(l,s,p,raw,reason,isVariant),key=isVariant?'variantPassed':'passed';update(t=>{const pr=t.progress[l.id]||(t.progress[l.id]={attempts:0,hint:0});pr.attempts=(pr.attempts||0)+(!result.ok?1:0);if(result.ok)pr[key]={stamp:stamp(s),input:raw};else pr[key]=null;t.feedback={lesson:l.id,stage:4,...result,title:result.ok?'這一步正確':'目前還不能通過',next:result.ok?(isVariant?'請按「下一步：主管講評」。':'請完成下方不同數字或條件的變化題。'):'按「帶我去修正」回到輸入欄位，再用提示逐步核對。',target:isVariant?'coach-variant-answer':'coach-answer'};});api.render();return true;};
+A.reset=()=>{OLD.reset();update(t=>{Object.assign(t,base());});};
+A.__coachTest={grade,variants,roundsSnapshot,instruction,exactNumeric};
+})(globalThis);
+</script><script>/* v4.2 guided order lifecycle. Training scenario is an isolated clone of the existing E engine. */
+(function (root, factory) {
+  const api = factory(root.PC);
+  if (typeof module === 'object' && module.exports) module.exports = api;
+  root.JOURNEY42 = api;
+})(typeof globalThis !== 'undefined' ? globalThis : this, function (E) {
+  'use strict';
+  const ORDER_ID = 'SO-101';
+  const NAMES = [
+    '確認接單與訂單資料', 'BOM 毛需求計算', '共用物料與可用庫存',
+    '確認產線與代工條件', '排程與交期風險判斷', '跨部門任務交接',
+    '第一批良品進度回報', '剩餘良品完工回報', '品保放行條件',
+    '模擬出貨與數量核對', '交貨結案與追蹤'
+  ];
+  const HINTS = [
+    ['先找「SO-101」這張訂單，核對產品、箱數、交期與核准狀態。','SO-101 是已核准的 360 箱芒果飲品，其他訂單不能拿來代替。'],
+    ['毛需求＝尚待投入箱數 × BOM 每箱耗用量。','SO-101：360 箱 × 1.4 kg／箱＝504 kg。'],
+    ['先看品保已放行且扣預留的可用量，再計算其他共用訂單的需求。','目前芒果可用 1,100 kg；SO-101 與 R-900 合計需要 (360＋280)×1.4＝896 kg；餘 204 kg。'],
+    ['工廠有產能不代表可承接，還要看產品相容與檔期確認。','F-A 能做 P-M，檔期已確認；F-B 檔期尚未確認，F-C 製程不相容。'],
+    ['試排日期只是模型預估，還不等於對客戶承諾的交貨日期。','應選「可以作內部試排，但需進一步核對品保、物流和正式承諾」。'],
+    ['你需要分工，不是生管一個人批准品質或替業務承諾。','採購查料、工廠回報、品保核准，生管整合與追蹤；不要勾選生管自行放行。'],
+    ['先回報 180 箱；欄位填的是「累計良品」，不是本次新增量。','360 箱的一半是 180 箱。系統會依差額扣耗料，不會多扣一輪。'],
+    ['上一輪已回報 180 箱，這次要回報「累計」完成數。','累計完成量應填 360 箱，不是再填 180。'],
+    ['完成 360 箱不等於允許出貨。','必須由品保依授權流程模擬放行，生管不能自行略過品質狀態。'],
+    ['目前已完成 360 箱且完成模擬放行，請核對尚未出貨數量。','本次練習要模擬出貨 360 箱；多填、負數或超過可出貨量都應被阻擋。'],
+    ['「系統已記錄出貨」不等於「客戶已簽收」。','結案前還要查物流簽收、數量差異、回單與異常紀錄，未取得證據要列待追蹤。']
+  ];
+  const e = v => String(v ?? '').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const num=n=>Number(n||0).toLocaleString('zh-TW',{maximumFractionDigits:2});
+  const button=(label,action,cls='')=>`<button type="button" class="btn ${cls}" data-j42="${action}">${label}</button>`;
+  const current=j=>j.sim.orders.find(o=>o.id===ORDER_ID);
+  const openStage=j=>Math.min(j.stage,NAMES.length-1);
+  const ready=j=>E.plan(j.sim,'user').byOrder[ORDER_ID];
+  function start(today){return {schema:1,stage:0,passed:false,hint:0,feedback:null,sim:E.initial('rush',today),history:[]};}
+  function feedback(j,good,reason,guide){j.feedback={good,reason,guide:guide||''};j.passed=good; if(good)j.history.push({step:j.stage,when:j.sim.date,result:'PASS'});return j;}
+  function check(j,form){
+    const step=j.stage, o=current(j), val=String(form.get('answer')||''), many=form.getAll('check');
+    if(j.passed)return feedback(j,true,'這一步已完成，請按「下一步」。');
+    switch(step){
+      case 0:
+        return feedback(j,val===ORDER_ID,val===ORDER_ID?'正確：SO-101 是已核准的芒果飲品 360 箱，接單先核對單號、規格與交期。':'訂單選錯了。請先看資料卡的產品名稱、數量、交期及核准狀態，選擇 SO-101。','請按「SO-101｜芒果飲 360 箱」這個選項。');
+      case 1: {
+        const x=Number(val), expected=360*E.product('P-M').bom['M-MANGO'];
+        if(!val || !Number.isFinite(x) || x<0)return feedback(j,false,'請輸入非負的公斤數。只需輸入數字，不要輸入 kg。','點選「芒果果泥毛需求（kg）」欄位。');
+        if(Math.abs(x-expected)>.001)return feedback(j,false,x===360?'你輸入的是箱數，不是原料重量。要用「剩餘箱數 × 每箱 BOM 用量」。':`你填入 ${num(x)} kg，但和 BOM 毛需求不符。請核對 360 箱與每箱 1.4 kg。`,'請重新計算 BOM 毛需求。');
+        return feedback(j,true,'正確：360 箱 × 1.4 kg／箱＝504 kg。這是毛需求，不代表要採購 504 kg。');
+      }
+      case 2: {
+        const x=Number(val), available=E.usable(j.sim,'M-MANGO',j.sim.date), same=j.sim.orders.filter(a=>a.productId==='P-M').reduce((n,a)=>n+E.orderRemaining(a),0), expected=E.round(available-same*1.4);
+        if(!val || !Number.isFinite(x))return feedback(j,false,'請輸入計算後的剩餘公斤數。','先確認已放行可用量，以及兩張芒果訂單的合計需求。');
+        if(Math.abs(x-expected)>.001)return feedback(j,false,Math.abs(x-(available-504))<.001?'你只扣了 SO-101，忘了 R-900 也共用芒果果泥。':'計算結果不一致。應由真正可用量扣除「所有共用這個原料的未投入需求」，隔離與在途不可當成今日可用。','請回到庫存表，核對 1,100 kg、360 箱與 280 箱。');
+        return feedback(j,true,`正確：${num(available)} − (${num(same)} × 1.4)＝${num(expected)} kg。這是指定兩張單的簡化合計，並非已發出正式領料單。`);
+      }
+      case 3: {
+        const f=j.sim.factories.find(x=>x.id===val);
+        if(val!=='F-A')return feedback(j,false,!f?'請先選一座工廠。':val==='F-B'?'F-B 雖可做這項產品，但示範檔期尚未確認，不能視為已可承接。':'F-C 不在芒果飲品相容清單，不能因為有空就直接轉廠。','請選擇製程相容且檔期已確認的 F-A。');
+        return feedback(j,true,'正確：F-A 產品相容、檔期已確認。仍需看其他訂單負荷與換線時間，不能只憑「每天 300 箱」保證交貨。');
+      }
+      case 4: {
+        const p=ready(j);
+        if(!p||!['READY','RISK'].includes(p.status))return feedback(j,false,'排程引擎目前無法確認這張訂單可試排，必須先解除資料或品質限制。','檢查排程的「不可開工／條件式」訊息。');
+        return feedback(j,val==='trial',val==='trial'?`正確：模型預估完工 ${p.finish||'UNKNOWN'}、交貨 ${p.delivery||'UNKNOWN'}；仍須核對品保、物流、正式交期承諾。`:'「模型可排」不等於「可以立即對客戶承諾」。必須核對完整交貨條件及核准權限。','請選「先作內部試排並確認條件」。');
+      }
+      case 5: {
+        const must=['purchase','factory','qa'];
+        if(!must.every(x=>many.includes(x))||many.includes('selfqa'))return feedback(j,false,'請把採購追料、工廠回報、品保檢驗分工；生管不能自行進行品質放行。','勾選三個必要角色，不要勾選「生管自行放行」。');
+        return feedback(j,true,'正確：生管整合訂單與進度，採購查料，工廠回報生產，品保確認放行；各角色可同步工作。');
+      }
+      case 6: case 7:{
+        const expected=step===6?180:360, x=Number(val);
+        if(!val||!Number.isInteger(x)||x<0)return feedback(j,false,'請輸入非負整數的「累計完成良品箱數」。','請確認欄位不是「本次新增箱數」。');
+        if(x!==expected)return feedback(j,false,step===7&&x===180?'這次還填 180，代表累計量沒有增加；第二次應填整張訂單累計良品。':`目前要練習回報累計 ${expected} 箱，不是 ${num(x)} 箱。`,'請修改累計良品箱數後重新驗證。');
+        try {j.sim=E.reportGood(j.sim,ORDER_ID,x);}catch(err){return feedback(j,false,'引擎阻擋回報：'+err.message,'請核對原料可用量、品質狀態與已完成數量。');}
+        return feedback(j,true,`已透過原有引擎回報累計良品 ${expected} 箱。注意是差額耗料，不會重複扣料；後續仍須品保放行。`);
+      }
+      case 8:
+        if(val!=='qa')return feedback(j,false,'生管不能把「生產完成」當成「品保已放行」。','請選「由品保依核准流程放行」。');
+        try{j.sim=E.qaRelease(j.sim,ORDER_ID);}catch(err){return feedback(j,false,'引擎阻擋：'+err.message,'請核對良品完成量和未結案的品質事件。');}
+        return feedback(j,true,'已在教學副本中模擬品保放行。這不是正式簽核；真實工作必須由授權角色及品質證據決定。');
+      case 9: {
+        const x=Number(val), max=o.good-o.shipped;
+        if(!val||!Number.isInteger(x)||x<=0)return feedback(j,false,'出貨箱數必須是大於零的整數。','請查看尚未出貨的已放行良品數。');
+        if(x!==360)return feedback(j,false,x>max?'出貨量超過可出貨的已放行良品，系統必須阻擋。':`本次練習要求出貨 360 箱，你填入 ${num(x)} 箱。請核對剩餘出貨量，不能把「已出貨」當「已簽收」。`,'請按「模擬出貨箱數」重新輸入 360。');
+        try{j.sim=E.ship(j.sim,ORDER_ID,x);}catch(err){return feedback(j,false,'引擎阻擋出貨：'+err.message,'請先檢查品保放行狀態與出貨箱數。');}
+        return feedback(j,true,'已記錄模擬出貨 360 箱。此時沒有實際物流回單，仍不能稱「客戶已簽收結案」。');
+      }
+      case 10:
+        return feedback(j,val==='track',val==='track'?'正確：已出貨不等於已交貨。生管應追查物流簽收、數量差異、缺件與客訴，再依公司制度結案。':'不能只因系統顯示出貨 360 箱就宣稱整張訂單已完全結案；需要交貨簽收與相關紀錄。','請選擇「簽收待確認，建立追蹤事項」。');
+    }
+    return feedback(j,false,'步驟不存在，請重啟練習。');
+  }
+  function stageBody(j){
+    const st=j.stage,o=current(j),p=ready(j),f=j.sim.factories.find(x=>x.id===o.factoryId);
+    switch(st){
+      case 0:return `<div class="j42-card"><h3>訂單收到後，不是先按排程</h3><p>先確認單號、產品規格、箱數、交期以及是否有正式接單依據。</p><div class="j42-table"><div>SO-101｜芒果飲品｜360 箱｜交期 ${e(o.due)}｜已核准</div><div>SO-102｜柳橙飲品｜220 箱｜交期 ${e(j.sim.orders.find(x=>x.id==='SO-102').due)}</div><div>R-900｜芒果急單｜280 箱｜需一起考慮共用料</div></div></div>${select('請選擇這次要核對的正式訂單',[['','先選一張訂單'],['SO-101','SO-101｜芒果飲 360 箱'],['SO-102','SO-102｜柳橙飲 220 箱'],['R-900','R-900｜急單 280 箱']])}`;
+      case 1:return `<div class="j42-card"><h3>看懂 BOM，不能拿訂單箱數當原料公斤</h3><p>產品：芒果飲品；剩餘待投入 360 箱；每箱需要芒果果泥 1.4 公斤。</p><p>公式：剩餘待投入箱數 × BOM 每箱用量＝原料毛需求。</p></div>${numeric('芒果果泥毛需求（kg）','例如：504')}`;
+      case 2:{const available=E.usable(j.sim,'M-MANGO',j.sim.date);return `<div class="j42-card"><h3>同一種料可能有不只一張訂單要用</h3><p>芒果果泥已放行可用量：<b>${num(available)} kg</b>。SO-101 要 360 箱、R-900 要 280 箱，兩者每箱各用 1.4 kg。</p><p>兩張單合計的剩餘需求，不能只算你手上的 SO-101。</p><div class="j42-mini">隔離原料與尚未驗收的在途原料，不算今日可用。此題僅核算兩張芒果訂單的合計缺口，不代表正式配料預留。</div></div>${numeric('扣除這兩張訂單需求後，還剩多少 kg？','請填剩餘公斤數')}`;}
+      case 3:return `<div class="j42-card"><h3>有產能 ≠ 有資格、已確認可承接</h3>${j.sim.factories.map(x=>`<div class="j42-factory"><b>${e(x.id)}｜${e(x.name)}</b><span>每日示範產能 ${x.capacity} 箱；芒果相容：${x.compatible.includes('P-M')?'是':'否'}；檔期：${x.confirmed?'已確認':'待確認'}</span></div>`).join('')}</div>${select('哪一座適合本次已確認的生產排程？',[['','請選擇工廠'],['F-C','F-C：代工廠 C'],['F-B','F-B：代工廠 B'],['F-A','F-A：自有灌裝線 A']])}`;
+      case 4:return `<div class="j42-card"><h3>排出日期，不代表可以直接向客戶承諾</h3><p>依現有引擎與原順序試算 SO-101：<b>${p?.status||'UNKNOWN'}</b>；預計完工 ${e(p?.finish||'UNKNOWN')}；預計交貨 ${e(p?.delivery||'UNKNOWN')}；交期 ${e(o.due)}。</p><p>還須核對品檢、物流、客戶收貨時間與授權承諾。</p></div>${select('主管問：這個日期可以直接答應客戶嗎？',[['','請選擇你的判斷'],['promise','可以，系統排得出來就保證準時'],['trial','不能直接承諾，先作內部試排並確認品檢、物流與核准']])}`;
+      case 5:return `<div class="j42-card"><h3>不要把全部事情攬在自己身上</h3><p>已確認可試排，接下來要同步交接、回報、追蹤。請勾選必要的權責，**可複選**。</p></div>${checks([['purchase','採購：確認原料與到貨'],['factory','產線／代工廠：回報實際生產進度'],['qa','品保：依規定確認品質及放行'],['selfqa','生管：不用品保就自行核准放行']])}`;
+      case 6:return `<div class="j42-card"><h3>第一次生產進度回報</h3><p>訂單總量 ${o.qty} 箱；模擬產線回報：今天累計已完成一半良品。</p><p>注意欄位是<strong>「累計完成良品」</strong>，不只是這次增加多少。</p></div>${numeric('請輸入累計完成良品（箱）','例如：180')}`;
+      case 7:return `<div class="j42-card"><h3>第二次回報：做完剩下的良品</h3><p>前次已完成 <b>${o.good} 箱</b>。代工廠通知這張單全部已生產完成。</p><p>回報累計時，應填整張單的累計數；引擎只扣差額，不會重複扣料。</p></div>${numeric('這次累計完成良品（箱）','請填全單累計數量')}`;
+      case 8:return `<div class="j42-card"><h3>「已完工」不是「已允許出貨」</h3><p>目前累計良品 ${o.good}／${o.qty} 箱，品質狀態 ${e(o.qa)}。未完成品保放行前，不能出貨。</p></div>${select('下一步最合理的作法？',[['','請選擇'],['self','生管直接改為已放行，快點出貨'],['qa','由品保依品質判定與授權程序核准，才可放行']])}`;
+      case 9:return `<div class="j42-card"><h3>確認可出貨量，不要出超過良品的數字</h3><p>SO-101 良品 ${o.good} 箱、已出貨 ${o.shipped} 箱、品保狀態 ${e(o.qa)}。</p><p>此步驟是教學模擬出貨，並非真實物流出貨單。</p></div>${numeric('要記錄的模擬出貨箱數','請輸入箱數')}`;
+      case 10:return `<div class="j42-card"><h3>最後一道常被忽略的關卡</h3><p>目前引擎紀錄已出貨 ${o.shipped}／${o.qty} 箱，但尚未提供物流簽收回單。</p><p>可以直接把這張訂單標示「客戶已收貨且全部結案」嗎？</p></div>${select('你會怎麼處理？',[['','請選擇'],['close','可以，系統已經記錄出貨'],['track','不行；先追簽收回單、交貨差異及未結事項，再依制度結案']])}`;
+    }
+    return '';
+  }
+  function select(title,items){return `<label class="fieldlabel j42-target" id="j42-task">${e(title)}<select class="select j42-input" name="answer" required>${items.map(([v,t])=>`<option value="${e(v)}">${e(t)}</option>`).join('')}</select></label>`;}
+  function numeric(title,placeholder){return `<label class="fieldlabel j42-target" id="j42-task">${e(title)}<input class="field j42-input" type="number" min="0" step="any" inputmode="decimal" name="answer" placeholder="${e(placeholder)}" required></label>`;}
+  function checks(items){return `<fieldset class="j42-target j42-checks" id="j42-task"><legend>應由哪些單位負責？</legend>${items.map(([v,t])=>`<label><input type="checkbox" name="check" value="${e(v)}">${e(t)}</label>`).join('')}</fieldset>`;}
+  function render(s){const j=s.journey42;
+    if(!j||j.schema!==1)return `<div class="panel j42-intro"><div class="j42-label">NEW · V4.2 引導式跟班實作</div><h2>從接單到交貨｜跟著主管完成一張訂單</h2><p>你不需要先懂 ERP。這個單元會用同一張 SO-101 訂單，帶你從核對資料、算 BOM、查原料、確認產能，到生產進度、品質放行、出貨與交貨追蹤。每一步都有「為什麼」、「下一步按哪裡」和「我看不懂」。</p><p class="j42-mini">本單元使用原有排程引擎的獨立教學副本，不會偷偷修改其他九種突發情境或十門課的資料。全部為虛構資料。</p>${button('開始：從接單核對學起','start','primary')}<div class="j42-kinds"><div><b>原料供應</b><small>常重視庫存、批次、效期與規格</small></div><div><b>OEM 代工</b><small>常重視規格、物料、產能與委外</small></div><div><b>ODM 開發</b><small>另需關注試產、包裝版次與量產導入</small></div></div></div>`;
+    if(j.stage>=NAMES.length){const o=current(j);return `<section class="panel j42-finish"><div class="j42-label">全部步驟完成</div><h2>你已完成 SO-101 的跟班流程</h2><p>模擬完成良品 <b>${o.good} 箱</b>、模擬已出貨 <b>${o.shipped} 箱</b>。但客戶簽收仍為 UNKNOWN，不應虛構真正完成交貨。</p><div class="j42-mini">真正的生管還要檢查簽收回單、異常結案及 ERP 單據一致性。此單元的「完成」代表完成學習，不代表具備實際企業獨立排程資格。</div><div class="j42-result">${NAMES.map((x,i)=>`<div>✓ ${String(i+1).padStart(2,'0')}｜${e(x)}</div>`).join('')}</div><div class="line topspace">${button('重新練習完整訂單','reset')}${button('回專業課程','academy','primary')}</div></section>`;}
+    const n=openStage(j),hint=HINTS[n],pct=Math.round((n/NAMES.length)*100);
+    return `<section class="panel j42-shell"><div class="line"><div><span class="j42-label">實務跟班 · 第 ${n+1}／${NAMES.length} 步</span><h2>${e(NAMES[n])}</h2></div>${button('重新開始這張訂單','reset')}</div><div class="j42-progress" role="progressbar" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pct}%"></i></div><div class="j42-guide"><strong>現在應該做什麼？</strong><p>${e(['先確認正式訂單資訊，再決定接下來查什麼。','用剩餘箱數與 BOM 用量計算毛需求。','別只看一張訂單，先確認共用原料及真正可用量。','查核產品相容性、已確認檔期與產能。','先判斷排程可行性，再檢查是否能對客戶承諾。','分工追蹤：採購、產線、品保各有不同責任。','練習第一筆累計良品回報，觀察數量與耗料連動。','練習最終累計完工，不重複扣料。','確認誰有權核准品保放行。','在符合品質條件後模擬出貨。','核對交貨證據，知道出貨與簽收的差別。'][n])}</p><p><b>下一步按哪裡：</b>先閱讀下方資料，填寫「${e(n===5?'應由哪些單位負責？':n===2?'扣除這兩張訂單需求後的剩餘公斤數':'本步驟題目')}」，再按「檢查我的判斷」。</p><div class="line">${button('我看不懂','hint')}${button('帶我去操作','focus')}</div></div><div class="j42-lesson"><form id="journey42Form" novalidate>${stageBody(j)}${j.passed?'':`<div class="line topspace"><button type="submit" class="btn primary">檢查我的判斷</button>${button('我需要提示','hint')}</div>`}</form></div>${j.hint?`<div class="j42-hint"><b>老師提示 ${Math.min(j.hint,2)}／2</b><p>${e(hint[Math.min(j.hint-1,1)])}</p>${j.hint===1?button('我還是不會，顯示完整步驟','hint'):''}</div>`:''}${j.feedback?`<div class="j42-feedback ${j.feedback.good?'good':'bad'}" role="status"><strong>${j.feedback.good?'✓ 這步判斷通過':'請修正這一步'}</strong><p>${e(j.feedback.reason)}</p>${j.feedback.guide?`<p><b>要按哪裡：</b>${e(j.feedback.guide)}</p>`:''}<div class="line">${j.feedback.good?button('下一步：'+e(NAMES[n+1]||'看總結'),'next','primary'):button('帶我回題目修正','focus')}</div></div>`:''}<div class="j42-mini">此單元只使用虛構資料，生產進度與出貨由既有模型即時計算；實際工作須遵守公司授權、品保與現場紀錄。</div></section>`;
+  }
+  function click(ev,s,ctx){const b=ev.target.closest('[data-j42]');if(!b)return false;
+    const act=b.dataset.j42;
+    if(act==='academy'){ctx.navigate('academy');return true;}
+    if(act==='focus'){
+      const target=document.getElementById('j42-task');target?.scrollIntoView({behavior:'smooth',block:'center'});target?.querySelector('input,select')?.focus();return true;
+    }
+    const next=E.clone(s);let j=next.journey42;
+    if(act==='start'){next.journey42=start(s.date);ctx.setState(next);return true;}
+    if(act==='reset'){
+      if(!rootConfirm('要重啟此張模擬訂單嗎？只會清除此單元的跟班進度，不會刪除其他課程或工作台資料。'))return true;
+      next.journey42=start(s.date);ctx.setState(next);return true;
+    }
+    if(!j)return false;
+    if(act==='hint'){j.hint=Math.min(2,(j.hint||0)+1);ctx.setState(next);return true;}
+    if(act==='next'){if(!j.passed){j.feedback={good:false,reason:'本步尚未驗證通過。請先完成題目。',guide:'請按「檢查我的判斷」。'};}else{j.stage+=1;j.passed=false;j.hint=0;j.feedback=null;}ctx.setState(next);return true;}
+    return false;
+  }
+  function rootConfirm(t){return typeof confirm==='function'?confirm(t):true;}
+  function submit(ev,s,ctx){if(ev.target.id!=='journey42Form')return false;
+    ev.preventDefault();const next=E.clone(s),j=next.journey42;if(!j){return true;}
+    try{check(j,new FormData(ev.target));}catch(err){j.passed=false;j.feedback={good:false,reason:'無法完成這一步：'+err.message,guide:'請重新檢查對應數字與前置限制。'};}
+    ctx.setState(next);return true;
+  }
+  return {start,check,render,click,submit,NAMES};
+});
+</script><script>(()=>{'use strict';
+const E=window.PC,A=window.ACADEMY,J=window.JOURNEY42,STORE='food-production-simulation-neutral-v42',PREVIOUS_STORE='food-production-simulation-neutral-v41';
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const escape=s=>String(s??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+const fmt=n=>Number(n||0).toLocaleString('zh-TW',{maximumFractionDigits:2});
+const P=id=>E.product(id)?.name||id,M=id=>E.mat(id)?.name||id;
+const pill=(text,type='')=>`<span class="pill ${type}">${escape(text)}</span>`;
+const statusP=x=>x==='READY'?pill('可試排','good'):x==='RISK'?pill('逾期風險','bad'):x==='BLOCKED'?pill('禁止開工／缺料','bad'):x==='CONDITIONAL'?pill('條件式待確認','warn'):pill('已生產完成','info');
+const showDate=d=>d||'UNKNOWN';
+let s;try{const v=JSON.parse(localStorage.getItem(STORE)||localStorage.getItem(PREVIOUS_STORE));s=v&&v.version===3&&E.SCENARIOS.some(x=>x.id===v.scenarioId)&&Array.isArray(v.orders)&&Array.isArray(v.lots)&&Array.isArray(v.factories)?v:E.initial()}catch(e){s=E.initial()}
+let tab='academy',strategy='user',selected=null,preview=null,feedback=null,toastHandle=null;
+function save(){try{localStorage.setItem(STORE,JSON.stringify(s));$('#saveStatus').textContent='已儲存至此瀏覽器'}catch(e){$('#saveStatus').textContent='本機存檔不可用；資料可能遺失';}}
+function msg(t,bad=false){const b=$('#toast');b.textContent=t;b.style.background=bad?'#903c40':'#154c3f';b.classList.add('show');clearTimeout(toastHandle);toastHandle=setTimeout(()=>b.classList.remove('show'),4200)}
+function showFieldIssue(field,text){if(!field)return;const form=field.form||field.closest('form');if(!form)return;form.querySelectorAll('.coach-field-error').forEach(e=>e.remove());const el=document.createElement('div');el.className='coach-field-error';el.setAttribute('role','alert');const p=document.createElement('span');p.textContent=text;const btn=document.createElement('button');btn.className='btn small';btn.type='button';btn.textContent='帶我去修改這個欄位';btn.addEventListener('click',()=>{field.scrollIntoView({behavior:'smooth',block:'center'});field.focus();});el.append(p,btn);field.insertAdjacentElement('afterend',el);field.setAttribute('aria-invalid','true');}
+function explainInvalid(el){const name=el.closest('label')?.textContent?.trim().slice(0,35)||'這個欄位';if(el.validity.valueMissing)return name+'尚未填寫。請填入必要的數字或選項，再按送出。';if(el.validity.rangeUnderflow)return name+'不可低於 '+el.min+'。請檢查是否填了負數或小於允許的數量。';if(el.validity.rangeOverflow)return name+'不可高於 '+el.max+'。請核對訂單量、產能或輸入的單位。';if(el.validity.stepMismatch)return name+'必須使用符合題目的數量單位，請確認是否需要輸入整數。';if(el.validity.badInput)return name+'需要輸入數字，請勿混入文字或單位，例如 200 箱只需輸入 200。';return '這個欄位格式不正確，請核對欄位說明與數字單位。';}
+function change(next){s=next;preview=null;feedback=null;save();render();}
+function sectionTitle(title,sub=''){return `<div class="line"><h2>${escape(title)}</h2></div>${sub?`<p class="subtitle">${escape(sub)}</p>`:''}`}
+function selectedScene(){return E.SCENARIOS.find(x=>x.id===s.scenarioId)}
+function table(headers,rows,extra=''){return `<div class="tablewrap"><table class="${extra}"><thead><tr>${headers.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${rows.join('')||`<tr><td colspan="${headers.length}">目前沒有資料</td></tr>`}</tbody></table></div>`}
+function metrics(items){return `<div class="grid four">${items.map(x=>`<div class="metric ${x.class||''}"><span>${x.label}</span><strong>${escape(x.num)}</strong><small>${x.tip||''}</small></div>`).join('')}</div>`}
+function riskList(pp){return s.orders.map(o=>({o,p:pp.byOrder[o.id]})).sort((a,b)=>({BLOCKED:0,CONDITIONAL:1,RISK:2,READY:3,PRODUCTION_DONE:4}[a.p.status]-{BLOCKED:0,CONDITIONAL:1,RISK:2,READY:3,PRODUCTION_DONE:4}[b.p.status])).map(({o,p})=>`<div class="step"><div class="line tight"><b>${escape(o.id)}｜${escape(P(o.productId))}</b>${statusP(p.status)}</div><small>交期 ${o.due} · 排定交貨 ${showDate(p.delivery)} · 剩餘待投入 ${fmt(p.remaining)} 箱${p.blockers.length?` · ${escape(p.blockers.join('；'))}`:''}</small></div>`).join('')}
+function overview(){const pp=E.plan(s,strategy),issues=s.issues.filter(x=>x.status!=='closed');return `
+ <div class="note"><b>今天先看什麼？</b> ① 食安／品質限制 → ② 當天到期、缺料與停機 → ③ 可用產能及到貨 → ④ 交期緩衝 → ⑤ 分工、確認與追蹤。<br><small>兩套優先順序要分開：<b>事件處理優先</b>是先止損；<b>生產排程優先</b>是確認可執行後，才比交期與整體代價。</small></div>
+ <div class="topspace">${metrics([{label:'可試排訂單',num:pp.summary.confirmed,tip:'不代表已獲出貨核准',class:'good'},{label:'未具備開工條件',num:pp.summary.blocked,tip:'不能搶先占用材料',class:'bad'},{label:'條件式待確認',num:pp.summary.conditional,tip:'暫不可正式承諾',class:'warn'},{label:'預估逾期訂單',num:pp.summary.late,tip:'僅計已可試排訂單',class:pp.summary.late?'bad':''}])}</div>
+ <div class="grid two topspace"><div class="panel">${sectionTitle('本日最需要你注意的事項','由模型提示，仍須人工確認真實資料')}<div class="steps">${riskList(pp)}</div></div>
+ <div class="panel">${sectionTitle('五分鐘上班練習','按順序做一次，而不是只看系統幫你算好。')}
+  <div class="steps"><div class="step"><b>1｜先看品質封鎖</b><small>不能開工／出貨的訂單，先隔離與通知品保。</small></div><div class="step"><b>2｜查庫存與 BOM</b><small>可用量＝已放行帳面量－預留；在途不等於可用。</small></div><div class="step"><b>3｜確認可生產與交期緩衝</b><small>分開確認工廠檔期、清洗換線、產能、品檢、物流。</small></div><div class="step"><b>4｜試排替代方案</b><small>保留原排程做基準，再試插單、調線或協調交期。</small></div><div class="step"><b>5｜分派與追蹤</b><small>確認誰負責、下次何時追、何時才算結案。</small></div></div>
+  <div class="topspace line"><button class="btn primary" data-nav="journey">跟班完成一張訂單</button><button class="btn" data-nav="cases">開始突發情境練習</button><button class="btn" data-nav="orders">查看排程</button></div>
+ </div></div>
+ <div class="panel">${sectionTitle('模型的假設與不能代表的事實')}<p>本工具所有工廠、原料、訂單、客戶、成本皆為虛構。它沒有連線任何真實 ERP，也沒有取得任何企業或代工廠的內部資料。標示「可試排」不代表食品已獲品保放行。</p></div>`}
+function orders(){const pp=E.plan(s,strategy);const rows=s.orders.map(o=>{let p=pp.byOrder[o.id];return `<tr><td><strong>${escape(o.id)} ${o.rush?pill('急單','warn'):''}</strong><br><small>${escape(P(o.productId))}</small></td><td>${fmt(o.qty)}</td><td>${fmt(o.good)}／${fmt(o.wip)}／<b>${fmt(p.remaining)}</b></td><td>${o.due}</td><td>${escape(s.factories.find(f=>f.id===o.factoryId)?.name||'—')}</td><td>${showDate(p.finish)}<br><small>交貨 ${showDate(p.delivery)}</small></td><td>${p.slack===null?'UNKNOWN':(p.slack>=0?'+':'')+p.slack+' 天'}</td><td>${statusP(p.status)}<br><small>${escape(p.blockers[0]||'')}</small></td></tr>`});
+ const days=Array.from({length:11},(_,i)=>E.date(s.date,i)).filter(E.workday).slice(0,8);
+ const gantt=s.factories.map(f=>`<tr><td><b>${escape(f.name)}</b><br><small>${fmt(f.capacity)} 箱／日</small></td>${days.map(d=>{const x=pp.timeline.filter(i=>i.fid===f.id&&i.day===d),down=f.downtime[d]||0,res=f.reserved[d]||0;return `<td>${down?pillslot('停機 '+down+' 分','downtime'):''}${res?pillslot('保留 '+res+' 箱','reserved'):''}${x.map(ev=>pillslot(ev.oid+' '+ev.qty+' 箱','')).join('')||(!down&&!res?'·':'')}</td>`}).join('')}</tr>`);
+ return `<div class="panel">${sectionTitle('訂單與可執行條件','良品、在製、剩餘待投入分開計算；品檢放行與出貨是額外步驟。')}
+ <div class="line"><label class="fieldlabel">優先排序試算<select id="strategy" class="select"><option value="user" ${strategy==='user'?'selected':''}>現有排程順序</option><option value="slack" ${strategy==='slack'?'selected':''}>粗估緩衝最少</option><option value="due" ${strategy==='due'?'selected':''}>交期最早 EDD</option><option value="rush" ${strategy==='rush'?'selected':''}>急單標記先（僅作反例比較）</option></select></label>${pill('切換僅供試算，不會改動正式資料','info')}</div>
+ <div class="topspace">${table(['訂單／產品','訂單量','良品／在製／待投入（箱）','交期','指派工廠','預估完工／交貨','交期緩衝','條件'],rows)}</div>
+ <div class="note topspace">交期緩衝（示意）＝客戶交期－預估品檢與物流完成日。負值為預估延誤；未確認的在製完工日與外包檔期顯示 UNKNOWN，不應偽裝成準確日期。</div></div>
+ <div class="panel">${sectionTitle('工廠／代工產能時間軸','所有排產以同一天剩餘分鐘數限制；灰色代表預留產能，紅色代表停機。')}
+ ${table(['工廠',...days.map(x=>x.slice(5))],gantt,'gantt')}
+ <p class="tiny">換線時間以示範值估算；同一天分配的產能不可超過扣除停機、既有承諾與換線後的時間上限。</p></div>
+ <div class="panel">${sectionTitle('模擬進度／品保／出貨操作','所有操作會記錄並保存；未放行原料不可消耗，品質封鎖不得回報新良品或出貨。')}
+ <form id="progressForm" class="fieldline"><label class="fieldlabel">訂單<select class="select" name="oid">${s.orders.map(o=>`<option value="${o.id}">${o.id}｜${escape(P(o.productId))}</option>`).join('')}</select></label><label class="fieldlabel">累計完成良品（箱）<input class="field" type="number" name="good" min="0" step="1" required placeholder="例如 800"></label><button type="submit" class="btn primary">更新良品累計</button></form>
+ <p class="tiny">請填「累計良品量」，不是新增量。相同累計值再送一次不會重複扣料。若有在製量，系統先轉換已有在製品，不重複消耗原料。</p>
+ <form id="releaseForm" class="fieldline topspace"><label class="fieldlabel">品保授權的示範完工單<select class="select" name="oid">${s.orders.map(o=>`<option value="${o.id}">${o.id}｜良品 ${o.good}／${o.qty}｜${o.qa==='released'?'已放行':'未放行'}</option>`).join('')}</select></label><button type="submit" class="btn">模擬品保放行</button></form>
+ <form id="shipForm" class="fieldline topspace"><label class="fieldlabel">要出貨的訂單<select class="select" name="oid">${s.orders.map(o=>`<option value="${o.id}">${o.id}｜已出 ${o.shipped} 箱</option>`).join('')}</select></label><label class="fieldlabel">出貨箱數<input class="field small" name="qty" type="number" min="1" required step="1"></label><button type="submit" class="btn">模擬出貨（須放行）</button></form></div>`}
+function pillslot(t,k){return `<span class="slot ${k}">${escape(t)}</span>`}
+function materials(){const pp=E.plan(s,strategy);const rows=E.MATERIALS.map(m=>{let lots=s.lots.filter(x=>x.mid===m.id),released=lots.filter(x=>x.status==='released').reduce((a,l)=>a+l.qty,0),res=lots.filter(x=>x.status==='released').reduce((a,l)=>a+l.reserved,0),blocked=lots.filter(x=>x.status!=='released').reduce((a,l)=>a+l.qty,0),incoming=s.arrivals.filter(a=>a.mid===m.id).reduce((a,l)=>a+l.qty,0),used=pp.materialAlloc[m.id]||0;return `<tr><td><b>${escape(m.name)}</b><br><small>${m.id}（${escape(m.unit)}）</small></td><td>${fmt(lots.reduce((a,l)=>a+l.qty,0))}</td><td>${fmt(res)}</td><td>${fmt(blocked)}</td><td><b>${fmt(E.usable(s,m.id,s.date))}</b></td><td>${fmt(incoming)}<br><small>未放行不算可用</small></td><td>${fmt(used)}</td><td>${fmt(E.usable(s,m.id,s.date)-used)}</td></tr>`});
+ const lots=s.lots.map(x=>`<tr><td>${escape(x.id)}</td><td>${escape(M(x.mid))}</td><td>${fmt(x.qty)} ${escape(E.mat(x.mid)?.unit||'')}</td><td>${fmt(x.reserved)}</td><td>${pill(x.status==='released'?'已放行':x.status==='hold'?'隔離':x.status==='pending'?'待驗':'拒收',x.status==='released'?'good':'bad')} ${x.status!=='released'&&x.status!=='rejected'?`<button class="btn small" data-release-lot="${x.id}">模擬品保判定</button>`:''}</td></tr>`);
+ const bom=E.PRODUCTS.flatMap(p=>Object.entries(p.bom).map(([id,n])=>`<tr><td>${escape(P(p.id))}</td><td>${escape(M(id))}</td><td>${fmt(n)} ${escape(E.mat(id).unit)}／箱</td></tr>`));
+ const deficits=s.orders.map(o=>{const d=E.explainMaterials(s,o,s.date);const p=pp.byOrder[o.id];return `<div class="step"><div class="line tight"><b>${o.id}｜剩餘待投入 ${E.orderRemaining(o)} 箱</b>${statusP(p.status)}</div><small>${d.shortages.length?d.shortages.map(x=>`${M(x.mid)} 少 ${fmt(x.short)} ${E.mat(x.mid).unit}`).join('；'):'本日時點若獨立檢查此單，物料看似足夠；仍須考慮其他訂單占用及品質限制。'}</small></div>`}).join('');
+ return `<div class="panel">${sectionTitle('物料可用量與預排需求','「已放行量－已預留量」才是可用量；不可把待驗、隔離及未核可的在途品當現貨。')}
+ ${table(['原料','帳面總量','已預留','待驗／隔離','當日可用','在途數量','試排配置','試排後餘量'],rows)}
+ <div class="note topspace">試排配置是<b>暫時計算</b>，並沒有真的扣庫存。若某一張訂單缺少關鍵物料，整份 BOM 都不預占，避免其他本來能開工的訂單被誤判缺料。</div></div>
+ <div class="grid two"><div class="panel">${sectionTitle('各訂單物料快速判讀')}<div class="steps">${deficits}</div></div><div class="panel">${sectionTitle('在途與品保狀態')}
+ ${s.arrivals.map(x=>`<div class="step"><b>${x.id}｜${escape(M(x.mid))} ${fmt(x.qty)} ${escape(E.mat(x.mid).unit)}</b><small>預計 ${x.date} · 到貨 ${x.confirmed?'已確認':'UNKNOWN'} · 品保 ${x.qaReleased?'已放行':'未放行'}</small></div>`).join('')}
+ <p>在途的預計日期可以做「條件式預排」，但必須同時有到貨確認與品保放行才會計入可執行庫存。</p></div></div>
+ <div class="panel">${sectionTitle('批次庫存明細','總量與可用量不同。隔離／待驗批號只能在模擬品保核准後解除。')}${table(['批號','物料','帳面數','外部已預留','品質狀態'],lots)}</div>
+ <div class="panel">${sectionTitle('BOM：每箱標準用料','示範配方，不是食品工廠真正配方或 ERP 物料清單。')}${table(['產品','原物料','每箱用量'],bom)}</div>`}
+function factoryView(){const pp=E.plan(s,strategy),rows=s.factories.map(f=>{const loads=pp.timeline.filter(t=>t.fid===f.id);return `<tr><td><strong>${escape(f.name)}</strong><br><small>${f.id}</small></td><td>${f.capacity} 箱／8h</td><td>${f.setupHours}h／換品</td><td>${f.qcDays}／${f.shipDays} 工作天</td><td>${f.compatible.map(P).map(escape).join('、')}</td><td>${pill(f.confirmed?'可用檔期已確認':'檔期待確認',f.confirmed?'good':'warn')}</td><td>${loads.reduce((n,x)=>n+x.qty,0)} 箱</td></tr>`});return `<div class="panel">${sectionTitle('代工廠與產線能力','不同工廠只能接已確認相容的產品。已開工、在製訂單不能直接改派。')}${table(['工廠','示範日產能','換線／清洗','品檢／物流','可承接產品','檔期確認','目前試排總箱數'],rows)}
+ <div class="note topspace">產能不是每天固定能排滿：遇到設備停機、清洗換線、既有檔期或尚未批准的委外工作，真正可用的生產分鐘會減少。</div></div>
+ <div class="panel">${sectionTitle('產能壓力模擬','改動本地示範工廠的日產能，可用來測試交期風險；這不是代工廠實際產能。')}
+ <form id="capacityForm" class="fieldline"><label class="fieldlabel">工廠<select class="select" name="fid">${s.factories.map(f=>`<option value="${f.id}">${escape(f.name)}</option>`).join('')}</select></label><label class="fieldlabel">模擬日產能（箱）<input type="number" min="1" max="1500" step="1" name="capacity" class="field small" required value="300"></label><button class="btn primary" type="submit">更新並重新試排</button></form>
+ <p class="tiny">更動會儲存在這個瀏覽器；若要恢復案例原始設定，可點右上角「重新載入案例」。</p></div>`}
+function stageLabel(i,t){return `<div class="stage">階段 ${i} ／ 5　${t}</div>`}
+function caseView(){const sc=selectedScene();if(!selected||!sc.options.some(o=>o.id===selected))selected=sc.options[0].id;const opt=sc.options.find(x=>x.id===selected);const p=E.plan(s,strategy);const f=E.optionStatus(s,opt);
+ const facts=sc.facts.map(x=>`<div class="fact"><button type="button" data-fact="${x.id}" class="btn small ${s.checkedFacts.includes(x.id)?'':'primary'}">${s.checkedFacts.includes(x.id)?'再看一次':'查詢／確認'}</button><div><strong>${escape(x.q)}</strong>${s.checkedFacts.includes(x.id)?`<div class="reply ${x.value==='unknown'?'unknown':x.value==='fail'?'fail':''}">${escape(x.answer)} ${x.value==='unknown'?pill('UNKNOWN','warn'):''}</div>`:'<p>尚未查詢 · 不知道答案之前不要直接假設。</p>'}</div></div>`).join('');
+ const opts=sc.options.map(x=>{let f=E.optionStatus(s,x);return `<button class="choice ${x.id===selected?'selected':''}" type="button" data-option="${x.id}"><b>${escape(x.name)}</b><small>${escape(x.reason)}</small>${statusP(f.status)}</button>`}).join('');
+ const compare=preview?drawComparison(preview):'<div class="note">選好方案後，點「模擬試算」，才會產生原排程和方案排程比較。操作尚不會改動原訂單。</div>';
+ const triage=s.scenarioId==='multi'?`<div class="panel">${sectionTitle('多事件分級與同步分工','事件緊急度與生產先後不同；可由品保、設備、業務、資材同步處理。')}${E.MULTI_EVENTS.map(e=>`<div class="step"><div class="line"><b>${e.time}｜${e.name}</b><div class="fieldline"><label class="fieldlabel">處理級別<select class="select triagePriority" data-event="${e.id}"><option value="">選擇</option>${['P0','P1','P2','P3'].map(k=>`<option value="${k}" ${(s.triage[e.id]?.priority||'')===k?'selected':''}>${k}</option>`).join('')}</select></label><label class="fieldlabel">負責單位<select class="select triageOwner" data-event="${e.id}"><option value="">選擇</option>${['品保','設備','生管','業務','採購','資材'].map(k=>`<option value="${k}" ${(s.triage[e.id]?.owner||'')===k?'selected':''}>${k}</option>`).join('')}</select></label></div></div></div>`).join('')}<p class="tiny">同一時間可以分派多個事件；評估會看 P0 風險控制與分工是否合理，不依照點選先後順序扣分。</p></div>`:'';
+ return `<div class="panel"><div class="line"><div><h2>${escape(sc.name)}</h2><p>${escape(sc.desc)}</p></div>${pill('模擬時鐘 '+s.date,'info')}</div><div class="note topspace">本案例目標：${escape(sc.goal)}</div>
+ ${stageLabel(1,'閱讀現場狀況')}<p>已知訂單、料況、工廠與品質限制請先查看「訂單與排程」、「BOM 與庫存」等頁籤。此頁與那些看板共用同一份狀態。</p>
+ ${metrics([{label:'訂單數',num:s.orders.length,tip:'含未達條件者'},{label:'可試排',num:p.summary.confirmed,tip:'不等於已核准',class:'good'},{label:'禁止開工',num:p.summary.blocked,tip:'缺料／品質／相容性',class:'bad'},{label:'待確認',num:p.summary.conditional,tip:'不能逕自承諾',class:'warn'}])}
+ ${stageLabel(2,'選擇需要查的關鍵資訊')}<div class="grid two">${facts}</div>
+ ${stageLabel(3,'選方案；可並行分工')}<div class="choices">${opts}</div><p class="tiny">看板上所有日期與成本皆為虛構的估計。顯示「待確認」的方案可先比較風險，不可視為已能執行。</p>
+ ${stageLabel(4,'試算排程前後差異')}<div class="line"><button id="previewOption" class="btn primary">試算這個方案</button><button id="commitOption" class="btn" ${f.status==='FEASIBLE'?'':'disabled title="須先查證前提"'}>正式套用到模擬資料</button>${statusP(f.status)}</div>
+ ${f.lacks.length?`<div class="note warn topspace"><b>尚未查詢：</b>${f.lacks.map(escape).join('；')}</div>`:''}${f.unknown.length?`<div class="note warn topspace"><b>UNKNOWN：</b>${f.unknown.map(escape).join('；')}</div>`:''}${f.failed.length?`<div class="note bad topspace"><b>禁止執行：</b>${f.failed.map(escape).join('；')}</div>`:''}
+ <div id="comparison" class="topspace">${compare}</div>
+ ${stageLabel(5,'填寫你的決策理由並請教練回饋')}
+ <form id="thoughtForm" class="forms"><label class="fieldlabel">為什麼優先處理這件事？<textarea name="reason" class="field" placeholder="例如：批號有食安疑慮，須先隔離止損" required>${escape(s.learning.reason)}</textarea></label>
+ <label class="fieldlabel">最重要想保護什麼？<textarea name="protect" class="field" placeholder="例如：食品安全和原有訂單交期">${escape(s.learning.protect)}</textarea></label>
+ <label class="fieldlabel">這個方案可能犧牲什麼？<textarea name="tradeoff" class="field" placeholder="例如：提高換線時間或讓其他訂單延後">${escape(s.learning.tradeoff)}</textarea></label>
+ <label class="fieldlabel">需要通知誰或取得誰的核准？<textarea name="contact" class="field" placeholder="例如：品保、採購、業務、主管">${escape(s.learning.contact)}</textarea></label>
+ <label class="fieldlabel">下次何時追蹤？<input class="field" name="follow" type="datetime-local" value="${escape(s.learning.follow)}"></label>
+ <div class="fieldlabel"><span>教練回饋</span><button class="btn primary" type="submit">送出判斷並查看講解</button><small>重點在關鍵風險、資訊與分工，不以固定操作順序扣分。</small></div></form>
+ ${feedback?drawFeedback(feedback):''}</div>${triage}`}
+function drawComparison(c){const f=c.feasibility;const rows=c.rows.map(x=>`<tr><td><b>${x.id}</b></td><td>${x.oldFinish||'UNKNOWN'}<br><small>交貨 ${x.oldDelivery||'UNKNOWN'}</small></td><td>${x.newFinish||'UNKNOWN'}<br><small>交貨 ${x.newDelivery||'UNKNOWN'}</small></td><td>${statusP(x.newStatus)}</td><td>${x.oldLate===null||x.newLate===null?'UNKNOWN':`${x.oldLate} → ${x.newLate} 天`}</td><td class="${x.changed?'changed':''}">${x.changed?pill('發生變動','warn'):pill('不變')}</td></tr>`);
+ const ll=s.factories.map(factory=>`<tr><td>${escape(factory.name)}</td><td>${fmt((c.oldLoad[factory.id]||0)/60)} 小時</td><td>${fmt((c.newLoad[factory.id]||0)/60)} 小時</td><td>${fmt(((c.newLoad[factory.id]||0)-(c.oldLoad[factory.id]||0))/60)} 小時</td></tr>`);
+ const diffs=E.MATERIALS.map(m=>({id:m.id,a:c.oldAlloc[m.id]||0,b:c.newAlloc[m.id]||0,oldMiss:c.oldMissing[m.id]||0,newMiss:c.newMissing[m.id]||0})).filter(x=>x.a!==x.b||x.oldMiss!==x.newMiss).map(x=>`<tr><td>${escape(M(x.id))}</td><td>${fmt(x.a)} → ${fmt(x.b)}</td><td>${fmt(x.oldMiss)} → ${fmt(x.newMiss)}</td><td>${fmt(x.b-x.a)} ${escape(E.mat(x.id).unit)}</td></tr>`);
+ return `<div class="note ${f.status==='BLOCKED'?'bad':f.status==='CONDITIONAL'?'warn':''}"><b>方案驗證：${f.status==='FEASIBLE'?'已通過已知前提，可考慮套用示範':f.status==='BLOCKED'?'存在禁止條件，不得套用':'仍有前提未確認，只能做條件式比較'}</b><br>${escape(c.tradeoffs)}<br>延誤訂單：原 ${c.baseline.summary.late} 筆 → 新 ${c.alternative.summary.late} 筆（尚未排入的單不可算成準時）。</div>
+ <div class="topspace"><h3>訂單排程前後差異</h3>${table(['訂單','原完工／交貨','新完工／交貨','新方案狀態','原／新延誤','差異'],rows,'comparison')}</div>
+ <div class="topspace grid two"><div><h3>工廠試排負荷（含清洗換線）</h3>${table(['工廠','原負荷','新負荷','變動'],ll)}</div><div><h3>暫時配置原料變化</h3>${diffs.length?table(['物料','配置舊→新','缺口舊→新','配置差異'],diffs):'<div class="note">沒有新增加的物料配置差額；不代表所有原料都已採購或放行。</div>'}</div></div>
+ <div class="note warn topspace">試算換線／清洗總工時：${fmt(c.oldSetupHours)} → ${fmt(c.newSetupHours)} 小時。額外換線、加班、運費、違約與轉廠成本：<b>UNKNOWN</b>。此版本沒有真實成本資料，不能算出最便宜方案。試排不會真的扣料，也不會自動更新原單。</div>`}
+function drawFeedback(r){return `<div class="divider"></div><h3>資深生管主管的判斷回饋</h3>${r.feedback.map(x=>`<div class="feedback">${escape(x)}</div>`).join('')}<div class="note topspace"><b>專業講解</b><p>${escape(r.coach)}</p><b>管理決策說明示範</b><p>${escape(r.decisionSummary)}</p></div>`}
+function tracking(){const rows=s.issues.map(i=>`<tr><td><b>${escape(i.id)}</b><br><small>${escape(i.name)}</small></td><td>${i.orderIds.map(escape).join('、')}</td><td>${pill(i.severity,i.severity==='P0'?'bad':i.severity==='P1'?'warn':'info')}</td><td>${escape(i.owner)}</td><td>${i.next||'UNKNOWN'}</td><td>${pill(i.status==='closed'?'已結案':'處理中',i.status==='closed'?'good':'warn')}<br>${i.hardBlock?pill('品質硬封鎖','bad'):''}</td><td>${i.status!=='closed'?`<button class="btn small" data-issue="${i.id}">${i.hardBlock?'品保處置':'結案與證據'}</button>`:'—'}</td></tr>`);
+ const logs=s.logs.slice().reverse().map(x=>`<div class="step"><b>${escape(x.action)}</b><small>${escape(x.at)}｜${escape(x.detail)}</small></div>`).join('');
+ return `<div class="panel">${sectionTitle('事件責任與追蹤','品質事件不能點一下「已結案」就放行；一般事件也必須提供結案證據。')}${table(['事件','受影響訂單','級別','權責單位','下次追蹤','狀態','操作'],rows)}
+ <div class="note topspace">P0：立即控制食品安全與重大品質風險；P1：重大交期、停機風險；P2：需主動預防；P3：例行與改善。分級僅作教學，不能代替公司實際制度。</div></div>
+ <div class="panel">${sectionTitle('建立事件追蹤項目','事件必須有受影響對象、負責角色、下次追蹤時間與結案條件。')}
+ <form id="issueForm" class="forms"><label class="fieldlabel">事件名稱<input class="field wide" name="name" required maxlength="90"></label><label class="fieldlabel">相關訂單<select class="select" name="oid">${s.orders.map(o=>`<option value="${o.id}">${o.id}</option>`).join('')}</select></label><label class="fieldlabel">分級<select name="severity" class="select">${['P0','P1','P2','P3'].map(x=>`<option value="${x}">${x}</option>`).join('')}</select></label><label class="fieldlabel">負責單位<select name="owner" class="select">${['品保','設備','生管','業務','採購','資材'].map(x=>`<option value="${x}">${x}</option>`).join('')}</select></label><label class="fieldlabel">下次追蹤日<input type="date" class="field" name="next" required value="${s.date}"></label><label class="fieldlabel">結案必要條件<input class="field wide" name="resolution" minlength="5" required placeholder="例如：取得供應商書面到貨日"></label><label class="fieldlabel span">處置紀錄<textarea class="field" name="note" required></textarea></label><div class="span"><button class="btn primary" type="submit">建立追蹤事件</button></div></form></div>
+ <div class="panel">${sectionTitle('操作紀錄','僅記錄本機示範操作；重新載入案例可清除。')}<div class="steps">${logs||'<p>尚無手動操作紀錄。</p>'}</div></div>`}
+function erp(){return `<div class="panel">${sectionTitle('ERP／MRP／APS 觀念實作','此頁為通用 ERP 資料概念練習，不是任何廠牌 ERP 的實際操作畫面，也沒有串接外部系統。')}
+ <div class="grid three"><div class="step"><b>ERP：企業資源規劃系統</b><small>把銷售訂單、庫存、採購、生產與出貨等資訊以共同資料串起來。</small></div><div class="step"><b>MRP：物料需求規劃</b><small>由訂單剩餘量 × BOM 算出需要多少料，再扣掉真正可用的庫存。</small></div><div class="step"><b>APS：進階排程</b><small>考慮工作日、產線限制、換線、品質、交期等條件找出可行方案。</small></div></div>
+ <div class="topspace note">資料概念：<b>客戶訂單 → BOM／物料主檔 → 庫存批次與預留 → 生產排程 → 良品回報 → 品保放行 → 出貨。</b> 各階段必須能追溯，並且不可以把預估狀態寫成已完成。</div></div>
+ <div class="panel">${sectionTitle('示範資料匯出','匯出 CSV 可用 Excel 查看。所有表格均為教學欄位，不能直接當成任何實際 ERP 的匯入格式。')}
+ <div class="fieldline"><button class="btn primary" data-export="orders">匯出訂單 CSV</button><button class="btn" data-export="materials">匯出批次庫存 CSV</button><button class="btn" data-export="schedule">匯出試排 CSV</button><button class="btn" data-export="issues">匯出事件 CSV</button><button class="btn" data-export="json">匯出完整 JSON 備份</button><label class="btn" style="display:inline-flex;align-items:center">匯入 JSON 備份<input type="file" id="importBackup" accept=".json,application/json" style="display:none"></label></div>
+ <p class="tiny">CSV 已做 Excel 公式注入防護；所有匯出都不包含真實公司資料。</p></div>`}
+function learning(){const sc=selectedScene(),graded=s.checkedFacts.length,pp=E.plan(s,strategy);const glossary=[['BOM','物料清單：做一箱產品要多少原料與包材。'],['MRP','物料需求規劃：算需求、庫存與缺口。'],['APS','考慮產能限制的排程輔助。'],['MOQ','最小訂購量。'],['WIP','在製品：已投入但尚未成為合格成品。'],['可用庫存','已放行、扣除預留後真正可用的部分。'],['預留量','已承諾其他訂單或用途，不可重複分配。'],['品質放行','品保完成規定檢查後，依授權允許下一步。'],['交期緩衝','交期減去估計完成品檢、物流所需時間。'],['委外代工','交由外部合格工廠依核准條件生產。']];return `<div class="panel">${sectionTitle('你目前練習的成果','此頁不是考試排名，而是提醒哪些關鍵判斷仍未完成。')}
+ ${metrics([{label:'情境資料查詢',num:graded+'/'+sc.facts.length,tip:'先確認再下判斷'},{label:'異常追蹤件數',num:s.issues.length,tip:'有權責與條件'},{label:'試排中風險訂單',num:pp.summary.blocked+pp.summary.conditional,tip:'不能直接承諾交貨'},{label:'已填決策理由',num:s.learning.reason.length>=10?'已練習':'尚未',tip:'先說明原因和取捨'}])}
+ <div class="note topspace"><b>生管日常管理說明範例：</b><p>「我會先確認客戶訂單與交期，再查 BOM、庫存可用量及代工產能，先排出具備開工條件的訂單。遇到急單、缺料或品質異常，我會先釐清風險與受影響訂單，和採購、品保、業務同步確認替代方案。評估延誤、成本及需要核准的部分後，再更新排程並持續追蹤。」</p><p>這是通用管理觀念示範，不能取代實際工廠的核准流程或經驗。</p></div></div>
+ <div class="panel">${sectionTitle('隨時可以查的生管名詞')}${glossary.map(([a,b])=>`<details class="step"><summary><b>${escape(a)}</b></summary><small>${escape(b)}</small></details>`).join('')}</div>
+ <div class="panel">${sectionTitle('限制與下一步','優先熟悉流程與風險控制，再談企業級系統功能。')}<p>這個單檔 HTML 使用規則式示範排程，不包含食品工廠真實清洗驗證、製程良率、完整批號追溯、包材版次、複雜半成品 BOM、產能最佳化求解器、實際到貨可靠度、國定假日排班及成本數據。</p><p>你可以在上方選情境、回復起始資料，反覆比較自己的決策。改善方向請以 TEST_REPORT 與 LIMITATIONS 文件為準。</p></div>`}
+function mainBody(){const renderers={academy:()=>'<div class="panel"><b>新版實務練習：從接單到出貨</b><p>十門觀念課程照常保留。想知道實務上怎麼把知識串起來，請按下面的引導式工作流程。</p><button class="btn primary" data-nav="journey">開始完整訂單跟班實作</button></div>'+A.render(s,E.plan(s,strategy)),journey:()=>J.render(s),overview,orders,materials,factories:factoryView,cases:caseView,issues:tracking,erp,learning};return renderers[tab]()}
+const tabInfo={journey:['完整訂單跟班實作','從接單、BOM、庫存、產能與進度，一路練習到品質放行、出貨與交貨追蹤。'],academy:['食品生管專業養成學院','從基礎 → 正常作業 → 主動管理 → 風險預測 → 決策實戰。'],overview:['今日生管總覽','先確認重大風險，再決定下一步。'],orders:['訂單與產能排程','看剩餘量、交貨日期與真正可執行的排程。'],materials:['BOM、原物料與庫存','分清帳面、預留、待驗、隔離與可用量。'],factories:['代工廠與生產進度','比較產能、換線與製程相容性。'],cases:['突發事件決策訓練','先查證、選方案、試算，再看教練的專業回饋。'],issues:['跨部門事件追蹤','明確分工、下次追蹤、結案條件與品質封鎖。'],erp:['ERP 資料概念練習','了解 ERP 資料流；不宣稱真實串接。'],learning:['學習成果與管理思維','整理決策依據、跨部門溝通與追蹤方法。']};
+function render(){const t=tabInfo[tab];$('#pageTitle').textContent=t[0];$('#pageSub').textContent=t[1];$('#caseSelect').innerHTML=E.SCENARIOS.map(x=>`<option value="${x.id}" ${x.id===s.scenarioId?'selected':''}>${escape(x.name)}</option>`).join('');$('#simDate').value=s.date;
+ $$('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.nav===tab));$('#panel').innerHTML=(tab!=='academy'&&A.hasReturn?.()?'<div class="panel ac-work-return"><button class="btn primary" type="button" data-coach-return>← 返回剛才的課程（保留草稿與進度）</button></div>':'')+mainBody();$('#saveStatus').textContent='此瀏覽器本機儲存';}
+function navigate(t){if(!tabInfo[t])return;tab=t;render();window.scrollTo({top:0,behavior:'instant'})}
+function exportFile(name,mime,data){const blob=new Blob([data],{type:mime}),u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),3000);}
+function csvCell(x){let t=String(x??'');if(/^\s*[=@+\-\t\r]/.test(t))t="'"+t;return '"'+t.replace(/"/g,'""')+'"'}
+function csv(rows){return '\uFEFF'+rows.map(r=>r.map(csvCell).join(',')).join('\r\n')}
+function doExport(type){const pp=E.plan(s,strategy);if(type==='json'){exportFile('food_production_learning_backup.json','application/json;charset=utf-8',JSON.stringify(s,null,2));msg('已匯出 JSON 示範資料備份');return;}
+ let rows=[];
+ if(type==='orders'){rows=[['訂單編號','產品','訂單箱數','良品箱數','在製箱數','剩餘待投入箱數','已出貨箱數','交期','工廠','品保狀態','試排結果'],...s.orders.map(o=>[o.id,P(o.productId),o.qty,o.good,o.wip,E.orderRemaining(o),o.shipped,o.due,o.factoryId,o.qa,pp.byOrder[o.id]?.status])];}
+ if(type==='materials'){rows=[['批號','物料','帳面數量','其他用途已預留','單位','品保狀態'],...s.lots.map(o=>[o.id,M(o.mid),o.qty,o.reserved,E.mat(o.mid)?.unit,o.status])];}
+ if(type==='schedule'){rows=[['訂單','工廠','日期','箱數','生產分鐘','換線分鐘'],...pp.timeline.map(o=>[o.oid,o.fid,o.day,o.qty,o.minutes,o.setupMinutes])];}
+ if(type==='issues'){rows=[['編號','事件','相關訂單','等級','負責單位','追蹤日','狀態','結案條件'],...s.issues.map(o=>[o.id,o.name,o.orderIds.join(';'),o.severity,o.owner,o.next,o.status,o.resolution])];}
+ if(rows.length){exportFile('food_production_learning_'+type+'.csv','text/csv;charset=utf-8',csv(rows));msg('已匯出 '+type+' 示範 CSV');}}
+function askQuality(issue){const old=$('#qaModal');if(old)old.remove();const box=document.createElement('div');box.className='modal-bg';box.id='qaModal';box.innerHTML=`<div class="modal" role="dialog" aria-modal="true" aria-label="品質限制處理"><div class="line"><h2>模擬品保核准解除：${escape(issue.id)}</h2><button type="button" class="btn small" id="closeModal">關閉</button></div><p>只能在品保完成必要程序、授權核准後解除。此畫面是教學模擬，不是正式簽核。</p><form id="qaForm"><div class="controls"><label><input type="checkbox" name="batch"> 已核查異常批號與影響範圍</label><label><input type="checkbox" name="disposition"> 已依品保處置確認結果符合放行條件</label><label><input type="checkbox" name="authorized"> 已取得模擬品保授權與相關文件</label></div><label class="fieldlabel">品保處置／放行證據（至少 12 字）<textarea name="proof" required minlength="12" class="field"></textarea></label><div class="line topspace"><button class="btn primary" type="submit">依模擬品保流程解除</button><button id="cancelModal" type="button" class="btn">取消</button></div></form></div>`;document.body.appendChild(box);$('#closeModal').onclick=$('#cancelModal').onclick=()=>box.remove();$('#qaForm').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);try{change(E.qaResolve(s,issue.id,f.get('proof'),{batch:!!f.get('batch'),disposition:!!f.get('disposition'),authorized:!!f.get('authorized')}));box.remove();msg('已依教學模擬程序解除事件；隔離庫存仍不可使用，需另有原料批次放行程序')}catch(err){msg(err.message,true)}}}
+function askLotQa(lid){const old=$('#qaModal');if(old)old.remove();const box=document.createElement('div');box.className='modal-bg';box.id='qaModal';box.innerHTML=`<div class="modal" role="dialog" aria-modal="true"><div class="line"><h2>原料批次模擬品保判定：${escape(lid)}</h2><button type="button" id="closeModal" class="btn small">關閉</button></div><p>請先依示範流程核對批次與品質判定。錯版、拒收及未解除重大品質事件不得直接放行。</p><form id="qaLotForm"><div class="controls"><label><input type="checkbox" name="batch"> 已核對品項、批號與來源</label><label><input type="checkbox" name="disposition"> 已取得檢驗與品保處置結果</label><label><input type="checkbox" name="authorized"> 已取得模擬品保授權</label></div><label class="fieldlabel">模擬證據（至少12字）<textarea class="field" name="proof" minlength="12" required></textarea></label><div class="line topspace"><button class="btn primary" type="submit">確認模擬放行</button><button type="button" id="cancelModal" class="btn">取消</button></div></form></div>`;document.body.appendChild(box);$('#closeModal').onclick=$('#cancelModal').onclick=()=>box.remove();$('#qaLotForm').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);try{change(E.qaReleaseLot(s,lid,String(f.get('proof')),{batch:!!f.get('batch'),disposition:!!f.get('disposition'),authorized:!!f.get('authorized')}));box.remove();msg('已按模擬品保程序放行原料批次，非真實授權')}catch(err){msg(err.message,true)}}}
+function askClose(issue){const proof=prompt(`請輸入 ${issue.id} 的結案證據（至少10字），不可只按「已結案」\n結案條件：${issue.resolution}`,'');if(proof===null)return;try{change(E.closeIssue(s,issue.id,proof));msg('已記錄有證據的結案')}catch(e){msg(e.message,true)}}
+function clickAction(e){if(tab==='journey'&&J.click(e,s,{navigate,render,setState:change}))return;if(A.globalClick?.(e,s,E.plan(s,strategy),{navigate,render,setState:change}))return;if(tab==='academy'&&A.click(e,s,E.plan(s,strategy),{navigate,render,setState:change}))return;const b=e.target.closest('button');if(!b)return;
+ if(b.dataset.nav){navigate(b.dataset.nav);return}
+ if(b.dataset.fact){if(!s.checkedFacts.includes(b.dataset.fact)){s.checkedFacts.push(b.dataset.fact);save();}render();return}
+ if(b.dataset.option){selected=b.dataset.option;preview=null;feedback=null;render();return}
+ if(b.dataset.export){doExport(b.dataset.export);return}
+ if(b.dataset.releaseLot){askLotQa(b.dataset.releaseLot);return}
+ if(b.dataset.issue){const issue=s.issues.find(x=>x.id===b.dataset.issue);if(!issue||issue.status==='closed')return;if(issue.hardBlock)askQuality(issue);else askClose(issue);return}
+ if(b.id==='previewOption'){const opt=selectedScene().options.find(o=>o.id===selected);preview=E.compare(s,opt,strategy);feedback=null;render();setTimeout(()=>$('#comparison')?.scrollIntoView({block:'nearest',behavior:'smooth'}),20);return}
+ if(b.id==='commitOption'){const opt=selectedScene().options.find(o=>o.id===selected);try{if(!confirm('確定套用這個「模擬」方案嗎？原案例狀態將更新，可用重新載入案例回復。'))return;change(E.commitOption(s,opt));msg('已套用示範方案；請重新檢查交期與事件追蹤')}catch(err){msg(err.message,true)}return}
+}
+$('#panel').addEventListener('click',clickAction);
+$('#panel').addEventListener('input',e=>{if(tab==='academy'&&A.input)A.input(e,s,E.plan(s,strategy),{navigate,render,setState:change});if(e.target.matches('input,textarea,select')){e.target.removeAttribute('aria-invalid');e.target.form?.querySelectorAll('.coach-field-error').forEach(n=>n.remove());}});
+$('#panel').addEventListener('invalid',e=>{if(tab!=='academy'&&e.target.matches('input,textarea,select'))showFieldIssue(e.target,explainInvalid(e.target));},true);
+$('#panel').addEventListener('change',e=>{if(e.target.id==='strategy'){strategy=e.target.value;preview=null;render();return;}
+ const id=e.target.dataset.event;if(id){s.triage[id]??={};if(e.target.classList.contains('triagePriority'))s.triage[id].priority=e.target.value;if(e.target.classList.contains('triageOwner'))s.triage[id].owner=e.target.value;save();return;}});
+$('#panel').addEventListener('change',async e=>{if(e.target.id!=='importBackup')return;const file=e.target.files?.[0];if(!file)return;try{const o=JSON.parse(await file.text());if(o.version!==3||!E.SCENARIOS.some(x=>x.id===o.scenarioId)||!Array.isArray(o.orders)||!Array.isArray(o.lots)||!Array.isArray(o.factories)||!Array.isArray(o.checkedFacts)||!o.learning||!o.date)throw Error('檔案格式不符本版，不能匯入');if(o.orders.some(x=>!Number.isInteger(x.qty)||x.qty<0||!Number.isInteger(x.good)||x.good<0||x.good>x.qty||x.wip<0||x.good+x.wip>x.qty))throw Error('匯入檔的訂單數量不一致');if(o.lots.some(x=>!Number.isFinite(x.qty)||x.qty<0||x.reserved<0||x.reserved>x.qty))throw Error('匯入檔的庫存數量不一致');if(!confirm('確定匯入 JSON 備份並覆蓋本次本機資料？'))return;selected=null;strategy='user';change(o);msg('已還原 JSON 備份')}catch(err){msg('匯入失敗：'+err.message,true)}});
+$('#panel').addEventListener('submit',e=>{if(tab==='academy'&&A.submit(e,s,E.plan(s,strategy),{navigate,render,setState:change}))return;if(tab==='journey'&&J.submit(e,s,{navigate,render,setState:change}))return;e.preventDefault();const f=new FormData(e.target);try{
+ if(e.target.id==='progressForm'){change(E.reportGood(s,f.get('oid'),f.get('good')));msg('已更新良品累計，已按差額扣料');return}
+ if(e.target.id==='releaseForm'){if(!confirm('此為教學模擬：確認已由品保依公司流程正式核准放行？'))return;change(E.qaRelease(s,f.get('oid')));msg('模擬品保放行已登錄');return}
+ if(e.target.id==='shipForm'){change(E.ship(s,f.get('oid'),f.get('qty')));msg('已記錄模擬出貨');return}
+ if(e.target.id==='capacityForm'){const next=E.clone(s),o=next.factories.find(x=>x.id===f.get('fid')),cap=Number(f.get('capacity'));if(!Number.isInteger(cap)||cap<=0||cap>1500)throw Error('請輸入 1～1500 的整數');o.capacity=cap;next.logs.push({at:s.date,action:'產能情境調整',detail:o.id+' → '+cap+' 箱／日'});change(next);msg('已更新示範產能並重排');return}
+ if(e.target.id==='issueForm'){const next=E.clone(s),id='EX-U'+String(next.issues.length+1).padStart(3,'0');next.issues.push({id,name:String(f.get('name')).trim(),orderIds:[f.get('oid')],type:'一般',severity:f.get('severity'),owner:f.get('owner'),status:'open',hardBlock:f.get('severity')==='P0',next:f.get('next'),resolution:String(f.get('resolution')).trim(),note:String(f.get('note')).trim()});next.logs.push({at:next.date,action:'建立事件',detail:id});change(next);msg('已建立新事件，P0 將先套用硬封鎖，需模擬品保程序解除');return}
+ if(e.target.id==='thoughtForm'){s.learning=Object.fromEntries(['reason','protect','tradeoff','contact','follow'].map(x=>[x,String(f.get(x)||'').trim()]));let opt=selectedScene().options.find(x=>x.id===selected);feedback=E.grade(s,opt,s.triage);save();render();setTimeout(()=>$('#thoughtForm')?.scrollIntoView({block:'center',behavior:'smooth'}),30);return}
+ }catch(err){if(tab!=='academy'){const field=e.target.querySelector('input[type=number],input[required],textarea[required],select[required]');showFieldIssue(field,err.message+'。請檢查此欄位及對應的訂單／物料資料，修正後重新送出。');}msg(err.message,true)}});
+$$('.nav button').forEach(b=>b.addEventListener('click',()=>{if(b.dataset.nav==='academy')A.go('catalog');navigate(b.dataset.nav)}));
+$('#caseSelect').addEventListener('change',e=>{if(!confirm('切換情境將重置現有案例的所有本機示範資料。已匯出備份才能保留原案例，確定切換嗎？')){render();return;}selected=null;strategy='user';change(E.initial(e.target.value,s.date));navigate('cases');msg('新案例已載入')});
+$('#simDate').addEventListener('change',e=>{if(!e.target.value)return;if(!confirm('更改示範日期將重新建立本案例，原案例資料不保留。要繼續嗎？')){render();return}selected=null;strategy='user';change(E.initial(s.scenarioId,e.target.value));msg('已以新日期重新建立案例')});
+$('#resetCase').onclick=()=>{if(!confirm('確定重新載入當前案例的初始狀態？此操作會清除本案例的進度、決策與事件紀錄。'))return;selected=null;strategy='user';change(E.initial(s.scenarioId,s.date));msg('已回復案例最初快照')};
+$('#clearAll').onclick=()=>{if(!confirm('要清除本工具的案例資料與所有專業課程學習進度嗎？此操作不可復原，請先匯出備份。'))return;localStorage.removeItem(STORE);A.reset();selected=null;strategy='user';change(E.initial());navigate('overview');msg('已清除並恢復起始資料')};
+$('#helpTop').onclick=()=>{A.go('glossary');navigate('academy')};
+window.__PC_DEMO__={getState:()=>E.clone(s),getPlan:()=>E.plan(s,strategy),getTab:()=>tab,getAcademy:()=>A.state()};
+save();render();
+})();
+</script></body></html>

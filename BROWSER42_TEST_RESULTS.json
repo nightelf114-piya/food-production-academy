@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Browser loads no fatal JS errors",
+    "result": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "New guided tab visible",
+    "result": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Journey entry displays CTA",
+    "result": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Step 1 displayed",
+    "result": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Wrong answer produces specific explanation",
+    "result": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Contextual hints available",
+    "result": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Guided stage 1 accepted",
+    "result": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Guided stage 2 accepted",
+    "result": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Guided stage 3 accepted",
+    "result": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Guided stage 4 accepted",
+    "result": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Guided stage 5 accepted",
+    "result": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Guided stage 6 accepted",
+    "result": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Guided stage 7 accepted",
+    "result": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Guided stage 8 accepted",
+    "result": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Guided stage 9 accepted",
+    "result": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Guided stage 10 accepted",
+    "result": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Guided stage 11 accepted",
+    "result": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "End completion summary",
+    "result": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Updated order good and ship 360",
+    "result": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Existing academy still accessible",
+    "result": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "No browser errors after full flow",
+    "result": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Mobile entry accessible",
+    "result": "PASS",
+    "detail": ""
+  }
+]

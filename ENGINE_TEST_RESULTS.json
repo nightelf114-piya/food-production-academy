@@ -1,0 +1,128 @@
+[
+  {
+    "id": "TEST-01",
+    "title": "插急單造成的原訂單完工日變化顯示",
+    "result": "PASS",
+    "method": "Node.js assert + engine functions",
+    "detail": "R-900 被提前，且 SO-101 晚完成一天"
+  },
+  {
+    "id": "TEST-02",
+    "title": "缺料訂單不能當成可執行",
+    "result": "PASS",
+    "method": "Node.js assert + engine functions",
+    "detail": "SO-103 原料到貨尚未確認，無排產事件"
+  },
+  {
+    "id": "TEST-03",
+    "title": "隔離／待驗批次不得當可用庫存",
+    "result": "PASS",
+    "method": "Node.js assert + engine functions",
+    "detail": "M-MANGO 兩批隔離，當日可用量為 0"
+  },
+  {
+    "id": "TEST-04",
+    "title": "良品已達 80% 只排餘下 20%",
+    "result": "PASS",
+    "method": "Node.js assert + engine functions",
+    "detail": "1000 箱、良品 800 箱，只安排 200 箱"
+  },
+  {
+    "id": "TEST-05",
+    "title": "同廠同日排程工時不能超過可用上限",
+    "result": "PASS",
+    "method": "Node.js assert + engine functions",
+    "detail": "9 個情境 × 各工廠所有工作日逐筆驗證"
+  },
+  {
+    "id": "TEST-06",
+    "title": "轉廠須驗證相容性與確認檔期",
+    "result": "PASS",
+    "method": "Node.js assert + engine functions",
+    "detail": "未確認檔期為條件式、不相容工廠禁止、在製訂單不可直接改派"
+  },
+  {
+    "id": "TEST-07",
+    "title": "多重事件可分級並行分工",
+    "result": "PASS",
+    "method": "Node.js assert + engine functions",
+    "detail": "P0/P1/P2/P3 由不同角色同時負責，回饋承認同步分工"
+  },
+  {
+    "id": "TEST-08",
+    "title": "相同合理分工不因輸入順序而扣分",
+    "result": "PASS",
+    "method": "Node.js assert + engine functions",
+    "detail": "事件輸入物件順序不同，回饋相同"
+  },
+  {
+    "id": "TEST-09",
+    "title": "同一情境至少兩個可行方案有不同結果",
+    "result": "PASS",
+    "method": "Node.js assert + engine functions",
+    "detail": "SO-101 優先與 SO-102 優先皆符合前提，排程結果不同"
+  },
+  {
+    "id": "TEST-10",
+    "title": "試排訂單、物料、產能及成本狀態一致",
+    "result": "PASS",
+    "method": "Node.js assert + engine functions",
+    "detail": "物料配置量不超可用供給，生產不超剩餘量，成本維持 null/UNKNOWN"
+  },
+  {
+    "id": "TEST-11",
+    "title": "不明到貨、成本、ERP 應維持 UNKNOWN",
+    "result": "PASS",
+    "method": "Node.js assert + engine functions",
+    "detail": "延料 ETA 未確認、額外費用 null、未使用實際 ERP 資料"
+  },
+  {
+    "id": "TEST-12",
+    "title": "重新載入案例恢復完全一致起始快照",
+    "result": "PASS",
+    "method": "Node.js assert + engine functions",
+    "detail": "日期一致時初始狀態完全一致；已改狀態不影響新快照"
+  },
+  {
+    "id": "TEST-13",
+    "title": "方案試算不擅自改寫原狀態",
+    "result": "PASS",
+    "method": "Node.js assert + engine functions",
+    "detail": "plan/compare 均為純試算；原物料、訂單與排程未更動"
+  },
+  {
+    "id": "TEST-14",
+    "title": "累計回報、JSON 存取不重複扣料",
+    "result": "PASS",
+    "method": "Node.js assert + engine functions",
+    "detail": "良品累計 50→50 無新增扣料，JSON 重載前後排程一致"
+  },
+  {
+    "id": "TEST-15",
+    "title": "回饋解釋可行性、風險與管理判斷",
+    "result": "PASS",
+    "method": "Node.js assert + engine functions",
+    "detail": "回饋包含查核、方案前提、決策理由、管理說明範例"
+  },
+  {
+    "id": "EXTRA-QA",
+    "title": "品質未放行禁止出貨，封鎖不可一般結案",
+    "result": "PASS",
+    "method": "Node.js assert + engine functions",
+    "detail": "封鎖無法普通結案／製造／出貨；需模擬品保檢查及完整證據"
+  },
+  {
+    "id": "EXTRA-LOT",
+    "title": "隔離批次不可直接放行錯標／有未結品質事件",
+    "result": "PASS",
+    "method": "Node.js assert + engine functions",
+    "detail": "錯標批次及未結品質事件均擋住原料放行"
+  },
+  {
+    "id": "EXTRA-DATE",
+    "title": "日期可調不寫死過期資料",
+    "result": "PASS",
+    "method": "Node.js assert + engine functions",
+    "detail": "2027-03-02 能正常產生相對交期"
+  }
+]

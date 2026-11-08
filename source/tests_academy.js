@@ -1,0 +1,20 @@
+'use strict';const assert=require('node:assert/strict');require('./engine.js');const E=globalThis.PC,A=require('./academy.js');let tests=[];
+function check(label,fn){try{fn();tests.push({name:label,result:'PASS'});console.log('PASS',label)}catch(e){tests.push({name:label,result:'FAIL',error:e.message});console.error('FAIL',label,e.stack);}}
+const s=E.initial('rush','2026-11-09'),p=E.plan(s,'user');
+check('A-01 ten modules and six levels',()=>{assert.equal(A.LESSONS.length,10);assert.equal(A.LEVELS.length,6);});
+check('A-02 terms have explanation formal use sample pitfall',()=>{assert(A.glossary.length>=17);A.glossary.forEach(x=>assert.equal(x.length,5));});
+check('A-03 every module has 3 inspections, worked example and interactive question',()=>{A.LESSONS.forEach(x=>{assert(x.concept.length>45);assert(x.example.length>20);assert(x.inspection.length>=3);assert(x.terms.length>=2);assert(x.answer(s,p)!==undefined);assert(x.transfer.length>15)});});
+check('A-04 3 MPS sum is from actual planned F-A timeline',()=>{const l=A.LESSONS[2];let expect=p.timeline.filter(x=>x.fid==='F-A'&&x.day<=E.plusWork(s.date,4)).reduce((n,x)=>n+x.qty,0);assert.equal(l.answer(s,p),expect)});
+check('A-05 BOM derived from currently remaining',()=>{const l=A.LESSONS[3];assert(Math.abs(l.answer(s,p)-E.orderRemaining(s.orders[0])*1.4)<0.000001);});
+check('A-06 finite capacity accounts for downtime',()=>{const x=E.clone(s);x.factories[0].downtime[x.date]=240;assert.equal(A.LESSONS[4].answer(x,p),240)});
+check('A-07 material usable excludes held batches',()=>{const x=E.clone(s);x.lots.push({id:'PENDING-12',mid:'M-BOTTLE',qty:10000,reserved:0,status:'hold'});assert.equal(A.LESSONS[5].answer(x,p),A.LESSONS[5].answer(s,p));});
+check('A-08 exercise response does not mutate operational state',()=>{const before=JSON.stringify(s);const l=A.LESSONS[3];const x=A.__test.checkPractice(l,s,p,l.answer(s,p),'我會先確認現有需求與批次庫存，避免將未放行材料直接列為可用。');assert(x.ok);assert.equal(before,JSON.stringify(s));});
+check('A-09 wrong numeric choice is not accepted',()=>{const l=A.LESSONS[3];assert.equal(A.__test.checkPractice(l,s,p,l.answer(s,p)+1,'我會確認正確公式與物料單位，避免重複展開已完成量。').ok,false);});
+check('A-10 stage links and manual reason are required',()=>{const l=A.LESSONS[0];assert.equal(A.__test.checkPractice(l,s,p,l.answer(s,p),'太少').ok,false);});
+check('A-11 scenario change changes calculation where appropriate',()=>{let q=E.initial('rush','2026-11-09');q.orders[0].good=100;assert.equal(A.LESSONS[3].answer(q,E.plan(q)),(q.orders[0].qty-100)*1.4);assert.notEqual(A.__test.dataStamp(s),A.__test.dataStamp(q));});
+check('A-12 abnormal order not allowed to reserve material',()=>{const x=E.initial('quality','2026-11-09'),z=E.plan(x);assert.equal(z.byOrder['SO-101'].status,'BLOCKED');assert.equal(z.materialAlloc['M-MANGO']||0,0);});
+check('A-13 zero quality release authority cannot be assumed',()=>{const x=E.initial('quality','2026-11-09');assert.throws(()=>E.ship(x,'SO-101',1));});
+check('A-14 plan is deterministic at identical snapshot',()=>{assert.deepEqual(E.plan(s,'user'),E.plan(E.clone(s),'user'));});
+check('A-15 daily risk list tracks underlying model state',()=>{const x=E.initial('quality','2026-11-09');const list=A.__test.listRisk(x,E.plan(x));assert(list.some(v=>v.name.includes('SO-101')));});
+check('A-16 all modes render static HTML without DOM',()=>{for(const mode of ['catalog','lesson','week','levels','glossary']){A.go(mode);const h=A.render(s,p);assert(h.includes('class="academy"'));assert(h.length>400);}});
+const fs=require('fs');fs.writeFileSync(require('node:path').join(__dirname,'..','ACADEMY_TEST_RESULTS.json'),JSON.stringify(tests,null,2));const fail=tests.filter(x=>x.result==='FAIL');console.log(`${tests.length-fail.length} PASS / ${fail.length} FAIL`);if(fail.length)process.exit(1);

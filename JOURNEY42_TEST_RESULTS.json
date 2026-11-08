@@ -1,0 +1,74 @@
+[
+  {
+    "name": "J42-01 study copy matches existing engine and original scenario stays intact",
+    "result": "PASS"
+  },
+  {
+    "name": "J42-02 wrong order blocked with specific feedback",
+    "result": "PASS"
+  },
+  {
+    "name": "J42-03 guided step 1",
+    "result": "PASS"
+  },
+  {
+    "name": "J42-04 guided step 2",
+    "result": "PASS"
+  },
+  {
+    "name": "J42-05 guided step 3",
+    "result": "PASS"
+  },
+  {
+    "name": "J42-06 guided step 4",
+    "result": "PASS"
+  },
+  {
+    "name": "J42-07 guided step 5",
+    "result": "PASS"
+  },
+  {
+    "name": "J42-08 guided step 6",
+    "result": "PASS"
+  },
+  {
+    "name": "J42-09 guided step 7",
+    "result": "PASS"
+  },
+  {
+    "name": "J42-10 guided step 8",
+    "result": "PASS"
+  },
+  {
+    "name": "J42-11 guided step 9",
+    "result": "PASS"
+  },
+  {
+    "name": "J42-12 guided step 10",
+    "result": "PASS"
+  },
+  {
+    "name": "J42-13 guided step 11",
+    "result": "PASS"
+  },
+  {
+    "name": "J42-14 after full lifecycle good/ship/qa and material consumption correct",
+    "result": "PASS"
+  },
+  {
+    "name": "J42-15 label scenario fact uses reserved amount and matches live model",
+    "result": "PASS"
+  },
+  {
+    "name": "J42-16 shipping before QA must be blocked by original engine",
+    "result": "PASS"
+  },
+  {
+    "name": "J42-17 incorrect quantity does not consume materials",
+    "result": "PASS"
+  },
+  {
+    "name": "J42-18 contains complete guided page and focus button",
+    "result": "PASS"
+  }
+]
